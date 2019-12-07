@@ -6,4 +6,4 @@ description: PhD Candidate
 
 # This website is currently under construction.
 
-## Please see [my github page](https://github.com/leowerneck) in the meantime.
+Will work on improving this slowly.
