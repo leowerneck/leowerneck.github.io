@@ -6,16 +6,16 @@ description: PhD Candidate
 
 # <font color='red'> This website is currently under construction </font>
 
-[Contact](#contact) | [About me](#about) | [Research](#research)
+| [Contact](#Contact) | [About me](#About) | [Research](#Research) |
 
 
-<a id='contact'></a>
-# Contact
+<a name='Contact'>
+## Contact
 
-<a id='about'></a>
-# About me
+<a name='About'>
+## About me
 
-<a id='research'></a>
-# Research
+<a name='Research'>
+## Research
 
 
