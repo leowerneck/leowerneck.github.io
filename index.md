@@ -1,8 +1,5 @@
 ---
-layout: page
-title: Leo Werneck's website
-tagline: Personal/professional website
-description: Leo Werneck's website
+layout: default
 ---
 
 # This website is currently under construction.
