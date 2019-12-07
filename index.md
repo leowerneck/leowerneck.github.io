@@ -4,6 +4,18 @@ title: Leo Werneck
 description: PhD Candidate
 ---
 
-# This website is currently under construction.
+# <font color='red'> This website is currently under construction </font>
 
-Will work on improving this slowly.
+[Contact](#contact) | [About me](#about) | [Research](#research)
+
+
+<a id='contact'></a>
+# Contact
+
+<a id='about'></a>
+# About me
+
+<a id='research'></a>
+# Research
+
+
