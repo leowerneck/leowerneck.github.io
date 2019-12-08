@@ -40,23 +40,6 @@ li {
   line-height: 1.4 ;
 }
 
-a {
-  color:#ffcc00;
-  font-weight:400;
-  text-decoration:none;
-
-  &:hover {
-    color: #ffeb9b;
-  }
-}
-
-a small {
-  font-size:11px;
-  color:#666;
-  margin-top:-0.6em;
-  display:block;
-}
-
 /* Header, <header>
    header   - container
    h1       - project name
@@ -248,12 +231,23 @@ hr {
 }
 
 /* Links
-   a, a:hover, a:visited
-*/
+ */
 
 a {
-  color: #63c0f5;
-  text-shadow: 0 0 5px rgba(104, 182, 255, 0.5);
+  color:#ffcc00;
+  font-weight:400;
+  text-decoration:none;
+
+  &:hover {
+    color: #ffeb9b;
+  }
+}
+
+a small {
+  font-size:11px;
+  color:#666;
+  margin-top:-0.6em;
+  display:block;
 }
 
 /* Clearfix */
