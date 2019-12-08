@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Leo Werneck
+title: Leonardo Werneck
 description: PhD Candidate
 ---
 
