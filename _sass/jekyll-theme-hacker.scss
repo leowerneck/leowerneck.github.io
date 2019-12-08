@@ -40,6 +40,27 @@ li {
   line-height: 1.4 ;
 }
 
+a {
+  color:#267CB9;
+  text-decoration:none;
+}
+
+a:hover, a:focus {
+  color:#069;
+  font-weight: bold;
+}
+
+a small {
+  font-size:11px;
+  color:#777;
+  margin-top:-0.3em;
+  display:block;
+}
+
+a:hover small {
+  color:#777;
+}
+
 /* Header, <header>
    header   - container
    h1       - project name
