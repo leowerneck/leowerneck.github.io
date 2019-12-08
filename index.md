@@ -6,7 +6,7 @@ description: PhD Candidate
 
 # <font color='red'> This website is currently under construction </font>
 
-[**Contact**](#Contact) || [**About me**](#About) || [**Research**](#Research)
+[**Contact**](#Contact) \| [**About me**](#About) \| [**Research**](#Research)
 
 
 <a name='Contact'>
