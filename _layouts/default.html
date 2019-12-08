@@ -17,7 +17,7 @@
       <header>
         <h1 class="header">{{ site.title | default: site.github.repository_name }}</h1>
         <p class="header">{{ site.description | default: site.github.project_tagline }}</p>
-
+	<p class="header">{{ site.institution | default:  }}</p>
         {% if site.github.is_user_page %}
           <ul>
             <li><a class="buttons github" href="{{ site.github.owner_url }}">My GitHub Page</a></li>
