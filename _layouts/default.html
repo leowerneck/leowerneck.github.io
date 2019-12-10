@@ -19,14 +19,15 @@
         <p class="header">{{ site.description | default: site.github.project_tagline }}</p>
 	<p class="header">{{ site.institution | default:  }}</p>
         {% if site.github.is_user_page %}
-          <ul>
-            <li><a class="buttons github" href="{{ site.github.owner_url }}">My GitHub Page</a></li>
-          </ul>
+        <ul>
+          <li><a class="buttons github" href="{{ site.github.owner_url }}">My GitHub Page</a></li>
+        </ul>
         {% endif %}
+	<img align="center" src="assets/LeoWebsite.JPG" width="250"> 
       </header>
 
       <section>
-        <img align="right" src="assets/LeoWebsite.JPG" width="250">
+        {{ content }}
       </section>
 
       <footer>
