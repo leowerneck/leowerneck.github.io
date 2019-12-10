@@ -12,10 +12,20 @@ description: PhD Candidate
 <a name='Contact'>
 ## Contact
 
+**Office**<br>
+G62 - White Hall - West Virginia University
+
+**E-mail**
+[werneck@if.usp.br](mailto:werneck@if.usp.br) \| [leo.werneck@mail.wvu.edu](mailto:leo.werneck@mail.wvu.edu) \| [leow155@gmail.com](mailto:leow155@gmail.com)
+
+**Mailing address**
+PO Box 6315,
+Morgantown, WV 26506
+United States
+
 <a name='About'>
 ## About me
+Hi, my name is Leonardo (Leo) Werneck, and I am a fourth-year PhD candidate in Physics at the [Institute of Physics](http://portal.if.usp.br/) of the [University of São Paulo](https://www.usp.br/).
 
 <a name='Research'>
 ## Research
-
-
