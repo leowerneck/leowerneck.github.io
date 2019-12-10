@@ -15,12 +15,12 @@ description: PhD Candidate
 **Office**<br>
 G62 - White Hall - West Virginia University
 
-**E-mail**
+**E-mail**<br>
 [werneck@if.usp.br](mailto:werneck@if.usp.br) \| [leo.werneck@mail.wvu.edu](mailto:leo.werneck@mail.wvu.edu) \| [leow155@gmail.com](mailto:leow155@gmail.com)
 
-**Mailing address**
-PO Box 6315,
-Morgantown, WV 26506
+**Mailing address**<br>
+PO Box 6315<br>
+Morgantown, WV 26506<br>
 United States
 
 <a name='About'>
