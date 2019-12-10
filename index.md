@@ -10,7 +10,6 @@ description: PhD Candidate
 
 <a name='Contact'>
 ## Contact
-<img align="right" src="assets/LeoWebsite.JPG" width="250">
 **Office**<br>
 G62 - White Hall - West Virginia University
 
