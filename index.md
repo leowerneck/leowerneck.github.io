@@ -1,5 +1,6 @@
 ---
 layout: default
+title: Leonardo Werneck
 ---
 
 # <font color='red'> This website is currently under construction </font>
