@@ -1,7 +1,6 @@
 ---
 layout: default
-title: Leo Werneck
-description: PhD Candidate
+title: Leo Werneck's Webpage
 ---
 
 # <font color='red'> This website is currently under construction </font>
