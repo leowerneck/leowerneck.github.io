@@ -28,7 +28,7 @@ Hi, my name is Leonardo (Leo) Werneck, and I am a fourth-year PhD candidate in P
 ## Research
 My research fields are those of [Numerical Relativity](https://en.wikipedia.org/wiki/Numerical_relativity) and [Computational Astrophysics](https://en.wikipedia.org/wiki/Computational_astrophysics). I have dedicated a good fraction of my PhD to the study of [gravitational collapse](https://en.wikipedia.org/wiki/Gravitational_collapse) of [massless scalar fields](https://en.wikipedia.org/wiki/Scalar_field_theory).
 
-This is just a test: $\frac{dx}{dy} = -v y$, and also
+This is just a test: $$\frac{dx}{dy} = -v y$$, and also
 
 $$
 g_{\mu\nu}
