@@ -43,4 +43,4 @@ $$
 <a name='Notes'>
 ## Notes
 
-* [Wave equation](#https://leowerneck.github.io/Notes/Wave_equation)
+* [Wave equation](https://leowerneck.github.io/Wave_equation)
