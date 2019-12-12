@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: notes
 title: Leonardo Werneck
 mathjax: true
 ---
