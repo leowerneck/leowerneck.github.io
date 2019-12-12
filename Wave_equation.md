@@ -6,7 +6,7 @@ mathjax: true
 
 # The Wave Equation
 
-Here we will explore the [wave equation](https://en.wikipedia.org/wiki/Wave_equation) and discuss how to solve it in the computer. For the sake of this discussion, we will be using the [C programming language](https://en.wikipedia.org/wiki/C_(programming_language).
+Here we will explore the [wave equation](https://en.wikipedia.org/wiki/Wave_equation) and discuss how to solve it in the computer. For the sake of this discussion, we will be using the [C programming language](https://en.wikipedia.org/wiki/C_(programming_language)).
 
 For a given function $u(t,\vec{x})$, where $\vec{x}=(x,y,z)$, the *wave equation* is given by
 
