@@ -15,5 +15,5 @@ $$
 where $nabla^{2}$ is the Laplacian operator, which in Cartesian coordinates reads
 
 $$
-\nabla^{2} = \partial_{x}^{2} + \partial_{y}^{2} + \partial_{z}^{2}
+\nabla^{2} = \partial_{x}^{2} + \partial_{y}^{2} + \partial_{z}^{2}\ .
 $$
