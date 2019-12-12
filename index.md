@@ -32,4 +32,4 @@ My research fields are those of [Numerical Relativity](https://en.wikipedia.org/
 <a name='Notes'>
 ## Notes
 
-* [Wave equation](https://leowerneck.github.io/Wave_equation)
+* [Wave equation](Wave_equation.md)
