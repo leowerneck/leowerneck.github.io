@@ -48,18 +48,22 @@ $$
 
 so that we trade one second-order differential equation by a system of coupled, first-order differential equations:
 
+$$
 \begin{align}
 \partial_{t}u(t,x) &= v(t,x)\ ,\\
 \partial_{t}v(t,x) &= \partial_{x}^{2}u(t,x)\ .
 \end{align}
+$$
 
 One could go further and simplify the Laplacian operator by introducing yet another new auxiliary function $w(t,x)\equiv\partial_{x}u(t,x)$, but we won't do that for now. We will use second-order, centered [finite differences](https://en.wikipedia.org/wiki/Finite_difference) to solve this problem. Finite differences approximations to the derivatives are thus found by considering the [Taylor series](https://en.wikipedia.org/wiki/Taylor_series) of the function $f(t,x)$:
 
+$$
 \begin{align}
 f(t-\Delta t,x) &= f(t,x) - \Delta t \partial_{t}f(t,x) + \frac{\Delta t^{2}}{2!}\partial_{t}^{2}f(t,x) - \frac{\Delta t^{3}}{3!}\partial_{t}^{3}f(t,x) +  \mathcal{O}\left(\Delta t^{4}\right)\ ,\\
 f(t,x)          &= f(t,x)\ ,\\
 f(t+\Delta t,x) &= f(t,x) + \Delta t \partial_{t}f(t,x) + \frac{\Delta t^{2}}{2!}\partial_{t}^{2}f(t,x) + \frac{\Delta t^{3}}{3!}\partial_{t}^{3}f(t,x) + \mathcal{O}\left(\Delta t^{4}\right)\ .
 \end{align}
+$$
 
 For example, subtracting the first expression from the third, we target
 
