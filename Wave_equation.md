@@ -80,23 +80,27 @@ $$
 The derivation for the spatial derivatives are completely analogous and can be easily found by simply changing $t\leftrightarrow x$ on the derivations above. Introducing the notation
 
 $$
-f\left(n\cdot\Delta t,i\cdot\Delta x) \equiv f^{n}_{i}\ ,
+f\left(n\cdot\Delta t,i\cdot\Delta x\right) \equiv f^{n}_{i}\ ,
 $$
 
 we have
 
-\begin{align}
+$$
+\begin{aligned}
 \partial_{t}f^{n}_{i}     &= \frac{f^{n+1}_{i}-f^{n-1}_{i}}{2\Delta t}           \ ,\\
 \partial_{x}f^{n}_{i}     &= \frac{f^{n}_{i+1}-f^{n}_{i-1}}{2\Delta t}           \ ,\\
 \partial_{x}^{2}f^{n}_{i} &= \frac{f^{n}_{i+1}-2f^{n}_{i}+f^{n}_{i-1}}{\Delta x^{2}}\ ,
-\end{align}
+\end{aligned}
+$$
 
 which allow us to write down the wave equation as
 
+$$
 \begin{align}
 \frac{u^{n+1}_{i}-u^{n-1}_{i}}{2\Delta t} &= v^{n}_{i}\ ,\\
 \frac{v^{n+1}_{i}-v^{n-1}_{i}}{2\Delta t} &= \frac{u^{n}_{i+1}-2u^{n}_{i}+u^{n}_{i-1}}{\Delta x^{2}}\ ,
 \end{align}
+$$
 
 leading to the iterative relations
 
