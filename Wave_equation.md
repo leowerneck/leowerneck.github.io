@@ -72,18 +72,18 @@ For example, subtracting the first expression from the third, we target
 
 $$
 \begin{align}
-f(t+\Delta t,x) - f(t-\Delta t,x) &= 2 \Delta t \partial_{t}f(t,x) + \mathcal{O}\left(\Delta t^{3}\right)\\
-\implies \partial_{t}f(t,x) &= \frac{f(t+\Delta t,x) - f(t-\Delta t,x)}{2 \Delta} + \mathcal{O}\left(\Delta t^{2}\right)\ .
-\begin{align}
+f(t+\Delta t,x) - f(t-\Delta t,x) = 2 \Delta t \partial_{t}f(t,x) &+ \mathcal{O}\left(\Delta t^{3}\right)\\
+\implies \partial_{t}f(t,x) = \frac{f(t+\Delta t,x) - f(t-\Delta t,x)}{2 \Delta} &+ \mathcal{O}\left(\Delta t^{2}\right)\ .
+\end{align}
 $$
 
 On the other hand, subtracing 2 times the second expression from the third and adding the first to it results in
 
 $$
 \begin{align}
-f(t+\Delta t,x) - 2f(t,x) + f(t-\Delta t,x) &= \Delta t^{2}\partial_{t}^{2}f(t,x) + \mathcal{O}\left(\Delta t^{4}\right)\\
-\implies \partial_{t}^{2}f(t,x) &= \frac{f(t+\Delta t,x) - 2f(t,x) + f(t-\Delta t,x)}{\Delta t^{2}} + \mathcal{O}\left(\Delta t^{2}\right)\ .
-\begin{align}
+f(t+\Delta t,x) - 2f(t,x) + f(t-\Delta t,x) = \Delta t^{2}\partial_{t}^{2}f(t,x) &+ \mathcal{O}\left(\Delta t^{4}\right)\\
+\implies \partial_{t}^{2}f(t,x) = \frac{f(t+\Delta t,x) - 2f(t,x) + f(t-\Delta t,x)}{\Delta t^{2}} &+ \mathcal{O}\left(\Delta t^{2}\right)\ .
+\end{align}
 $$
 
 The derivation for the spatial derivatives are completely analogous and can be easily found by simply changing $t\leftrightarrow x$ on the derivations above. Introducing the notation
