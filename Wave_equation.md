@@ -4,12 +4,15 @@ title: Leonardo Werneck
 mathjax: true
 ---
 
+<a name='ToC'>
+### Table of Contents
+
 * [**The Wave Equation**](#WaveEquation)
   * [*Solving the wave equation in 1 spatial dimension*](#Wave1D)
     * [Finite differences approach](#Wave1DFD)
 
 <a name='WaveEquation'>
-# The Wave Equation
+# The Wave Equation \[Back to [ToC](#ToC)\]
 
 Here we will explore the [wave equation](https://en.wikipedia.org/wiki/Wave_equation){:target="_blank"} and discuss how to solve it in the computer. For the sake of this discussion, we will be using the [C programming language](https://en.wikipedia.org/wiki/C_(programming_language)){:target="_blank"}.
 
@@ -32,7 +35,7 @@ $$
 $$
 
 <a name='Wave1D'>
-## Solving the wave equation in 1 spatial dimension using finite differences
+## Solving the wave equation in 1 spatial dimension using finite differences \[Back to [ToC](#ToC)\]
 
 We will start studying the wave equation by focusing on the simplest case, the 1D wave equation. Considering that the one spatial dimension is the $x$-direction, we have
 
