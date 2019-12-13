@@ -73,8 +73,7 @@ For example, subtracting the first expression from the third, we target
 $$
 \begin{align}
 f(t+\Delta t,x) - f(t-\Delta t,x) &= 2 \Delta t \partial_{t}f(t,x) + \mathcal{O}\left(\Delta t^{3}\right)\\
-\implies
-\partial_{t}f(t,x) &= \frac{f(t+\Delta t,x) - f(t-\Delta t,x)}{2 \Delta} + \mathcal{O}\left(\Delta t^{2}\right)\ .
+\implies \partial_{t}f(t,x) &= \frac{f(t+\Delta t,x) - f(t-\Delta t,x)}{2 \Delta} + \mathcal{O}\left(\Delta t^{2}\right)\ .
 \begin{align}
 $$
 
@@ -83,8 +82,7 @@ On the other hand, subtracing 2 times the second expression from the third and a
 $$
 \begin{align}
 f(t+\Delta t,x) - 2f(t,x) + f(t-\Delta t,x) &= \Delta t^{2}\partial_{t}^{2}f(t,x) + \mathcal{O}\left(\Delta t^{4}\right)\\
-\implies
-\partial_{t}^{2}f(t,x) &= \frac{f(t+\Delta t,x) - 2f(t,x) + f(t-\Delta t,x)}{\Delta t^{2}} + \mathcal{O}\left(\Delta t^{2}\right)\ .
+\implies \partial_{t}^{2}f(t,x) &= \frac{f(t+\Delta t,x) - 2f(t,x) + f(t-\Delta t,x)}{\Delta t^{2}} + \mathcal{O}\left(\Delta t^{2}\right)\ .
 \begin{align}
 $$
 
@@ -97,11 +95,11 @@ $$
 we have
 
 $$
-\begin{aligned}
+\begin{align}
 \partial_{t}f^{n}_{i}     &= \frac{f^{n+1}_{i}-f^{n-1}_{i}}{2\Delta t}           \ ,\\
 \partial_{x}f^{n}_{i}     &= \frac{f^{n}_{i+1}-f^{n}_{i-1}}{2\Delta t}           \ ,\\
 \partial_{x}^{2}f^{n}_{i} &= \frac{f^{n}_{i+1}-2f^{n}_{i}+f^{n}_{i-1}}{\Delta x^{2}}\ ,
-\end{aligned}
+\end{align}
 $$
 
 which allow us to write down the wave equation as
