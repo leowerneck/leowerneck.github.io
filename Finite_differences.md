@@ -10,9 +10,9 @@ mathjax: true
 * [**Finite differences**](#FD)
   * [*Forward, backwards, and centered finite differences*](#FDTypes)
   * [*Determining finite differences expressions*](#FDTaylor)
-    * [Second order, forward finite difference](#FFD)
-    * [Second order, backward finite difference](#BFD)
-    * [Second order, centered finite difference](#CFD)
+    - [Second order, forward finite difference](#FFD)
+    - [Second order, backward finite difference](#BFD)
+    - [Second order, centered finite difference](#CFD)
   * [*Index notation*](#FDIndex)
   * [*A practical way of computing finite difference coefficients*](#FDPractical)
 
