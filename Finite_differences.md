@@ -34,7 +34,7 @@ $$
 Now while this is quite an intuitive way of thinking about finite differences, there are more systematic ways of obtaining derivatives of functions that are accurate to different orders in $dx$. In the following sections we will discuss them in more detail.
 
 <a name="FDTypes">
-## Forward, backwards, and centered finite differences
+## Forward, backwards, and centered finite differences  \[Back to [ToC](#ToC)\]
 
 Remember that there are three, equivalent ways of writing the derivative definition we have shown above. These are
 
@@ -59,7 +59,7 @@ Similarly, the second equation above is used to compute the derivative of $f(x)$
 Finally, the third equation above computes the derivative of $f(x)$ by considering the points $\big(f(x-dx),f(x+dx)\big)$. Quite appropriately, this is referred to as ***centered finite difference approximation***.
 
 <a name="FDTaylor">
-## Determining finite differences expressions
+## Determining finite differences expressions \[Back to [ToC](#ToC)\]
 
 Let us now present a more systematic way of determining the finite difference approximation to the derivative of a function $f(t,x)$. We will choose a function of 2 variables on purpose, because it then becomes trivial to understand the algorithm for functions of even more variables. In the derivations below, the single variable case can be obtained by simplying supressing the variable $x$ altogether.
 
@@ -77,7 +77,7 @@ f(t+3\Delta t,x) &= f(t,x) + 3\Delta t \partial_{t}f(t,x) + \frac{\left(3\Delta 
 $$
 
 <a name="FFD">
-### Second order, forward finite difference
+### Second order, forward finite difference \[Back to [ToC](#ToC)\]
 
 To obtain the expression for a forward finite difference approximation to the derivative $\partial_{t}f(t,x)$ that is accurate to second-order in the step size, $\mathcal{O}\left(\Delta t^{2}\right)$, we compute
 
@@ -106,7 +106,7 @@ $$
 $$
 
 <a name="BFD">
-### Second order, backward finite difference
+### Second order, backward finite difference \[Back to [ToC](#ToC)\]
 
 Backwards finite differences mirror the derivation of forwards finite differences. This means we can compute
 
@@ -129,7 +129,7 @@ $$
 $$
 
 <a name="CFD">
-### Second order, centered finite difference
+### Second order, centered finite difference \[Back to [ToC](#ToC)\]
 
 Now, consider subtracting the third expression from the fourth, so that
 
@@ -156,7 +156,7 @@ $$
 $$
 
 <a name="FDIndex">
-## Index notation
+## Index notation \[Back to [ToC](#ToC)\]
 
 When dealing with finite differences, it is common practice to introduce the following notation
 
@@ -171,4 +171,4 @@ $$
 $$
 
 <a name="FDPractical">
-## A practical way of computing finite difference coefficients
+## A practical way of computing finite difference coefficients \[Back to [ToC](#ToC)\]
