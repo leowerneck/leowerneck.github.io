@@ -8,8 +8,8 @@ mathjax: true
 # Table of Contents
 
 * [**Finite differences**](#FD)
-  * [*Forward, backwards, and centered finite differences**](#FDTypes)
-  * [*Determining finite differences expressions**](#FDTaylor)
+  * [*Forward, backwards, and centered finite differences*](#FDTypes)
+  * [*Determining finite differences expressions*](#FDTaylor)
     * [Second order, forward finite difference](#FFD)
     * [Second order, backward finite difference](#BFD)
     * [Second order, centered finite difference](#CFD)
