@@ -1,11 +1,11 @@
 ---
 layout: notes
-title: Leonardo Werneck
+title: Wave Equation
 mathjax: true
 ---
 
 <a name='ToC'>
-### Table of Contents
+# Table of Contents
 
 * [**The Wave Equation**](#WaveEquation)
   * [*Solving the wave equation in 1 spatial dimension*](#Wave1D)
