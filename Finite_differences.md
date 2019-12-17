@@ -7,33 +7,14 @@ mathjax: true
 <a name='ToC'>
 # Table of Contents
 
-<ul>
-  <li>Main</li>
-    <ul>
-      <li>Sub 1</li>
-      <li>Sub 2</li>
-        <ul>
-          <li>SubSub 2.1</li>
-          <li>SubSub 2.2</li>
-          <li>SubSub 2.3</li>
-        </ul>
-      <li>Sub 3</li>
-      <li>Sub 4</li>
-        <ul>
-          <li>SubSub 4.1</li>
-          <li>SubSub 4.2</li>
-        </ul>
-    </ul>
-</ul>
-
 * [**Finite differences**](#FD)
-  * [*Forward, backwards, and centered finite differences*](#FDTypes)
-  * [*Determining finite differences expressions*](#FDTaylor)
-     * [Second order, forward finite difference](#FFD)
-     * [Second order, backward finite difference](#BFD)
-     * [Second order, centered finite difference](#CFD)
-  * [*Index notation*](#FDIndex)
-  * [*A practical way of computing finite difference coefficients*](#FDPractical)
+  1. [*Forward, backwards, and centered finite differences*](#FDTypes)
+  1. [*Determining finite differences expressions*](#FDTaylor)
+    * [Second order, forward finite difference](#FFD)
+    * [Second order, backward finite difference](#BFD)
+    * [Second order, centered finite difference](#CFD)
+  1. [*Index notation*](#FDIndex)
+  1. [*A practical way of computing finite difference coefficients*](#FDPractical)
     * [Center Finite Differences](#FDPracticalCenter)
     * [Forward/backwards Finite Differences](#FDPracticalFwdBwd)
 
