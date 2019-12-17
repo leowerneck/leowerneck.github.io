@@ -176,7 +176,7 @@ $$
 ## A practical way of computing finite difference coefficients \[Back to [ToC](#ToC)\]
 
 <a name="FDPracticalCenter">
-### Center Finite Differences
+### Center Finite Differences \[Back to [ToC](#ToC)\]
 
 We will now discuss a fairly practical way of computing [finite difference coefficients](https://en.wikipedia.org/wiki/Finite_difference_coefficient){:target="_blank"}), which is the method used by the [NRPy+ infrastructure](https://blackholesathome.net/){:target="_blank"}. Our discussion will follow very closely that of Zach Etienne in the [NRPy+ Tutorial-How_NRPy_Computes_Finite_Difference_Coeffs](https://github.com/zachetienne/nrpytutorial/blob/master/Tutorial-How_NRPy_Computes_Finite_Difference_Coeffs.ipynb){:target="_blank"}.
 
@@ -309,7 +309,7 @@ $$
 Unfortunately, the other two columns give us approximations for $\partial_{x}^{3}f$ and $\partial_{x}^{4}f$ which are accurate only to $\mathcal{O}\left(\Delta x^{2}\right)$. To obtain these derivatives at $\mathcal{O}\left(\Delta x^{4}\right)$, we would need to increase our stencil size by 2.
 
 <a name="FDPracticalFwdBwd">
-### Forward/backwards Finite Differences
+### Forward/backwards Finite Differences \[Back to [ToC](#ToC)\]
 
 To compute the forward/backwards approximations, we follow a completely analogous prescription. The forwards/backwards finite differences, the first order derivative accurate to order $\mathcal{O}\left(h^{n}\right)$ requres a stencil size $n+1$. We then wish to compute, say to order $\mathcal{O}\left(\Delta x^{6}\right)$, the forward finite difference approximation first derivative of $f(x)$. This requires a stencil of size 7, which i.e.
 
