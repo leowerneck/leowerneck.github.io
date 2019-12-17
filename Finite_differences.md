@@ -15,6 +15,8 @@ mathjax: true
      * [Second order, centered finite difference](#CFD)
   * [*Index notation*](#FDIndex)
   * [*A practical way of computing finite difference coefficients*](#FDPractical)
+    * [**Center Finite Differences**](#FDPracticalCenter)
+    * [**Forward/backwards Finite Differences**](#FDPracticalFwdBwd)
 
 <a name="FD">
 # Finite differences
@@ -67,12 +69,12 @@ Consider the [Taylor series](https://en.wikipedia.org/wiki/Taylor_series){:targe
 
 $$
 \begin{align}
-f(t-3\Delta t,x) &= f(t,x) - 3\Delta t \partial_{t}f(t,x) + \frac{\left(3\Delta t\right)^{2}}{2!}\partial_{t}^{2}f(t,x) - \frac{\left(3\Delta t\right)^{3}}{3!}\partial_{t}^{3}f(t,x) +  \mathcal{O}\left(\Delta t^{4}\right)\ ,\\
-f(t-2\Delta t,x) &= f(t,x) - 2\Delta t \partial_{t}f(t,x) + \frac{\left(2\Delta t\right)^{2}}{2!}\partial_{t}^{2}f(t,x) - \frac{\left(2\Delta t\right)^{3}}{3!}\partial_{t}^{3}f(t,x) +  \mathcal{O}\left(\Delta t^{4}\right)\ ,\\
-f(t-\Delta t,x) &= f(t,x) - \Delta t \partial_{t}f(t,x) + \frac{\Delta t^{2}}{2!}\partial_{t}^{2}f(t,x) - \frac{\Delta t^{3}}{3!}\partial_{t}^{3}f(t,x) +  \mathcal{O}\left(\Delta t^{4}\right)\ ,\\
-f(t+\Delta t,x) &= f(t,x) + \Delta t \partial_{t}f(t,x) + \frac{\Delta t^{2}}{2!}\partial_{t}^{2}f(t,x) + \frac{\Delta t^{3}}{3!}\partial_{t}^{3}f(t,x) + \mathcal{O}\left(\Delta t^{4}\right)\ ,\\
-f(t+2\Delta t,x) &= f(t,x) + 2\Delta t \partial_{t}f(t,x) + \frac{\left(2\Delta t\right)^{2}}{2!}\partial_{t}^{2}f(t,x) + \frac{\left(2\Delta t\right)^{3}}{3!}\partial_{t}^{3}f(t,x) +  \mathcal{O}\left(\Delta t^{4}\right)\ ,\\
-f(t+3\Delta t,x) &= f(t,x) + 3\Delta t \partial_{t}f(t,x) + \frac{\left(3\Delta t\right)^{2}}{2!}\partial_{t}^{2}f(t,x) + \frac{\left(3\Delta t\right)^{3}}{3!}\partial_{t}^{3}f(t,x) +  \mathcal{O}\left(\Delta t^{4}\right)\ .
+f(t-3\Delta t,x) &= f(t,x) - 3\Delta t \partial_{t}f(t,x) + \frac{\left(3\Delta t\right)^{2}}{2!}\partial_{t}^{2}f(t,x) - \frac{\left(3\Delta t\right)^{3}}{3!}\partial_{t}^{3}f(t,x) + \frac{\left(3\Delta t\right)^{4}}{4!}\partial_{t}^{4}f(t,x) + \mathcal{O}\left(\Delta t^{5}\right)\ ,\\
+f(t-2\Delta t,x) &= f(t,x) - 2\Delta t \partial_{t}f(t,x) + \frac{\left(2\Delta t\right)^{2}}{2!}\partial_{t}^{2}f(t,x) - \frac{\left(2\Delta t\right)^{3}}{3!}\partial_{t}^{3}f(t,x) + \frac{\left(2\Delta t\right)^{4}}{4!}\partial_{t}^{4}f(t,x) + \mathcal{O}\left(\Delta t^{5}\right)\ ,\\
+f(t-\Delta t,x) &= f(t,x) - \Delta t \partial_{t}f(t,x) + \frac{\Delta t^{2}}{2!}\partial_{t}^{2}f(t,x) - \frac{\Delta t^{3}}{3!}\partial_{t}^{3}f(t,x) + + \frac{\left(\Delta t\right)^{4}}{4!}\partial_{t}^{4}f(t,x) \mathcal{O}\left(\Delta t^{5}\right)\ ,\\
+f(t+\Delta t,x) &= f(t,x) + \Delta t \partial_{t}f(t,x) + \frac{\Delta t^{2}}{2!}\partial_{t}^{2}f(t,x) + \frac{\Delta t^{3}}{3!}\partial_{t}^{3}f(t,x) + + \frac{\left(\Delta t\right)^{4}}{4!}\partial_{t}^{4}f(t,x) \mathcal{O}\left(\Delta t^{5}\right)\ ,\\
+f(t+2\Delta t,x) &= f(t,x) + 2\Delta t \partial_{t}f(t,x) + \frac{\left(2\Delta t\right)^{2}}{2!}\partial_{t}^{2}f(t,x) + \frac{\left(2\Delta t\right)^{3}}{3!}\partial_{t}^{3}f(t,x) + \frac{\left(2\Delta t\right)^{4}}{4!}\partial_{t}^{4}f(t,x) +  \mathcal{O}\left(\Delta t^{5}\right)\ ,\\
+f(t+3\Delta t,x) &= f(t,x) + 3\Delta t \partial_{t}f(t,x) + \frac{\left(3\Delta t\right)^{2}}{2!}\partial_{t}^{2}f(t,x) + \frac{\left(3\Delta t\right)^{3}}{3!}\partial_{t}^{3}f(t,x) + \frac{\left(3\Delta t\right)^{4}}{4!}\partial_{t}^{4}f(t,x) + \mathcal{O}\left(\Delta t^{5}\right)\ .
 \end{align}
 $$
 
@@ -172,3 +174,203 @@ $$
 
 <a name="FDPractical">
 ## A practical way of computing finite difference coefficients \[Back to [ToC](#ToC)\]
+
+<a name="FDPracticalCenter">
+### Center Finite Differences
+
+We will now discuss a fairly practical way of computing [finite difference coefficients](https://en.wikipedia.org/wiki/Finite_difference_coefficient){:target="_blank"}), which is the method used by the [NRPy+ infrastructure](https://blackholesathome.net/){:target="_blank"}. Our discussion will follow very closely that of Zach Etienne in the [NRPy+ Tutorial-How_NRPy_Computes_Finite_Difference_Coeffs](https://github.com/zachetienne/nrpytutorial/blob/master/Tutorial-How_NRPy_Computes_Finite_Difference_Coeffs.ipynb){:target="_blank"}.
+
+By construction, a center finite difference approximation to the *first* derivative of a function up to order $\mathcal{O}\left(h^{n}\right)$, where $h$ is the step size, will require a *stencil* of size $2n+1$. In other words, consider the first derivative of a function $f(x)$ accurate to $\mathcal{O}\left(dx^{4}\right)$, and assume:
+
+$$
+\partial_{x}f_{i} = a_{-2}f_{i-2} + a_{-1}f_{i-1} + a_{0}f_{i} + a_{1}f_{i+1} + a_{2}f_{i+2}\ .
+$$
+
+Then, by considering the set of Taylor series we had [before](#FDTaylor), we can add up all the Taylor series to obtain:
+
+$$
+\begin{align}
+a_{-2}f_{i-2} + a_{-1}f_{i-1} + a_{0}f_{i} + a_{1}f_{i+1} + a_{2}f_{i+2}
+&=
+\left(-2^{0}a_{-2} - 1^{0}a_{-1} + 1^{0}a_{0} + 1^{0}a_{1} + 2^{0}a_{2}\right)f_{0}\\
+&+
+\left(-2^{1}a_{-2} - 1^{1}a_{-1} + 0^{1}a_{0} + 1^{1}a_{1} + 2^{1}a_{2}\right)\Delta x\partial_{x}f\\
+&+
+\left(-2^{2}a_{-2} - 1^{2}a_{-1} + 0^{2}a_{0} + 1^{2}a_{1} + 2^{2}a_{2}\right)\frac{\Delta x^{2}}{2!}\partial_{x}^{2}f\\
+&+
+\left(-2^{3}a_{-2} - 1^{3}a_{-1} + 0^{3}a_{0} + 1^{3}a_{1} + 2^{3}a_{2}\right)\frac{\Delta x^{3}}{3!}\partial_{x}^{3}f\\
+&+
+\left(-2^{4}a_{-2} - 1^{4}a_{-1} + 0^{4}a_{0} + 1^{4}a_{1} + 2^{4}a_{2}\right)\frac{\Delta x^{4}}{4!}\partial_{x}^{4}f
+\end{align}
+$$
+
+Which leads to the following system of equations (absorbing the powers of $\Delta x$ in the derivatives, for now)
+
+$$
+\begin{align}
+0\times0! &= -2^{0}a_{-2} - 1^{0}a_{-1} + 1^{0}a_{0} + 1^{0}a_{1} + 2^{0}a_{2}\\
+1\times1! &= -2^{1}a_{-2} - 1^{1}a_{-1} + 0^{1}a_{0} + 1^{1}a_{1} + 2^{1}a_{2}\\
+0\times2! &= -2^{2}a_{-2} - 1^{2}a_{-1} + 0^{2}a_{0} + 1^{2}a_{1} + 2^{2}a_{2}\\
+0\times3! &= -2^{3}a_{-2} - 1^{3}a_{-1} + 0^{3}a_{0} + 1^{3}a_{1} + 2^{3}a_{2}\\
+0\times4! &= -2^{4}a_{-2} - 1^{4}a_{-1} + 0^{4}a_{0} + 1^{4}a_{1} + 2^{4}a_{2}
+\end{align}
+$$
+
+or, in matrix form
+
+$$
+\begin{bmatrix}
+0\\
+1\\
+0\\
+0\\
+0
+\end{bmatrix}
+=
+\begin{bmatrix}
+(-2)^{0} & (-1)^{0} & 1^{0} & 1^{0} & 2^{0}\\
+(-2)^{1} & (-1)^{1} & 0^{1} & 1^{1} & 2^{1}\\
+(-2)^{2} & (-1)^{2} & 0^{2} & 1^{2} & 2^{2}\\
+(-2)^{3} & (-1)^{3} & 0^{3} & 1^{3} & 2^{3}\\
+(-2)^{4} & (-1)^{4} & 0^{4} & 1^{4} & 2^{4}
+\end{bmatrix}
+\begin{bmatrix}
+a_{-2}\\
+a_{-1}\\
+a_{0}\\
+a_{1}\\
+a_{2}
+\end{bmatrix}\ .
+$$
+
+Solving the problem now amounts to inverting the matrix
+
+$$
+M =
+\begin{bmatrix}
+(-2)^{0} & (-1)^{0} & 1^{0} & 1^{0} & 2^{0}\\
+(-2)^{1} & (-1)^{1} & 0^{1} & 1^{1} & 2^{1}\\
+(-2)^{2} & (-1)^{2} & 0^{2} & 1^{2} & 2^{2}\\
+(-2)^{3} & (-1)^{3} & 0^{3} & 1^{3} & 2^{3}\\
+(-2)^{4} & (-1)^{4} & 0^{4} & 1^{4} & 2^{4}
+\end{bmatrix}
+$$
+
+The following code in Python, which uses the [SymPy](https://www.sympy.org/) module takes care of this:
+
+```python
+# Import SymPy Python module
+import sympy as sp
+
+# Set stencil size, initialize the matrix to zero
+stencil_size = 5
+M = sp.zeros(stencil_size,stencil_size)
+
+# Loop over the matrix elements, implementing the pattern above
+for i in range(stencil_size):
+    for j in range(stencil_size):
+        M[(i,j)] = (j - (stencil_size-1)/2)**i
+
+# Invert the matrix
+M_inv = M**(-1)
+```
+
+The code above produces the following answer
+
+$$
+M^{-1} =
+\begin{bmatrix}
+0 & \frac{1}{12}  & -\frac{1}{24} & -\frac{1}{12} & \frac{1}{24} \\
+0 & -\frac{2}{3}  & \frac{2}{3}   & \frac{1}{6}   & -\frac{1}{6} \\
+1 & 0             & -\frac{5}{4}  & 0             & \frac{1}{4}  \\
+0 & \frac{2}{3}   & \frac{2}{3}   & -\frac{1}{6}  & -\frac{1}{6} \\
+0 & -\frac{1}{12} & -\frac{1}{24} & \frac{1}{12}  & \frac{1}{24}
+\end{bmatrix}\ .
+$$
+
+Now, if we want to obtain, say, the $p$th derivative of the function $f$, we compute the dot product between the $p+1$ column of the matrix $M^{-1}$ with the vector $\left(f_{i-2},f_{i-1},f_{i},f_{i+1},f_{i+2}\right)$. To restore units, we also multiply the entire thing by $\frac{p!}{\Delta x^{p}}$. For example, the zeroth order derivative would correspond to $p=0$, hence
+
+$$
+\frac{0!}{\Delta x^{0}}\left(0f_{i-2} + 0f_{i-1} + 1f_{i} + 0f_{i+1} + 0f_{i+2}\right) = f_{i}\ .
+$$
+
+The first order derivative, on the other hand, corresponds to
+
+$$
+\frac{1!}{\Delta x^{1}}\left(\frac{1}{12}f_{i-2} - \frac{2}{3}f_{i-1} + 0f_{i} + \frac{2}{3}f_{i+1} - \frac{1}{12}0f_{i+2}\right) = \frac{f_{i-2} - 8f_{i-1} + 8f_{i+1} - f_{i+2}}{12\Delta x} = \partial_{x}f_{i} + \mathcal{O}\left(\Delta x^{4}\right)\ .
+$$
+
+Finally, since it turns out that for center finite differences the second derivative stencil size is the same as the first derivative, we can also compute the $p=2$ case
+
+$$
+\frac{2!}{\Delta x^{2}}\left(-\frac{1}{24}f_{i-2} + \frac{2}{3}f_{i-1} - \frac{5}{4}f_{i} + \frac{2}{3}f_{i+1} - \frac{1}{24}0f_{i+2}\right) = \frac{-f_{i-2} + 16f_{i-1} -30f_{i} + 16f_{i+1} - f_{i+2}}{12\Delta x} = \partial_{x}^{2}f_{i} + \mathcal{O}\left(\Delta x^{4}\right)\ .
+$$
+
+Unfortunately, the other two columns give us approximations for $\partial_{x}^{3}f$ and $\partial_{x}^{4}f$ which are accurate only to $\mathcal{O}\left(\Delta x^{2}\right)$. To obtain these derivatives at $\mathcal{O}\left(\Delta x^{4}\right)$, we would need to increase our stencil size by 2.
+
+<a name="FDPracticalFwdBwd">
+### Forward/backwards Finite Differences
+
+To compute the forward/backwards approximations, we follow a completely analogous prescription. The forwards/backwards finite differences, the first order derivative accurate to order $\mathcal{O}\left(h^{n}\right)$ requres a stencil size $n+1$. We then wish to compute, say to order $\mathcal{O}\left(\Delta x^{6}\right)$, the forward finite difference approximation first derivative of $f(x)$. This requires a stencil of size 7, which i.e.
+
+$$
+a_{0}f_{i} + a_{1}f_{i+1} + a_{1}f_{i+1} + a_{2}f_{i+2} + a_{3}f_{i+3} + a_{4}f_{i+4} + a_{5}f_{i+5} + a_{6}f_{i+6}\ .
+$$
+
+By staring at the previous section, it is easy to convince oneself that the matrix we need to invert now is
+
+$$
+M =
+\begin{bmatrix}
+0^{0} & 1^{0} & 2^{0} & 3^{0} & 4^{0} & 5^{0} & 6^{0}\\
+0^{1} & 1^{1} & 2^{1} & 3^{1} & 4^{1} & 5^{1} & 6^{1}\\
+0^{2} & 1^{2} & 2^{2} & 3^{2} & 4^{2} & 5^{2} & 6^{2}\\
+0^{3} & 1^{3} & 2^{3} & 3^{3} & 4^{3} & 5^{3} & 6^{3}\\
+0^{4} & 1^{4} & 2^{4} & 3^{4} & 4^{4} & 5^{4} & 6^{4}\\
+0^{5} & 1^{5} & 2^{5} & 3^{5} & 4^{5} & 5^{5} & 6^{5}\\
+0^{6} & 1^{6} & 2^{6} & 3^{6} & 4^{6} & 5^{6} & 6^{6}
+\end{bmatrix}
+$$
+
+We can then use the following piece of code to invert this matrix:
+
+```python
+# Import SymPy Python module
+import sympy as sp
+
+# Set stencil size, initialize the matrix to zero
+stencil_size = 7
+M = sp.zeros(stencil_size,stencil_size)
+
+# Loop over the matrix elements, implementing the pattern above
+for i in range(stencil_size):
+    for j in range(stencil_size):
+        M[(i,j)] = j**i
+
+# Invert the matrix
+M_inv = M**(-1)
+```
+
+resulting in
+
+$$
+\left[
+\begin{matrix}
+1 & - \frac{49}{20} & \frac{203}{90} & - \frac{49}{48} & \frac{35}{144} & - \frac{7}{240} & \frac{1}{720}\\0 & 6 & - \frac{87}{10} & \frac{29}{6} & - \frac{31}{24} & \frac{1}{6} & - \frac{1}{120}\\0 & - \frac{15}{2} & \frac{117}{8} & - \frac{461}{48} & \frac{137}{48} & - \frac{19}{48} & \frac{1}{48}\\0 & \frac{20}{3} & - \frac{127}{9} & \frac{31}{3} & - \frac{121}{36} & \frac{1}{2} & - \frac{1}{36}\\0 & - \frac{15}{4} & \frac{33}{4} & - \frac{307}{48} & \frac{107}{48} & - \frac{17}{48} & \frac{1}{48}\\0 & \frac{6}{5} & - \frac{27}{10} & \frac{13}{6} & - \frac{19}{24} & \frac{2}{15} & - \frac{1}{120}\\0 & - \frac{1}{6} & \frac{137}{360} & - \frac{5}{16} & \frac{17}{144} & - \frac{1}{48} & \frac{1}{720}
+\end{matrix}
+\right]\ .
+$$
+
+To obtain the final result, the process is identical to the central finite differences case. Consider the $p$th derivative. Then, multiply the $p+1$ column of the $M^{-1}$ matrix by the vector $\left(f_{i},f_{i+1},f_{i+2},f_{i+3},f_{i+4},f_{i+5},f_{i+6}\right)$. For example, for $p=0$
+
+$$
+\frac{0!}{\Delta x^{0}}\left(f_{i} + 0f_{i+1} + 0f_{i+2} + 0f_{i+3} + 0f_{i+4} + 0f_{i+5} + 0f_{i+6}\right) = f_{i}\ .
+$$
+
+The first derivative is given by the $p=1$ case,
+
+$$
+\frac{1!}{\Delta x^{1}}\left(-\frac{49}{20}f_{i} + 6f_{i+1}  -\frac{15}{2}f_{i+2} + \frac{20}{3}f_{i+3} - \frac{15}{4}f_{i+4} + \frac{6}{5}f_{i+5} - \frac{1}{6}f_{i+6}\right) = \partial_{x}f_{i} + \mathcal{O}\left(\Delta x^{6}\right)\ .
+$$
+
+To obtain the second derivative with the same accuracy, we would need a stencil size that is greater than the one we use by 1. The algorithm for backwards finite differences should now be straightforward and will be left as an exercise to the reader.
