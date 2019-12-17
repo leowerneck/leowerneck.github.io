@@ -374,3 +374,5 @@ $$
 $$
 
 To obtain the second derivative with the same accuracy, we would need a stencil size that is greater than the one we use by 1. The algorithm for backwards finite differences should now be straightforward and will be left as an exercise to the reader.
+
+### \[Back to [ToC](#ToC)\]
