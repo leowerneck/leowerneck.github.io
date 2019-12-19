@@ -170,7 +170,7 @@ $$
 f\left(n\cdot\Delta t,i\cdot\Delta x,j\cdot\Delta y,k\cdot\Delta z\right) \equiv f^{n}_{i,j,k}\ .
 $$
 
-The indices $\left(i,j,k\right)$ indicate the points in the grid that we are in. This notation greatly simplifies the finite differences expressions. For example, the fourth-order accurate, centered finite difference approximation to the second derivative of $f(t,x,y,z)$ with respect to $y$ reads (since we have not derived these coefficients here, we refer the reader to [this article](https://en.wikipedia.org/wiki/Finite_difference_coefficient){:target="_blank"})
+The indices $\left(i,j,k\right)$ indicate the points in the grid that we are in. This notation greatly simplifies the finite differences expressions. For example, the fourth-order accurate, centered finite difference approximation to the second derivative of $f(t,x,y,z)$ with respect to $y$ reads (we refer the reader to the next section for the computation of the coefficients used in the following equation)
 
 $$
 \partial_{y}^{2}f^{n}_{i,j,k} = \frac{-f^{n}_{i,j+2,k}+8f^{n}_{i,j+1,k}-8f^{n}_{i,j-1,k}+f^{n}_{i,j-2,k}}{12\Delta y} + \mathcal{O}\left(\Delta t^{4}\right)\ .
