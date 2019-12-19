@@ -40,19 +40,23 @@ Now while this is quite an intuitive way of thinking about finite differences, t
 
 Remember that there are three, equivalent ways of writing the derivative definition we have shown above. These are
 
+$$
 \begin{align}
 \frac{df}{dx} &= \lim_{\Delta x\to0}\frac{f(x+\Delta x) - f(x)}{\Delta x}    \ ,\\
 \frac{df}{dx} &= \lim_{\Delta x\to0}\frac{f(x)    - f(x-\Delta x)}{\Delta x} \ ,\\
 \frac{df}{dx} &= \lim_{\Delta x\to0}\frac{f(x+\Delta x) - f(x-dx)}{2\Delta x}\ .
 \end{align}
+$$
 
 Each of these expressions yield a different kind of finite difference approximation to the derivative of $f(x)$, that is
 
+$$
 \begin{align}
 \frac{df}{dx} &\approx \frac{f(x+\Delta x) - f(x)}{\Delta x}    \ ,\\
 \frac{df}{dx} &\approx \frac{f(x)    - f(x-\Delta x)}{\Delta x} \ ,\\
 \frac{df}{dx} &\approx \frac{f(x+\Delta x) - f(x-\Delta x)}{2\Delta x}\ .
 \end{align}
+$$
 
 In the first equation above we compute the derivative of $f(x)$ by considering the points $\big(f(x),f(x+\Delta x)\big)$. Because of the nature of the approximation to use points that are further *up* the $x$-direction, this is called a ***forward finite difference approximation***.
 
