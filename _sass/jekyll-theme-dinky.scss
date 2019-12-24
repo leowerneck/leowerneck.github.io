@@ -15,7 +15,7 @@ table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+time, mark, audio, video, svg {
   margin: 0;
   padding: 0;
   border: 0;
@@ -25,10 +25,12 @@ time, mark, audio, video {
 
 
 /* Base text styles */
-
+/* Justify options: https://css-tricks.com/almanac/properties/t/text-justify/ */
 body {
   padding:20px 100px 0 0;
   font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: justify;
+    text-justify: inter-word;
 	font-size: 14px;
 	color: #232323;
 	background-color: #FBFAF7;
@@ -424,4 +426,21 @@ footer {
     font-size:12pt;
     color:#444;
   }
+}
+
+img {
+    background:transparent;
+    border:0;
+}
+
+figure img {
+    display: block;
+    background:transparent;
+    border:0;
+}
+
+figcaption {
+    font-size:9pt;
+    margin: -30px 90px 20px 40px;
+    line-height: 1.5em;
 }
