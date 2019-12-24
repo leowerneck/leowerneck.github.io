@@ -224,7 +224,6 @@ $$
 
     <li>
 Find the initial data.
-    </li>
         <ol>
             <li>
     Start by computing the "half-step forward" approximation
@@ -265,12 +264,13 @@ $$
 $$
             </li>
         </ol>
+    </li>
 
-     <li>
+    <li>
 Start the main time loop. While $n$ < $N_{t}^{\rm max}$, do:
-     </li>
-     <ol>
-         <li>
+    </li>
+    <ol>
+        <li>
     Step the interior grid forward in time using our $\mathcal{O}\left(\Delta t^{2} + \Delta x^{2}\right)$ centered finite differences scheme, namely
 
 $$
@@ -281,15 +281,15 @@ v^{n+1}_{i} &= v^{n-1}_{i} + \frac{2c^{2}\Delta t}{\Delta x^{2}}\left(u^{n}_{i+1
 \end{align}
 }\ .
 $$
-         </li>
-         <li>
+        </li>
+        <li>
 Apply boundary conditions
 
 $$
 \boxed{u^{n+1}_{-1} = u^{n+1}_{N_{x}+1} = v^{n+1}_{-1} = v^{n+1}_{N_{x}+1} = 0}\ .
 $$
-          </li>
-     </ol>
+        </li>
+    </ol>
 </ol>
 
 

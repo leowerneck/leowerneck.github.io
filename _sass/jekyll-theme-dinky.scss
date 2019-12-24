@@ -46,7 +46,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p, ul, ol, table, dl {
-  margin:0 0 22px;
+  margin:0 0 12px;
+  margin-bottom: 0;
+  white-space: normal;
 }
 
 h1, h2, h3 {
@@ -443,4 +445,21 @@ figcaption {
     font-size:9pt;
     margin: -30px 90px 20px 40px;
     line-height: 1.5em;
+}
+
+ol {
+    counter-reset: item;
+}
+
+ol > li {
+    counter-increment: item;
+}
+
+ol ol > li {
+    display: block;
+}
+
+ol ol > li:before {
+    content: counters(item, ".") ". ";
+    margin-left: -20px;
 }

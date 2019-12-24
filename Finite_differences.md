@@ -7,16 +7,44 @@ mathjax: true
 <a name='ToC'>
 # Table of Contents
 
-* [**Finite differences**](#FD)
-    * [*Forward, backwards, and centered finite differences*](#FDTypes)
-    * [*Determining finite differences expressions*](#FDTaylor)
-        * [Second order, forward finite difference](#FFD)
-        * [Second order, backward finite difference](#BFD)
-        * [Second order, centered finite difference](#CFD)
-    * [*Index notation*](#FDIndex)
-    * [*A practical way of computing finite difference coefficients*](#FDPractical)
-        * [Center Finite Differences](#FDPracticalCenter)
-        * [Forward/backwards Finite Differences](#FDPracticalFwdBwd)
+<ul>
+    <li>
+<a href="#FD"><strong>Finite differences</strong></a>
+        <ul>
+            <li>
+    <a href="#FDTypes"><em>Forward, backwards, and centered finite differences</em></a>
+            </li>
+            <li>
+    <a href="#FDTaylor"><em>Determining finite differences expressions</em></a>
+                <ul>
+                    <li>
+        <a href="#FFD">Second order, forward finite difference</a>
+                    </li>
+                    <li>
+        <a href="#BFD">Second order, backward finite difference</a>
+                    </li>
+                    <li>
+        <a href="#CFD">Second order, centered finite difference</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+    <a href="#FDIndex"><em>Index notation</em></a>
+            </li>
+            <li>
+    <a href="#FDPractical"><em>A practical way of computing finite difference coefficients</em></a>
+                <ul>
+                    <li>
+        <a href="#FDPracticalCenter">Center Finite Differences</a>
+                    </li>
+                    <li>
+        <a href="#FDPracticalFwdBwd">Forward/backwards Finite Differences</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
 
 <a name="FD">
 # Finite differences
