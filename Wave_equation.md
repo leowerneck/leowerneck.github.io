@@ -176,7 +176,7 @@ In order to be able to use our numerical scheme throughout the entire numerical 
 <a name="Figure1"></a>
 <html>
     <figure>
-        <img src="assets/tex_files/ghostzones.svg"/>
+        <img src="assets/images/tex_to_svg/ghostzones.svg"/>
         <figcaption>
             <strong>Figure 1</strong>: Illustration of computational grid. The interior grid is composed of the blue spatial points and the ghostzones are composed of the red spatial points. The illustration also shows the three time levels required by the numerical scheme described here.
         </figcaption>
