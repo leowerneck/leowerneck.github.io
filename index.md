@@ -4,8 +4,6 @@ title: Leonardo Werneck
 mathjax: true
 ---
 
-# <font color='red'> This website is currently under construction </font>
-
 [**Contact**](#Contact) \| [**About me**](#About) \| [**Research**](#Research) \| [**Notes**](#Notes)
 
 <a name='Contact'>
