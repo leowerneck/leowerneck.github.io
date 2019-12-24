@@ -187,7 +187,7 @@ The number of ghostzones is scheme dependent. For example, choosing to evaluate 
 
 The idea behind ghostzones is to be able to naturally evaluate all points that belong to the interior grid, without modifying our scheme. Then, after all interior grid points have been determined, we apply outer boundary conditions to the ghostzones, filling up the entire grid before moving on to the next time step.
 
-Since our numerical scheme of choice omly requires one ghostzone at each outer boundary, we will choose to impose [Dirichlet boundary conditions](https://en.wikipedia.org/wiki/Dirichlet_boundary_condition){:target="_blank"} of the form
+Since our numerical scheme of choice only requires one ghostzone at each outer boundary, we will choose to impose [Dirichlet boundary conditions](https://en.wikipedia.org/wiki/Dirichlet_boundary_condition){:target="_blank"} of the form
 
 $$
 \boxed{
@@ -211,7 +211,7 @@ $$
 \boxed{u^{0}_{i} = f(x)\ ,\ v^{0}_{i} = 0 }\ ,
 $$
 
-where $f(x)$ is a function of our choosing. This initial condition is applied *to the interior grid*.
+where $f(x)$ is a function of our choosing. This initial condition is applied <em>to the interior grid</em>.
     </li>
 
     <li>
@@ -239,14 +239,14 @@ v^{\frac{1}{2}}_{i} &= v^{0}_{i} + \frac{c^{2}\Delta t}{2\Delta x^{2}}\left(u^{0
 $$
             </li>
             <li>
-    Then apply boundary conditions
+    Next, apply boundary conditions
 
 $$
 \boxed{u^{\frac{1}{2}}_{-1} = u^{\frac{1}{2}}_{N_{x}+1} = v^{\frac{1}{2}}_{-1} = v^{\frac{1}{2}}_{N_{x}+1} = 0}\ .
 $$
             </li>
             <li>
-    Then compute the "half-step centered" approximation
+    Then, compute the "half-step centered" approximation
 
 $$
 \boxed{
