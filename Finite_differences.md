@@ -182,7 +182,7 @@ $$
 <a name="FDPracticalCenter">
 ### Center Finite Differences \[Back to [ToC](#ToC)\]
 
-We will now discuss a fairly practical way of computing [finite difference coefficients](https://en.wikipedia.org/wiki/Finite_difference_coefficient){:target="_blank"}), which is the method used by the [NRPy+ infrastructure](https://blackholesathome.net/){:target="_blank"}. Our discussion will follow very closely that of Zach Etienne in the [NRPy+ Tutorial-How_NRPy_Computes_Finite_Difference_Coeffs](https://github.com/zachetienne/nrpytutorial/blob/master/Tutorial-How_NRPy_Computes_Finite_Difference_Coeffs.ipynb){:target="_blank"}.
+We will now discuss a fairly practical way of computing [finite difference coefficients](https://en.wikipedia.org/wiki/Finite_difference_coefficient){:target="_blank"}, which is the method used by the [NRPy+ infrastructure](https://blackholesathome.net/){:target="_blank"}. Our discussion will follow very closely that of Zach Etienne in the [NRPy+ Tutorial-How_NRPy_Computes_Finite_Difference_Coeffs](https://github.com/zachetienne/nrpytutorial/blob/master/Tutorial-How_NRPy_Computes_Finite_Difference_Coeffs.ipynb){:target="_blank"}.
 
 By construction, a center finite difference approximation to the *first* derivative of a function up to order $\mathcal{O}\left(h^{n}\right)$, where $h$ is the step size, will require a *stencil* of size $2n+1$. In other words, consider the first derivative of a function $f(x)$ accurate to $\mathcal{O}\left(dx^{4}\right)$, and assume:
 
