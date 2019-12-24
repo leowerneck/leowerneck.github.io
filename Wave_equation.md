@@ -62,7 +62,7 @@ $$
 \end{align}
 $$
 
-One could go further and simplify the Laplacian operator by introducing yet another new auxiliary function $w_{x}(t,x)\equiv\partial_{x}u(t,x)$, but we won't do that for now.
+One could also simplify the Laplacian operator by introducing yet another auxiliary function $w_{x}(t,x)\equiv\partial_{x}u(t,x)$, but we won't do that here.
 
 
 <a name='WaveEq_Evolution_Equations'></a>
@@ -118,9 +118,9 @@ v_{i}^{0} &= 0\ .
 \end{align}
 $$
 
-This is all very well, but now how do we evolve the system in time? We currently have access to $\left(u^{0}_{i},v^{0}_{i}\right)$, but if we use our evolution equations with $n=1$, we will need to have access to $\left(u^{1}_{i},v^{1}_{i}\right)$ *before* we can compute $\left(u^{2}_{i},v^{2}_{i}\right)$. Obtaining $\left(u^{1}_{i},v^{1}_{i}\right)$ then becomes a crucial part of the initial data specification known as the *initial data problem*.
+This is all very well, but now how do we evolve the system in time? We currently have access to $\left(u^{0}\_{i},v^{0}\_{i}\right)$, but if we use our evolution equations with $n=1$, we will need to have access to $\left(u^{1}\_{i},v^{1}\_{i}\right)$ *before* we can compute $\left(u^{2}\_{i},v^{2}\_{i}\right)$. Obtaining $\left(u^{1}\_{i},v^{1}\_{i}\right)$ then becomes a crucial part of the initial data specification known as the ***initial data problem***.
 
-To make it clear, when the user specify $\left(u^{0}_{i},v^{0}_{i}\right)$ we are giving the *initial conditions* required by the differential equation. However, due to our choice of numerical scheme, a different, *artificial* initial condition is also required, that is $\left(u^{1}_{i},v^{1}_{i}\right)$. The combination of these two initial conditions is referred to as the *initial data*.
+To make it clear, when the user specify $\left(u^{0}\_{i},v^{0}\_{i}\right)$ we are giving the *initial conditions* required by the differential equation. However, due to our choice of numerical scheme, a different, *artificial* initial condition is also required, that is $\left(u^{1}\_{i},v^{1}\_{i}\right)$. The combination of these two initial conditions is referred to as the *initial data*.
 
 A common trick to obtain this initial data is the following. Consider a *half-step forward* iteration
 
@@ -169,7 +169,7 @@ $$
 \end{align}
 $$
 
-since we do not have the values $u^{n}_{-1}$ and $u^{n}_{N_{x}+1}$.
+since we do not have the values $u^{n}\_{-1}$ and $u^{n}\_{N_{x}+1}$.
 
 In order to be able to use our numerical scheme throughout the entire numerical grid, we introduce *artificially* the points $i=-1$ and $i=N_{x}+1$ to the grid. The portion of the numerical grid which contains *only* the points $i=0,1,\dots,N_{x}$ is referred to as the ***interior grid***, while the points $i=-1$ and $i=N_{x}+1$ are referred to as ***external grid points***  or ***ghostzones***. [Figure 1](#Figure1) illustrates the numerical grid.
 
@@ -203,19 +203,32 @@ $$
 
 We now outline the numerical algorithm we will use to solve the wave equation. It is a combination of all the equations we have boxed this far:
 
-1. Set the initial condition
+<ol>
+    <li>
+Set the initial condition
+
 $$
 \boxed{u^{0}_{i} = f(x)\ ,\ v^{0}_{i} = 0 }\ ,
 $$
-where $f(x)$ is a function of our choosing. This initial condition is applied *to the interior grid*.
 
-1. Set boundary conditions to the initial condition
+where $f(x)$ is a function of our choosing. This initial condition is applied *to the interior grid*.
+    </li>
+
+    <li>
+Set boundary conditions to the initial condition
+
 $$
 \boxed{u^{0}_{-1} = u^{0}_{N_{x}+1} = v^{0}_{-1} = v^{0}_{N_{x}+1} = 0}\ .
 $$
+    </li>
 
-1. Find the initial data.
-    1. Start by computing the "half-step forward" approximation
+    <li>
+Find the initial data.
+    </li>
+        <ol>
+            <li>
+    Start by computing the "half-step forward" approximation
+
 $$
 \boxed{
 \begin{align}
@@ -224,11 +237,17 @@ v^{\frac{1}{2}}_{i} &= v^{0}_{i} + \frac{c^{2}\Delta t}{2\Delta x^{2}}\left(u^{0
 \end{align}
 }\ .
 $$
-    1. Then apply boundary conditions
+            </li>
+            <li>
+    Then apply boundary conditions
+
 $$
 \boxed{u^{\frac{1}{2}}_{-1} = u^{\frac{1}{2}}_{N_{x}+1} = v^{\frac{1}{2}}_{-1} = v^{\frac{1}{2}}_{N_{x}+1} = 0}\ .
 $$
-    1. Then compute the "half-step centered" approximation
+            </li>
+            <li>
+    Then compute the "half-step centered" approximation
+
 $$
 \boxed{
 \begin{align}
@@ -237,13 +256,23 @@ v^{1}_{i} &= v^{0}_{i} + \frac{c^{2}\Delta t}{\Delta x^{2}}\left(u^{\frac{1}{2}}
 \end{align}
 }\ .
 $$
-    1. Finally, apply boundary conditions
+            </li>
+            <li>
+    Finally, apply boundary conditions
+
 $$
 \boxed{u^{1}_{-1} = u^{1}_{N_{x}+1} = v^{1}_{-1} = v^{1}_{N_{x}+1} = 0}\ .
 $$
+            </li>
+        </ol>
 
-1. Start the main time loop. While $n$ < $N_{t}^{\rm max}$, do:
-    1. Step the interior grid forward in time using our $\mathcal{O}\left(\Delta t^{2} + \Delta x^{2}\right)$ centered finite differences scheme, namely
+     <li>
+Start the main time loop. While $n$ < $N_{t}^{\rm max}$, do:
+     </li>
+     <ol>
+         <li>
+    Step the interior grid forward in time using our $\mathcal{O}\left(\Delta t^{2} + \Delta x^{2}\right)$ centered finite differences scheme, namely
+
 $$
 \boxed{
 \begin{align}
@@ -252,10 +281,16 @@ v^{n+1}_{i} &= v^{n-1}_{i} + \frac{2c^{2}\Delta t}{\Delta x^{2}}\left(u^{n}_{i+1
 \end{align}
 }\ .
 $$
-    1. Apply boundary conditions
+         </li>
+         <li>
+Apply boundary conditions
+
 $$
 \boxed{u^{n+1}_{-1} = u^{n+1}_{N_{x}+1} = v^{n+1}_{-1} = v^{n+1}_{N_{x}+1} = 0}\ .
 $$
+          </li>
+     </ol>
+</ol>
 
 
 ### \[Back to [ToC](#ToC)\]
