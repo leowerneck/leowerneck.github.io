@@ -5,15 +5,14 @@ mathjax: true
 ---
 
 <a id='ToC'></a>
-
 # Table of Contents
 
 * [**The Wave Equation**](#WaveEquation)
   * [*Solving the wave equation in 1-dimensional Cartesian coordinates using finite differences*](#WaveEq)
-      * [The evolution equations](#WaveEq_Evolution_Equations)
-      * [The initial data problem](#WaveEq_Initial_Data)
-      * [Outer boundary conditions](#WaveEq_Outer_Boundary)
-      * [Outline of the algorithm](#WaveEq_Algorithm)
+    * [The evolution equations](#WaveEq_Evolution_Equations)
+    * [The initial data problem](#WaveEq_Initial_Data)
+    * [Outer boundary conditions](#WaveEq_Outer_Boundary)
+    * [Outline of the algorithm](#WaveEq_Algorithm)
 
 <a name='WaveEquation'></a>
 # The Wave Equation \[Back to [ToC](#ToC)\]
