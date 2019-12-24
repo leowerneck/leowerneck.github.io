@@ -4,7 +4,12 @@ title: Leonardo Werneck
 mathjax: true
 ---
 
-[**Contact**](#Contact) \| [**About me**](#About) \| [**Research**](#Research) \| [**Notes**](#Notes)
+<center>
+<a href="#Contact" ><strong> Contact  </strong></a> |
+<a href="#About"   ><strong> About me </strong></a> |
+<a href="#Research"><strong> Research </strong></a> |
+<a href="#Notes"   ><strong> Notes    </strong></a>
+</center>
 
 <a name='Contact'>
 ## Contact
