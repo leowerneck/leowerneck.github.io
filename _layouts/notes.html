@@ -33,9 +33,16 @@
         <ul>
           <li><a class="buttons github" href="{{ site.github.owner_url }}">My GitHub Page</a></li>
           <li><a class="buttons back" href="https://leowerneck.github.io">Main Page</a></li>
-          <li><a class="buttons download" href="{{ page.pdfpath }}">Notes in PDF</a></li>
           {% if page.pdfpath %}
-          <li><a class="buttons download" href="{{ page.pdfpath }}">Wave3DFD source code (.tar)</a></li>
+          <li><a class="buttons download" href="{{ page.pdfpath }}">Notes in PDF</a></li>
+          {% endif %}
+          {% if page.program_name %}
+            {% if page.tarpath %}
+            <li><a class="buttons download" href="{{ page.tarpath }}">page.program_name (.tar)</a></li>
+            {% endif %}
+            {% if page.zippath %}
+            <li><a class="buttons download" href="{{ page.zippath }}">page.program_name (.zip)</a></li>
+            {% endif %}
           {% endif %}
         </ul>
         {% endif %}

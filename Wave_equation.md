@@ -2,6 +2,9 @@
 layout: notes
 title: Wave Equation
 mathjax: true
+program_name: Wave3DFD
+tarpath: '/assets/Notes/Wave_equation.pdf'
+zippath: '/assets/Notes/Wave_equation.pdf'
 pdfpath: '/assets/Notes/Wave_equation.pdf'
 ---
 
