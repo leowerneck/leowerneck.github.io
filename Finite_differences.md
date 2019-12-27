@@ -2,7 +2,7 @@
 layout: notes
 title: Finite Differences
 mathjax: true
-pdf_path: assets/Notes/Finite_differences.pdf
+pdfpath: "assets/Notes/Finite_differences.pdf"
 ---
 
 <a name='ToC'>
