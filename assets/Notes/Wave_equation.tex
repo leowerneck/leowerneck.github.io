@@ -23,11 +23,13 @@
 
 \title{The Wave Equation}
 \author{Leonardo Werneck}
+\date{December, 2019}
 
 \begin{document}
 
 \maketitle
 \tableofcontents
+\listoffigures
 
 \section{The Wave Equation}
 
@@ -184,7 +186,7 @@ In order to be able to use our numerical scheme throughout the entire numerical 
 \begin{figure}[ht]
 \centering
 \includestandalone[width=\textwidth]{../images/tex_to_svg/ghostzones}
-\caption{Illustration of computational grid. The interior grid is composed of the blue spatial points and the ghostzones are composed of the red spatial points. The illustration also shows the three time levels required by the numerical scheme described here.}
+\caption[Illustration of computational grid.]{Illustration of computational grid. The interior grid is composed of the blue spatial points and the ghostzones are composed of the red spatial points. The illustration also shows the three time levels required by the numerical scheme described here.}
 \label{Figure1}
 \end{figure}
 
@@ -210,17 +212,17 @@ We now outline the numerical algorithm we will use to solve the wave equation. I
 \begin{enumerate}
 \item Set the initial condition
 
-$$
+\begin{equation}
 \boxed{u^{0}_{i} = f(x)\ ,\ v^{0}_{i} = 0 }\ ,
-$$
+\end{equation}
 
 where $f(x)$ is a function of our choosing. This initial condition is applied <em>to the interior grid</em>.
 
 \item Set boundary conditions to the initial condition
 
-$$
+\begin{equation}
 \boxed{u^{0}_{-1} = u^{0}_{N_{x}+1} = v^{0}_{-1} = v^{0}_{N_{x}+1} = 0}\ .
-$$
+\end{equation}
 
 \item Find the initial data.
 
@@ -228,37 +230,37 @@ $$
 
     \item Start by computing the "half-step forward" approximation
 
-$$
+\begin{equation}
 \boxed{
 \begin{aligned}
 u^{\frac{1}{2}}_{i} &= u^{0}_{i} + \frac{\Delta t}{2}v^{0}_{i}\\
 v^{\frac{1}{2}}_{i} &= v^{0}_{i} + \frac{c^{2}\Delta t}{2\Delta x^{2}}\left(u^{0}_{i+1}-2u^{0}_{i}+u^{0}_{i-1}\right)
 \end{aligned}
 }\ .
-$$
+\end{equation}
 
     \item Next, apply boundary conditions
 
-$$
+\begin{equation}
 \boxed{u^{\frac{1}{2}}_{-1} = u^{\frac{1}{2}}_{N_{x}+1} = v^{\frac{1}{2}}_{-1} = v^{\frac{1}{2}}_{N_{x}+1} = 0}\ .
-$$
+\end{equation}
 
     \item Then, compute the "half-step centered" approximation
 
-$$
+\begin{equation}
 \boxed{
 \begin{aligned}
 u^{1}_{i} &= u^{0}_{i} + \Delta t v^{\frac{1}{2}}_{i}\\
 v^{1}_{i} &= v^{0}_{i} + \frac{c^{2}\Delta t}{\Delta x^{2}}\left(u^{\frac{1}{2}}_{i+1}-2u^{\frac{1}{2}}_{i}+u^{\frac{1}{2}}_{i-1}\right)
 \end{aligned}
 }\ .
-$$
+\end{equation}
 
     \item Finally, apply boundary conditions
 
-$$
+\begin{equation}
 \boxed{u^{1}_{-1} = u^{1}_{N_{x}+1} = v^{1}_{-1} = v^{1}_{N_{x}+1} = 0}\ .
-$$
+\end{equation}
 \end{enumerate}
 
 \item Start the main time loop. While $n$ < $N_{t}^{\rm max}$, do:
@@ -266,20 +268,20 @@ $$
   
     \item Step the interior grid forward in time using our $\mathcal{O}\left(\Delta t^{2} + \Delta x^{2}\right)$ centered finite differences scheme, namely
 
-$$
+\begin{equation}
 \boxed{
 \begin{aligned}
 u^{n+1}_{i} &= u^{n-1}_{i} + 2\Delta t v^{n}_{i}\\
 v^{n+1}_{i} &= v^{n-1}_{i} + \frac{2c^{2}\Delta t}{\Delta x^{2}}\left(u^{n}_{i+1}-2u^{n}_{i}+u^{n}_{i-1}\right)
 \end{aligned}
 }\ .
-$$
+\end{equation}
 
     \item Apply boundary conditions
 
-$$
+\begin{equation}
 \boxed{u^{n+1}_{-1} = u^{n+1}_{N_{x}+1} = v^{n+1}_{-1} = v^{n+1}_{N_{x}+1} = 0}\ .
-$$
+\end{equation}
   \end{enumerate}
 \end{enumerate}
 
