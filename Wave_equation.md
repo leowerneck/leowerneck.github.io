@@ -2,7 +2,7 @@
 layout: notes
 title: Wave Equation
 mathjax: true
-pdfpath: "assets/Notes/Wave_equation.pdf"
+pdfpath: '/assets/Notes/Wave_equation.pdf'
 ---
 
 <a id='ToC'></a>
