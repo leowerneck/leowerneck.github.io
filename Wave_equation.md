@@ -295,5 +295,13 @@ $$
     </ol>
 </ol>
 
+<a name='Wave3DFD'></a>
+### Solving the wave equation using the `Wave3DFD` code  \[Back to [ToC](#ToC)\]
+
+We will now solve the 1-dimensional (in space) wave equation using the `Wave3DFD` code (view the [documentation](Wave3DFD.md)). It implements all the equations we have described here so far. The initial condition set in the code is
+
+$$
+u(0,x) = \frac{A}{2}\sin\left(x)\ ,
+$$
 
 ### \[Back to [ToC](#ToC)\]
