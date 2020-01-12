@@ -22,7 +22,7 @@ pdfpath: /assets/Notes/Finite_differences.pdf
 <a name="FD">
 # Finite differences
 
-[Finite differences](https://en.wikipedia.org/wiki/Finite_difference){:target="_blank"} are approximations to the derivatives of functions that we can use to solve differential equations. Instead of considering the exact definition
+[Finite differences](https://en.wikipedia.org/wiki/Finite_difference) are approximations to the derivatives of functions that we can use to solve differential equations. Instead of considering the exact definition
 
 $$
 \frac{df}{dx} = \lim_{dx\to0}\frac{f(x+dx) - f(x)}{dx}\ ,
@@ -49,12 +49,12 @@ $$
 \end{align}
 $$
 
-Each of these expressions yield a different kind of finite difference approximation to the derivative of $f(x)$, that is
+Each of these expressions yields a different kind of finite difference approximation to the derivative of $f(x)$, that is
 
 $$
 \begin{align}
-\frac{df}{dx} &\approx \frac{f(x+\Delta x) - f(x)}{\Delta x}    \ ,\\
-\frac{df}{dx} &\approx \frac{f(x)    - f(x-\Delta x)}{\Delta x} \ ,\\
+\frac{df}{dx} &\approx \frac{f(x+\Delta x) - f(x)         }{ \Delta x} \ ,\\
+\frac{df}{dx} &\approx \frac{f(x)          - f(x-\Delta x)}{ \Delta x} \ ,\\
 \frac{df}{dx} &\approx \frac{f(x+\Delta x) - f(x-\Delta x)}{2\Delta x}\ .
 \end{align}
 $$
@@ -68,9 +68,9 @@ Finally, the third equation above computes the derivative of $f(x)$ by consideri
 <a name="FDTaylor">
 ## Determining finite differences expressions \[Back to [ToC](#ToC)\]
 
-Let us now present a more systematic way of determining the finite difference approximation to the derivative of a function $f(t,x)$. We will choose a function of 2 variables on purpose, because it then becomes trivial to understand the algorithm for functions of even more variables. In the derivations below, the single variable case can be obtained by simplying supressing the variable $x$ altogether.
+Let us now present a more systematic way of determining the finite difference approximation to the derivative of a function $f(t,x)$. We will choose a function of 2 variables, because it then becomes straightforward to understand the algorithm for functions of any number of variables. In the derivations below, the single variable case can be obtained by simplying supressing the variable $x$ altogether.
 
-Consider the [Taylor series](https://en.wikipedia.org/wiki/Taylor_series){:target="_blank"} of the function $f(t,x)$ around different points, strategically chosen:
+Consider the [Taylor series](https://en.wikipedia.org/wiki/Taylor_series) of the function $f(t,x)$ around different points, strategically chosen as:
 
 $$
 \begin{align}
@@ -92,7 +92,7 @@ $$
 f(t+2\Delta t,x) - 4f(t+\Delta t,x) = - 3f(t,x) - 2\Delta t\partial_{t}f(t,x) + \mathcal{O}\left(\Delta t^{3}\right)\ .
 $$
 
-Note that we have chosen to multiply $f(t+\Delta t,x)$ by $4$ because then we cancel the term of $\mathcal{O}\Delta t^{2}$ exactly when performing the operation above. We then have, rearranging the terms and dividing through by $\Delta t$,
+Note that we have chosen to multiply $f(t+\Delta t,x)$ by $4$ because then we cancel the term of $\mathcal{O}\left(\Delta t^{2}\right)$ exactly when performing the operation above. We then have, rearranging the terms and dividing through by $\Delta t$,
 
 $$
 \boxed{
@@ -103,13 +103,13 @@ $$
 Similarly, we could seek for an expression that approximates $\partial_{t}^{2}f(t,x)$ also to second-order in the step size. Consider
 
 $$
--f(t+3\Delta t,x) + 4f(t+2\Delta t,x) - 5f(t+\Delta t,x) = -2f(t,x) + \frac{\Delta t^{2}}{2!}\left(-9 + 16 -5\right)\partial_{t}^{2}f(t,x)\ ,
+-f(t+3\Delta t,x) + 4f(t+2\Delta t,x) - 5f(t+\Delta t,x) = -2f(t,x) + \frac{\Delta t^{2}}{2!}\left(-9 + 16 -5\right)\partial_{t}^{2}f(t,x) + \mathcal{O}\left(\Delta t^{4}\right)\ ,
 $$
 
 resulting in
 
 $$
-\boxed{\partial_{t}^{2}f(t,x) = \frac{-f(t+3\Delta t,x) + 4f(t+2\Delta t,x) - 5f(t+\Delta t,x) + 2f(t,x)}{\Delta t^{2}}}\ .
+\boxed{\partial_{t}^{2}f(t,x) = \frac{-f(t+3\Delta t,x) + 4f(t+2\Delta t,x) - 5f(t+\Delta t,x) + 2f(t,x)}{\Delta t^{2}} + \mathcal{O}\left(\Delta t^{2}\right)}\ .
 $$
 
 <a name="BFD">
@@ -132,7 +132,7 @@ $$
 The result for the second derivative is
 
 $$
-\boxed{\partial_{t}^{2}f(t,x) = \frac{-f(t-3\Delta t,x) + 4f(t-2\Delta t,x) - 5f(t-\Delta t,x) + 2f(t,x)}{\Delta t^{2}}}\ .
+\boxed{\partial_{t}^{2}f(t,x) = \frac{-f(t-3\Delta t,x) + 4f(t-2\Delta t,x) - 5f(t-\Delta t,x) + 2f(t,x)}{\Delta t^{2}} + \mathcal{O}\left(\Delta t^{2}\right)}\ .
 $$
 
 <a name="CFD">
@@ -168,10 +168,10 @@ $$
 When dealing with finite differences, it is common practice to introduce the following notation
 
 $$
-f\left(n\cdot\Delta t,i\cdot\Delta x,j\cdot\Delta y,k\cdot\Delta z\right) \equiv f^{n}_{i,j,k}\ .
+f\left(t_{0}+n\cdot\Delta t,x_{0}+i\cdot\Delta x,y_{0}+j\cdot\Delta y,z_{0}+k\cdot\Delta z\right) \equiv f^{n}_{i,j,k}\ ,
 $$
 
-The indices $\left(i,j,k\right)$ indicate the points in the grid that we are in. This notation greatly simplifies the finite differences expressions. For example, the fourth-order accurate, centered finite difference approximation to the second derivative of $f(t,x,y,z)$ with respect to $y$ reads (we refer the reader to the next section for the computation of the coefficients used in the following equation)
+where the indices run from $0$ to $N_{l}$, and $l=(n,i,j,k)$. The indices $\left(i,j,k\right)$ indicate the points in the grid that we are in. This notation greatly simplifies the finite differences expressions. For example, the fourth-order accurate, centered finite difference approximation to the second derivative of $f(t,x,y,z)$ with respect to $y$ reads (we refer the reader to the next section for the computation of the coefficients used in the following equation)
 
 $$
 \partial_{y}^{2}f^{n}_{i,j,k} = \frac{-f^{n}_{i,j+2,k}+8f^{n}_{i,j+1,k}-8f^{n}_{i,j-1,k}+f^{n}_{i,j-2,k}}{12\Delta y} + \mathcal{O}\left(\Delta t^{4}\right)\ .
@@ -183,9 +183,9 @@ $$
 <a name="FDPracticalCenter">
 ### Center Finite Differences \[Back to [ToC](#ToC)\]
 
-We will now discuss a fairly practical way of computing [finite difference coefficients](https://en.wikipedia.org/wiki/Finite_difference_coefficient){:target="_blank"}, which is the method used by the [NRPy+ infrastructure](https://blackholesathome.net/){:target="_blank"}. Our discussion will follow very closely that of Zach Etienne in the [NRPy+ Tutorial-How_NRPy_Computes_Finite_Difference_Coeffs](https://github.com/zachetienne/nrpytutorial/blob/master/Tutorial-How_NRPy_Computes_Finite_Difference_Coeffs.ipynb){:target="_blank"}.
+We will now discuss a fairly practical way of computing [finite difference coefficients](https://en.wikipedia.org/wiki/Finite_difference_coefficient), which is the method used by the [NRPy+ infrastructure](https://blackholesathome.net/). Our discussion will follow very closely that of Zach Etienne in the [NRPy+ Tutorial-How_NRPy_Computes_Finite_Difference_Coeffs](https://github.com/zachetienne/nrpytutorial/blob/master/Tutorial-How_NRPy_Computes_Finite_Difference_Coeffs.ipynb).
 
-By construction, a center finite difference approximation to the *first* derivative of a function up to order $\mathcal{O}\left(h^{n}\right)$, where $h$ is the step size, will require a *stencil* of size $2n+1$. In other words, consider the first derivative of a function $f(x)$ accurate to $\mathcal{O}\left(dx^{4}\right)$, and assume:
+By construction, a center finite difference approximation to the *first* derivative of a function up to order $\mathcal{O}\left(\Delta x^{n}\right)$, where $\Delta x$ is the step size, will require a *stencil* of size $2n+1$. As an example, consider the first derivative of a function $f(x)$ accurate to $\mathcal{O}\left(\Delta x^{4}\right)$. The stencil that we need to approximate this derivative is:
 
 $$
 \partial_{x}f_{i} = a_{-2}f_{i-2} + a_{-1}f_{i-1} + a_{0}f_{i} + a_{1}f_{i+1} + a_{2}f_{i+2}\ .
@@ -205,19 +205,19 @@ a_{-2}f_{i-2} + a_{-1}f_{i-1} + a_{0}f_{i} + a_{1}f_{i+1} + a_{2}f_{i+2}
 &+
 \left(-2^{3}a_{-2} - 1^{3}a_{-1} + 0^{3}a_{0} + 1^{3}a_{1} + 2^{3}a_{2}\right)\frac{\Delta x^{3}}{3!}\partial_{x}^{3}f\\
 &+
-\left(-2^{4}a_{-2} - 1^{4}a_{-1} + 0^{4}a_{0} + 1^{4}a_{1} + 2^{4}a_{2}\right)\frac{\Delta x^{4}}{4!}\partial_{x}^{4}f
+\left(-2^{4}a_{-2} - 1^{4}a_{-1} + 0^{4}a_{0} + 1^{4}a_{1} + 2^{4}a_{2}\right)\frac{\Delta x^{4}}{4!}\partial_{x}^{4}f\ ,
 \end{align}
 $$
 
-Which leads to the following system of equations (absorbing the powers of $\Delta x$ in the derivatives, for now)
+which leads to the following system of equations (absorbing the powers of $\Delta x$ in the derivatives, for now)
 
 $$
 \begin{align}
-0\times0! &= -2^{0}a_{-2} - 1^{0}a_{-1} + 1^{0}a_{0} + 1^{0}a_{1} + 2^{0}a_{2}\\
-1\times1! &= -2^{1}a_{-2} - 1^{1}a_{-1} + 0^{1}a_{0} + 1^{1}a_{1} + 2^{1}a_{2}\\
-0\times2! &= -2^{2}a_{-2} - 1^{2}a_{-1} + 0^{2}a_{0} + 1^{2}a_{1} + 2^{2}a_{2}\\
-0\times3! &= -2^{3}a_{-2} - 1^{3}a_{-1} + 0^{3}a_{0} + 1^{3}a_{1} + 2^{3}a_{2}\\
-0\times4! &= -2^{4}a_{-2} - 1^{4}a_{-1} + 0^{4}a_{0} + 1^{4}a_{1} + 2^{4}a_{2}
+0\times0! &= -2^{0}a_{-2} - 1^{0}a_{-1} + 1^{0}a_{0} + 1^{0}a_{1} + 2^{0}a_{2}\ ,\\
+1\times1! &= -2^{1}a_{-2} - 1^{1}a_{-1} + 0^{1}a_{0} + 1^{1}a_{1} + 2^{1}a_{2}\ ,\\
+0\times2! &= -2^{2}a_{-2} - 1^{2}a_{-1} + 0^{2}a_{0} + 1^{2}a_{1} + 2^{2}a_{2}\ ,\\
+0\times3! &= -2^{3}a_{-2} - 1^{3}a_{-1} + 0^{3}a_{0} + 1^{3}a_{1} + 2^{3}a_{2}\ ,\\
+0\times4! &= -2^{4}a_{-2} - 1^{4}a_{-1} + 0^{4}a_{0} + 1^{4}a_{1} + 2^{4}a_{2}\ ,
 \end{align}
 $$
 
@@ -258,10 +258,10 @@ M =
 (-2)^{2} & (-1)^{2} & 0^{2} & 1^{2} & 2^{2}\\
 (-2)^{3} & (-1)^{3} & 0^{3} & 1^{3} & 2^{3}\\
 (-2)^{4} & (-1)^{4} & 0^{4} & 1^{4} & 2^{4}
-\end{bmatrix}
+\end{bmatrix}\ .
 $$
 
-The following code in Python, which uses the [SymPy](https://www.sympy.org/) module takes care of this:
+The following code in Python, which uses the [SymPy](https://www.sympy.org/) python package, takes care of this:
 
 ```python
 # Import SymPy Python module
@@ -316,10 +316,10 @@ Unfortunately, the other two columns give us approximations for $\partial_{x}^{3
 <a name="FDPracticalFwdBwd">
 ### Forward/backwards Finite Differences \[Back to [ToC](#ToC)\]
 
-To compute the forward/backwards approximations, we follow a completely analogous prescription. The forwards/backwards finite differences, the first order derivative accurate to order $\mathcal{O}\left(h^{n}\right)$ requres a stencil size $n+1$. We then wish to compute, say to order $\mathcal{O}\left(\Delta x^{6}\right)$, the forward finite difference approximation first derivative of $f(x)$. This requires a stencil of size 7, which i.e.
+To compute the forward/backwards approximations, we follow a completely analogous prescription. For forwards/backwards finite differences, the first order derivative accurate to order $\mathcal{O}\left(\Delta x^{n}\right)$ requires a stencil of size $n+1$. We then wish to compute, say to order $\mathcal{O}\left(\Delta x^{6}\right)$, the forward finite difference approximation to the first derivative of $f(x)$. This requires a stencil of size 7, i.e.
 
 $$
-a_{0}f_{i} + a_{1}f_{i+1} + a_{1}f_{i+1} + a_{2}f_{i+2} + a_{3}f_{i+3} + a_{4}f_{i+4} + a_{5}f_{i+5} + a_{6}f_{i+6}\ .
+\partial_{x}f_{i} = a_{0}f_{i} + a_{1}f_{i+1} + a_{1}f_{i+1} + a_{2}f_{i+2} + a_{3}f_{i+3} + a_{4}f_{i+4} + a_{5}f_{i+5} + a_{6}f_{i+6}\ .
 $$
 
 By staring at the previous section, it is easy to convince oneself that the matrix we need to invert now is
@@ -356,7 +356,7 @@ for i in range(stencil_size):
 M_inv = M**(-1)
 ```
 
-resulting in
+The result we obtain is
 
 $$
 \left[
@@ -366,10 +366,10 @@ $$
 \right]\ .
 $$
 
-To obtain the final result, the process is identical to the central finite differences case. Consider the $p$th derivative. Then, multiply the $p+1$ column of the $M^{-1}$ matrix by the vector $\left(f_{i},f_{i+1},f_{i+2},f_{i+3},f_{i+4},f_{i+5},f_{i+6}\right)$. For example, for $p=0$
+To obtain the derivative, the process is identical to the central finite differences case. Consider the $p$th derivative. Then, multiply the $p+1$ column of the $M^{-1}$ matrix by the vector $\left(f_{i},f_{i+1},f_{i+2},f_{i+3},f_{i+4},f_{i+5},f_{i+6}\right)$. For example, for $p=0$
 
 $$
-\frac{0!}{\Delta x^{0}}\left(f_{i} + 0f_{i+1} + 0f_{i+2} + 0f_{i+3} + 0f_{i+4} + 0f_{i+5} + 0f_{i+6}\right) = f_{i}\ .
+\frac{0!}{\Delta x^{0}}\left(1f_{i} + 0f_{i+1} + 0f_{i+2} + 0f_{i+3} + 0f_{i+4} + 0f_{i+5} + 0f_{i+6}\right) = f_{i}\ .
 $$
 
 The first derivative is given by the $p=1$ case,
@@ -378,6 +378,6 @@ $$
 \frac{1!}{\Delta x^{1}}\left(-\frac{49}{20}f_{i} + 6f_{i+1}  -\frac{15}{2}f_{i+2} + \frac{20}{3}f_{i+3} - \frac{15}{4}f_{i+4} + \frac{6}{5}f_{i+5} - \frac{1}{6}f_{i+6}\right) = \partial_{x}f_{i} + \mathcal{O}\left(\Delta x^{6}\right)\ .
 $$
 
-To obtain the second derivative with the same accuracy, we would need a stencil size that is greater than the one we use by 1. The algorithm for backwards finite differences should now be straightforward and will be left as an exercise to the reader.
+To obtain the second derivative with the same accuracy, we would need to increase the stencil size by 1. Obtaining the algorithm for backwards finite differences should now be straightforward and is left as an exercise to the reader.
 
 ### \[Back to [ToC](#ToC)\]
