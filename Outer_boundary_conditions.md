@@ -90,7 +90,7 @@ $$
 However, in this coordinate system the points $i=-1$ *do not belong to the exterior grid*. This is a direct consequence of the fact that, in polar coordinates,
 
 $$
-f\left(-\rho,\theta\right) = f\left(\rho,\theta+\frac{\pi}{2}\right)\ .
+f\left(-\rho,\theta\right) = f\left(\rho,\theta+\pi\right)\ .
 $$
 
 Thus, the way to handle the points with $i=-1$ is actually to impose *inner boundary conditions*, as described by the last equation. The points with $i=N_{\rho}+1$, however, *do belong to the exterior grid*, and therefore must be handled by imposing outer boundary conditions.
