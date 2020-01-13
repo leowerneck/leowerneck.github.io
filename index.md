@@ -26,7 +26,7 @@ United States
 
 <a name='About'>
 ## About me
-Hi, my name is Leonardo (Leo) Werneck, and I am a fourth-year PhD candidate in Physics at the [Institute of Physics](http://portal.if.usp.br/) of the [University of São Paulo](https://www.usp.br/), under supervision of Prof. Dr. Elcio Abdalla. As part of my PhD, I am currently a Visiting Scholar at the [Department of Physics and Astronomy](https://physics.wvu.edu/) from [West Virginia University](https://www.wvu.edu/), where I am conducting research under supervision of Prof. Dr. Zachariah B. Etienne.
+Hi, my name is Leonardo (Leo) Werneck, and I am a fourth-year PhD candidate in Physics at the [Institute of Physics](http://portal.if.usp.br/) of the [University of São Paulo](https://www.usp.br/), under supervision of Prof. Dr. Elcio Abdalla. As part of my PhD, I am currently a Visiting Scholar at the [Department of Physics and Astronomy](https://physics.wvu.edu/) of the [West Virginia University](https://www.wvu.edu/), where I am conducting research under supervision of Prof. Dr. Zachariah B. Etienne.
 
 <a name='Research'>
 ## Research
