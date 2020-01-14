@@ -14,6 +14,7 @@ pdfpath: '/assets/Notes/Outer_boundary_conditions.pdf'
     * [Dirichlet boundary conditions](#BdryCond_Dirichlet)
     * [Neumann boundary conditions](#BdryCond_Neumann)
     * [Robin boundary conditions](#BdryCond_Robin)
+  * [*A less common boundary condition*](#BdryCond_Outgoing)
   * [*Implementation*](#BdryCond_Implementation)
     * [The general case](#BdryCond_General_Algorithm)
     * [Special case: Dirichlet](#BdryCond_Dirichlet_Algorithm)
@@ -134,6 +135,20 @@ Dirichlet boundary conditions do not completely populate the ghostzones when the
 
 Handling the other ghostzones would require additional work, either by resorting to [interpolating](https://en.wikipedia.org/wiki/Interpolation) or [extrapolating](https://en.wikipedia.org/wiki/Extrapolation) the function at those points or by adjusting the integration scheme to use, for example, [backwards or forwards finite differences](Finite_differences.md).
 
+A visualization of ***vanishing Dirichlet boundary conditions*** for the wave equation is given in [Figure 1](#Figure1_Dirichlet) below.
+
+<a name="Figure1_Dirichlet"></a>
+<html>
+    <figure>
+        <img src="assets/images/wave1D_Dirichlet.gif"/>
+        <figcaption>
+            <center>
+                <strong>Figure 1</strong>: Solution of the wave equation with vanishing Dirichlet boundary conditions $u(t,x)=0$ at the outer boundaries of the computational domain. These results are from the <code>Wave3D</code> code.
+            </center>
+        </figcaption>
+    </figure>
+</html>
+
 <a name='BdryCond_Neumann'></a>
 ### Neumann boundary conditions \[Back to [ToC](#ToC)\]
 
@@ -150,6 +165,20 @@ $$
 $$
 
 where $v$ is a positive constant.
+
+A visualization of ***vanishing Neumann boundary conditions*** for the wave equation is given in [Figure 2](#Figure2_Neumann) below. Compare the result with the one obtained using vanishing Dirichlet boundary conditions, as given by [Figure 1](#Figure1_Dirichlet).
+
+<a name="Figure2_Neumann"></a>
+<html>
+    <figure>
+        <img src="assets/images/wave1D_Neumann.gif"/>
+        <figcaption>
+            <center>
+                <strong>Figure 2</strong>: Solution of the wave equation with vanishing Neumann boundary conditions $\partial_{x}u(t,x)=0$ at the outer boundaries of the computational domain. These results are from the <code>Wave3D</code> code.
+            </center>
+        </figcaption>
+    </figure>
+</html>
 
 <a name='BdryCond_Robin'></a>
 ### Robin boundary conditions \[Back to [ToC](#ToC)\]
@@ -175,3 +204,94 @@ f\left(R_{\rm outer}\right) + R_{\rm outer}\left.\partial_{r}f\right|_{R_{\rm ou
 $$
 
 with $\alpha=1$, $\beta = R_{\rm outer}$, and $\gamma=0$. Here, the direction normal to the outer boundary is the $r$-direction.
+
+
+<a name='BdryCond_Outgoing'></a>
+## A less common boundary condition \[Back to [ToC](#ToC)\]
+
+We will now give a less common boundary condition which we will refer to as *outgoing wave boundary condition*. A general solution to the wave equation with 1 spatial dimension,
+
+$$
+\partial_{t}^{2}u(t,x) = \partial_{x}^{2}u(t,x)\ ,
+$$
+
+where we have chosen the wave speed to be unity, is
+
+$$
+u(t,x) = F(t-x) + G(t+x)\ ,
+$$
+
+with $F(t-x)$ representing a wave moving towards the right (towards the positive $x$-direction) and $G(t,x)$ representing a wave moving towards the left (towards the negative $x$-direction) boundary of the computational domain.
+
+Outgoing wave boundary conditions is the imposition that a wave traveling in a given direction keep traveling in that direction. In other words, we want the wave to *not* interact with the boundaries of the computatinal domain.
+
+This is a fairly straightfoward boundary condition to impose. For example, consider the boundary of computational domain located at $x=x_{\rm max}$. When the wave reaches that boundary, it will be propagating towards the right and we intend to keep it that way. Therefore, we wish to impose that
+
+$$
+\left.G(t+x)\right|_{x=x_{\rm max}} = 0\ .
+$$
+
+Moreover, we wish this condition to be valid for all times $t$. Consider then the following quantities
+
+$$
+\begin{align}
+\partial_{t}u &= \partial_{t}F + \partial_{t}G = +F^{\prime} +G^{\prime}\ ,\\
+\partial_{x}u &= \partial_{x}F + \partial_{x}G = -F^{\prime} +G^{\prime}\ ,
+\end{align}
+$$
+
+where a prime indicates a derivative with respect to the argument. Adding up the two equations result in the equation that will allow us to impose the outgoing wave boundary condition *at the boundary located at* $x=x_{\rm max}$,
+
+$$
+\left.\left[\partial_{t}u + \partial_{x}u\right]\right|_{x=x_{\rm max}} = 2\left.G^{\prime}\right|_{x=x_{\rm max}} = 0\ ,
+$$
+
+where we have set the right-hand side to zero by demanding that $G=0=\left.G^{\prime}\right\|_{x=x\_{\rm max}}$. Analogously, the outgoing wave boundary condition at $x=-x\_{\\rm max}$ is obtained through the expression
+
+
+$$
+\left.\left[\partial_{t}u - \partial_{x}u\right]\right|_{x=-x_{\rm max}} = 2\left.F^{\prime}\right|_{x=x_{\rm max}} = 0\ ,
+$$
+
+which amounts to imposing that a wave propagating towards the left direction continues that way. Converting the two conditions above to index notation, we see that
+
+$$
+\begin{alignat*}{2}
+x = + x_{\rm max} &\to \partial_{t}u^{n}_{N_{x}+1}  &&= - \partial_{x}u^{n}_{N_{x}+1}\ ,\\
+x = - x_{\rm max} &\to \partial_{t}u^{n}_{0}  &&= + \partial_{x}u^{n}_{0}\ .
+\end{alignat*}
+$$
+
+Now we need to think about how we are going to evaluate the derivatives at $i=0$ and $i=N\_{x}+1$. Clearly using centered finit differences is not an option, since that would introduce the necessity for extra ghostzones. Instead, we will use backwards and forwards finite differences. Remember that, to second order accuracy in the step size $\Delta x$ we have
+
+$$
+\begin{align}
+\partial_{x}u^{n}_{i} &= \frac{-3u^{n}_{i}+4u^{n}_{i+1}-u^{n}_{i+2}}{2\Delta x}\ ,\\
+\partial_{x}u^{n}_{i} &= \frac{3u^{n}_{i}-4u^{n}_{i-1}+u^{n}_{i-2}}{2\Delta x}\ ,
+\end{align}
+$$
+
+for the forward and backwards finite difference approximations to the first derivative of $u$ with respect to $x$, respecitvely. Thus, the boundary conditions we wish to impose are (using centered finite differences for the time derivative)
+
+$$
+\begin{alignat*}{7}
+x = + x_{\rm max} &\to u^{n+1}_{N_{x}+1} &&= u^{n-1}_{N_{x}+1} &&- \frac{\Delta t}{\Delta x}\big(&&+3u^{n}_{N_{x}+1}&&-4u^{n}_{N_{x}}&&+u^{n}_{N_{x}-1}&&\big)\ ,\\
+x = - x_{\rm max} &\to u^{n+1}_{0} &&= u^{n-1}_{0} &&- \frac{\Delta t}{\Delta x}\big(&&+3u^{n}_{0}&&-4u^{n}_{1}&&+u^{n}_{2}&&\big)\ .
+\end{alignat*}
+$$
+
+A visualization of ***outgoing wave boundary conditions*** for the wave equation is given in [Figure 3](#Figure2_Neumann) below. Compare the result with [Figure 1](#Figure1_Dirichlet) and [Figure 2](#Figure1_Neumann).
+
+<a name="Figure3_OutgoingWave"></a>
+<html>
+    <figure>
+        <img src="assets/images/wave1D_OutgoingWave.gif"/>
+        <figcaption>
+            <center>
+                <strong>Figure 3</strong>: Solution of the wave equation with outgoing wave boundary conditions. These results are from the <code>Wave3D</code> code.
+            </center>
+        </figcaption>
+    </figure>
+</html>
+
+### \[Back to [ToC](#ToC)\]
