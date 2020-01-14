@@ -18,8 +18,6 @@ header-includes:
     * [Robin boundary conditions](#BdryCond_Robin)
   * [*A less common boundary condition*](#BdryCond_Outgoing)
   * [*Implementation*](#BdryCond_Implementation)
-    * [The general case](#BdryCond_General_Algorithm)
-    * [Special case: Dirichlet](#BdryCond_Dirichlet_Algorithm)
 
 <a name='BdryCond'></a>
 # Outer boundary conditions \[Back to [ToC](#ToC)\]
@@ -142,11 +140,9 @@ A visualization of ***vanishing Dirichlet boundary conditions*** for the wave eq
 <a name="Figure1_Dirichlet"></a>
 <html>
     <figure>
-        <img src="assets/images/wave1D_Dirichlet.gif"/>
+        <img src="assets/images/wave1D_Dirichlet.gif" width="80%" class="center"/>
         <figcaption>
-            <center>
-                <strong>Figure 1</strong>: Solution of the wave equation with vanishing Dirichlet boundary conditions $$u(t,x)=0$$ at the outer boundaries of the computational domain. These results are from the <code>Wave3D</code> code.
-            </center>
+            <strong>Figure 1</strong>: Solution of the wave equation with vanishing Dirichlet boundary conditions $u(t,x)=0$ at the outer boundaries of the computational domain. These results are from the <code>Wave3D</code> code.
         </figcaption>
     </figure>
 </html>
@@ -173,11 +169,9 @@ A visualization of ***vanishing Neumann boundary conditions*** for the wave equa
 <a name="Figure2_Neumann"></a>
 <html>
     <figure>
-        <img src="assets/images/wave1D_Neumann.gif"/>
+        <img src="assets/images/wave1D_Neumann.gif" class="center"/>
         <figcaption>
-            <center>
-                <strong>Figure 2</strong>: Solution of the wave equation with vanishing Neumann boundary conditions $$\partial_{x}u(t,x)=0$$ at the outer boundaries of the computational domain. These results are from the <code>Wave3D</code> code.
-            </center>
+            <strong>Figure 2</strong>: Solution of the wave equation with vanishing Neumann boundary conditions $\partial_{x}u(t,x)=0$ at the outer boundaries of the computational domain. These results are from the <code>Wave3D</code> code.
         </figcaption>
     </figure>
 </html>
@@ -287,35 +281,41 @@ A visualization of ***outgoing wave boundary conditions*** for the wave equation
 <a name="Figure3_OutgoingWave"></a>
 <html>
     <figure>
-        <img src="assets/images/wave1D_OutgoingWave.gif"/>
+        <img src="assets/images/wave1D_OutgoingWave.gif" class="center"/>
         <figcaption>
-            <center>
-                <strong>Figure 3</strong>: Solution of the wave equation with outgoing wave boundary conditions. These results are from the <code>Wave3D</code> code.
-            </center>
+            <strong>Figure 3</strong>: Solution of the wave equation with outgoing wave boundary conditions. These results are from the <code>Wave3D</code> code.
         </figcaption>
     </figure>
 </html>
 
-### \[Back to [ToC](#ToC)\]
+<a name='BdryCond_Implementation'></a>
+## Implementation \[Back to [ToC](#ToC)\]
 
-# Algorithm 1
-Just a sample algorithmn
-\begin{algorithm}[H]
-\DontPrintSemicolon
-\SetAlgoLined
-\KwResult{Write here the result}
-\SetKwInOut{Input}{Input}\SetKwInOut{Output}{Output}
-\Input{Write here the input}
-\Output{Write here the output}
-\BlankLine
-\While{While condition}{
-    instructions\;
-    \eIf{condition}{
-        instructions1\;
-        instructions2\;
-    }{
-        instructions3\;
-    }
-}
-\caption{While loop with If/Else condition}
-\end{algorithm}
+The boundary condition algorithm can be summarized quite generally by the following pseudocode:
+
+<pre>
+<strong>start LOOP</strong> over <strong>GRIDFUNCTIONS</strong>
+    <strong>start LOOP</strong> over <strong>GHOSTZONES</strong>
+        Update face of <strong>negative x</strong>; decrease <strong>xmin</strong>;
+        Update face of <strong>positive x</strong>; increase <strong>xmax</strong>;
+        Update face of <strong>negative y</strong>; decrease <strong>ymin</strong>;
+        Update face of <strong>positive y</strong>; increase <strong>ymax</strong>;
+        Update face of <strong>negative z</strong>; decrease <strong>zmin</strong>;
+        Update face of <strong>positive z</strong>; increase <strong>zmax</strong>;
+    <strong>end LOOP</strong> over <strong>GHOSTZONES</strong>
+<strong>end LOOP</strong> over <strong>GRIDFUNCTIONS</strong>
+</pre>
+
+Visually, the algorithm above performs the task illustrated by [Figure 4](#Figure4_Algorithm) below.
+
+<a name="Figure4_Algorithm"></a>
+<html>
+  <figure>
+    <img src="assets/images/gnuplot/bdrycond_general_algorithm.gif" class="center"/>
+    <figcaption>
+        <strong>Figure 4</strong>: General boundary condition algorithm. The <font color='blue'><strong>blue</strong></font> points represent the <font color='blue'><strong>interior grid</strong></font>, while the <font color='red'><strong>red</strong></font> points indicate the <font color='red'><strong>exterior grid</strong></font> (prior to the application of boundary conditions). After the <font color='green'><strong>boundary condition</strong></font> has been applied, the exterior grid point turns <font color='green'><strong>green</strong></font>, indicating that it has been updated.
+    </figcaption>
+  </figure>
+</html>
+
+### \[Back to [ToC](#ToC)\]

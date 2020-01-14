@@ -1,7 +1,7 @@
 # Copyright (c) 2019, Leonardo Werneck
 
 # Set animation parameters
-set term gif animate enhanced delay 10 size 900,900
+set term gif animate enhanced delay 10 size 900,900 transparent
 set output 'bdrycond_general_algorithm.gif'
 set font "Helvetica"
 unset key

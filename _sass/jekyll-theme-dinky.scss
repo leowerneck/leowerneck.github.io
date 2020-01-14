@@ -156,6 +156,12 @@ img {
   border: 1px solid #ccc;
 }
 
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 p img, .emoji {
   display: inline;
   margin: 0;
@@ -446,12 +452,15 @@ figure img {
     display: block;
     background:transparent;
     border:0;
+    text-align: center;
 }
 
 figcaption {
     font-size:9pt;
-    margin: -30px 90px 20px 40px;
     line-height: 1.5em;
+    margin-top: -30px;
+    margin-left: 75px;
+    margin-right: 75px;
 }
 
 ol {
