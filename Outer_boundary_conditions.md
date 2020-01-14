@@ -294,16 +294,16 @@ A visualization of ***outgoing wave boundary conditions*** for the wave equation
 The boundary condition algorithm can be summarized quite generally by the following pseudocode:
 
 <pre>
-<strong>start LOOP</strong> over <strong>GRIDFUNCTIONS</strong>
-    <strong>start LOOP</strong> over <strong>GHOSTZONES</strong>
+<strong>start LOOP</strong> over <strong>GHOSTZONES</strong>
+    <strong>start LOOP</strong> over <strong>GRIDFUNCTIONS</strong>
         Update face of <strong>negative x</strong>; decrease <strong>xmin</strong>;
         Update face of <strong>positive x</strong>; increase <strong>xmax</strong>;
         Update face of <strong>negative y</strong>; decrease <strong>ymin</strong>;
         Update face of <strong>positive y</strong>; increase <strong>ymax</strong>;
         Update face of <strong>negative z</strong>; decrease <strong>zmin</strong>;
         Update face of <strong>positive z</strong>; increase <strong>zmax</strong>;
-    <strong>end LOOP</strong> over <strong>GHOSTZONES</strong>
-<strong>end LOOP</strong> over <strong>GRIDFUNCTIONS</strong>
+    <strong>end LOOP</strong> over <strong>GRIDFUNCTIONS</strong>
+<strong>end LOOP</strong> over <strong>GHOSTZONES</strong>
 </pre>
 
 Visually, the algorithm above performs the task illustrated by [Figure 4](#Figure4_Algorithm) below.
