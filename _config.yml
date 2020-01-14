@@ -4,3 +4,6 @@ institution: University of São Paulo, Brazil
 show_downloads: false
 google_analytics:
 theme: jekyll-theme-dinky
+markdown: kramdown
+kramdown:
+  math_engine: mathjax

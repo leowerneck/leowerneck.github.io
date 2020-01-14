@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Leonardo Werneck
-mathjax: true
 ---
 
 <center>
