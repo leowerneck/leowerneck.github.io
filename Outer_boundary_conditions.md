@@ -303,7 +303,7 @@ The boundary condition algorithm can be summarized quite generally by the follow
           Update face of <strong>positive y</strong>; increase <strong>ymax</strong>;
           <strong>IF</strong> DIM>2:
             Update face of <strong>negative z</strong>; decrease <strong>zmin</strong>;
-              Update face of <strong>positive z</strong>; increase <strong>zmax</strong>;
+            Update face of <strong>positive z</strong>; increase <strong>zmax</strong>;
     <strong>end LOOP</strong> over <strong>GRIDFUNCTIONS</strong>
 <strong>end LOOP</strong> over <strong>GHOSTZONES</strong>
 </pre>
