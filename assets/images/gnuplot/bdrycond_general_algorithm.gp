@@ -1,4 +1,4 @@
-# Copyright (c) 2019, Leonardo Werneck
+# Copyright (c) 2020 Leonardo Werneck
 
 # Set animation parameters
 set term gif animate enhanced delay 10 size 900,900 transparent
