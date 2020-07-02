@@ -179,7 +179,7 @@ A visualization of ***vanishing Neumann boundary conditions*** for the wave equa
 <a name='BdryCond_Robin'></a>
 ### Robin boundary conditions \[Back to [ToC](#ToC)\]
 
-[Robin boundary conditions](https://en.wikipedia.org/wiki/Robin_boundary_condition) specify a comobination of the *function* and its *derivative*, at the ghostzones, e.g.
+[Robin boundary conditions](https://en.wikipedia.org/wiki/Robin_boundary_condition) specify a combination of the *function* and its *derivative*, at the ghostzones, e.g.
 
 $$
 \alpha f + \beta \partial_{n}f = \gamma\ ,
