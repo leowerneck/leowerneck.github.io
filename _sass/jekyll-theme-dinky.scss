@@ -496,30 +496,40 @@ p {
   margin: 0;
 }
 
-.performance-facts {
+.nutrition-facts {
   border: 1px solid black;
   margin: 20px;
   float: left;
   width: 280px;
   padding: 0.5rem;
+  background: White;
+  color: Black;
 }
-.performance-facts table {
+.nutrition-facts table {
   border-collapse: collapse;
+  color: Black;
+  background-color: White;
 }
 
-.performance-facts__title {
+.nutrition-facts__title {
   font-weight: bold;
   font-size: 2rem;
   margin: 0 0 0.25rem 0;
+  color: Black;
+  background-color: White;
 }
 
-.performance-facts__header {
+.nutrition-facts__header {
   border-bottom: 10px solid black;
   padding: 0 0 0.25rem 0;
   margin: 0 0 0.5rem 0;
+  color: Black;
+  background-color: White;
 }
 .performance-facts__header p {
   margin: 0;
+  color: Black;
+  background-color: White;
 }
 
 .performance-facts__table, .performance-facts__table--small, .performance-facts__table--grid {
@@ -530,6 +540,8 @@ p {
 .performance-facts__table--small thead tr td,
 .performance-facts__table--grid thead tr td {
   border: 0;
+  background: White;
+  color: Black;
 }
 .performance-facts__table th, .performance-facts__table--small th, .performance-facts__table--grid th,
 .performance-facts__table td,
@@ -573,6 +585,8 @@ p {
 .performance-facts__table--small td {
   border: 0;
   padding: 0;
+  background: White;
+  color: Black;
 }
 
 .performance-facts__table--grid {
