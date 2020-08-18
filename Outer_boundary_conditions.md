@@ -26,7 +26,7 @@ Applying outer boundary conditions is a necessary task when solving [partial dif
 
 Outer boundary conditions reflect the fact that we must restrict our attention to a finite region, thus introducing *artificial boundaries* into the problem. A wave propagating along the $$x$$-direction will do so forever, but if one studies this wave in a finite region of space, say $$x\in[0,L]$$, then the wave will interact with the boundaries at $$x=0$$ and $$x=L$$, causing, for example, undesirable reflections.
 
-The reason why we refer to these boundary conditions as *outer* is the following: we generally consider a numerical grid with $$N+1$$ discretization points. This grid, which is where we are interested in obtaining the solution, is refered to as the ***interior grid***. However, say we are solving the problem:
+The reason why we refer to these boundary conditions as *outer* is the following: we generally consider a numerical grid with $$N+1$$ discretization points. This grid, which is where we are interested in obtaining the solution, is referred to as the ***interior grid***. However, say we are solving the problem:
 
 $$
 \partial_{t}f(t,x) = \partial_{x}f(t,x)\ .
@@ -38,7 +38,7 @@ $$
 \partial_{t}f^{n}_{i} = \frac{f^{n}_{i+1} - f^{n}_{i-1}}{2\Delta x}\ ,
 $$
 
-where the notation $$f^{n}_{i} \equiv f\left(t_{0} + n\cdot\Delta t,x_{0}+i\cdot\Delta x\right)$$ and $$\Delta t$$ and $$\Delta x$$ are the step sizes in the $$t$$ and $$x$$-directions respectively. Now, assuming that the computational grid contains $$N_{x}+1$$ spatial discretization points, i.e. $$i=0,\ldots,N_{x}$$, then we run into problems when evaluating
+where we have used the notation $$f^{n}_{i} \equiv f\left(t_{0} + n\cdot\Delta t,x_{0}+i\cdot\Delta x\right)$$ and $$\Delta t$$ and $$\Delta x$$ are the step sizes in the $$t$$ and $$x$$-directions respectively. Now, assuming that the computational grid contains $$N_{x}+1$$ spatial discretization points, i.e. $$i=0,\ldots,N_{x}$$, then we run into problems when evaluating
 
 $$
 \begin{align}
@@ -49,7 +49,7 @@ $$
 
 Notice that the values of $$f$$ at the points $$f^{n}_{0}$$ and $$f^{n}_{N_{x}}$$ are legitimate, in the sense that they are part of the *interior* grid. However, evaluation of the right-hand side of the evolution equation of $$f$$ at those points requires that we have information of the function $$f$$ at the points $$f^{n}_{-1}$$ and $$f^{n}_{N_{x}+1}$$, which are ***not*** part of the interior grid.
 
-The points $$i=-1$$ and $$i=N_{x}+1$$ can then be introduced artificially into the problem, so that we are able to use our numerical scheme to evaluate all interior grid points. Since these points do not belong to the interior grid they are refered to as ***exterior (outer) grid points*** or ***ghostzones***. Outer boundary conditions are thus responsible for specifying the behaviour of the function at the ghostzones. The combination of interior and exterior grids form the computational domain.
+The points $$i=-1$$ and $$i=N_{x}+1$$ can then be introduced artificially into the problem, so that we are able to use our numerical scheme to evaluate all interior grid points. Since these points do not belong to the interior grid they are referred to as ***exterior (outer) grid points*** or ***ghostzones***. Outer boundary conditions are thus responsible for specifying the behaviour of the function at the ghostzones. The combination of interior and exterior grids form the computational domain.
 
 As a final comment, we note that the number of ghostzones is scheme dependent. For example, a fourth-order centered [finite differences](Finite_differences.md) would lead to the equation
 
@@ -79,12 +79,12 @@ $$
 f\left(t_{0}+n\cdot\Delta t,\rho_{0}+i\cdot\Delta\rho,\theta_{0}+j\cdot\Delta\theta\right) \equiv f^{n}_{i,j}\ .
 $$
 
-Then, returning to our previous example of central finite differences, we run intro trouble when evaluating
+Then, returning to our previous example of central finite differences, we run into trouble when evaluating
 
 $$
 \begin{align}
-\partial_{t}f^{n}_{0,j} &= \frac{f^{n}_{1,j} - f^{n}_{-1,j}}{2\Delta x}\ ,\\
-\partial_{t}f^{n}_{N_{\rho},j} &= \frac{f^{n}_{N_{\rho}+1,j} - f^{n}_{N_{\rho}-1,j}}{2\Delta x}\ .
+\partial_{\rho}f^{n}_{0,j} &= \frac{f^{n}_{1,j} - f^{n}_{-1,j}}{2\Delta x}\ ,\\
+\partial_{\rho}f^{n}_{N_{\rho},j} &= \frac{f^{n}_{N_{\rho}+1,j} - f^{n}_{N_{\rho}-1,j}}{2\Delta x}\ .
 \end{align}
 $$
 
@@ -156,7 +156,7 @@ $$
 \partial_{n}f = \alpha\ ,
 $$
 
-with $$\alpha$$ a constant and $$\partial_{n}$$ indicate the derivative along the direction which is normal to the boundary. Imposing this condition when more ghostzones are present is relatively straightforward as well, though one must sometimes switch to using [centered/backwards/forwards finite differences](Finite_differences.md). For example, consider the differential equation
+where $$\alpha$$ is a constant and $$\partial_{n}$$ indicates the derivative along the direction which is normal to the boundary. Imposing this condition when more ghostzones are present is relatively straightforward as well, though one must sometimes switch to using [centered/backwards/forwards finite differences](Finite_differences.md). For example, consider the differential equation
 
 $$
 \partial_{t}f = -v\partial_{x}f\ ,
