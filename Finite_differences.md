@@ -22,19 +22,19 @@ pdfpath: /assets/Notes/Finite_differences.pdf
 <a name="FD">
 # Finite differences
 
-[Finite differences](https://en.wikipedia.org/wiki/Finite_difference) are approximations to the derivatives of functions that we can use to solve differential equations. Instead of considering the exact definition
+[Finite differences](https://en.wikipedia.org/wiki/Finite_difference) are approximations to the derivatives of functions that we can use to solve differential equations. Instead of considering the [exact definition of the derivative](https://en.wikipedia.org/wiki/Derivative) of a function $f(x)$,
 
 $$
-\frac{df}{dx} = \lim_{dx\to0}\frac{f(x+dx) - f(x)}{dx}\ ,
+\frac{df}{dx} = \lim_{\Delta x\to0}\frac{f(x+\Delta x) - f(x)}{\Delta x}\ ,
 $$
 
-we could, for example, not assume that $dx$ is infinitesimal and instead simply consider the *finite difference approximation*
+we could, instead, assume that $\Delta x$ is not infinitesimal and instead simply consider the *finite difference approximation*
 
 $$
-\frac{df}{dx} \approx \frac{f(x+dx) - f(x)}{dx}\ .
+\frac{df}{dx} \approx \frac{f(x+\Delta x) - f(x)}{\Delta x}\ .
 $$
 
-Now while this is quite an intuitive way of thinking about finite differences, there are more systematic ways of obtaining derivatives of functions that are accurate to different orders in $dx$. In the following sections we will discuss them in more detail.
+Now while this is quite an intuitive way of thinking about finite differences, there are more systematic ways of obtaining derivatives of functions that are accurate to different orders in $\Delta x$. In the following sections we will discuss them in more detail.
 
 <a name="FDTypes">
 ## Forward, backwards, and centered finite differences  \[Back to [ToC](#ToC)\]
@@ -45,7 +45,7 @@ $$
 \begin{align}
 \frac{df}{dx} &= \lim_{\Delta x\to0}\frac{f(x+\Delta x) - f(x)}{\Delta x}    \ ,\\
 \frac{df}{dx} &= \lim_{\Delta x\to0}\frac{f(x)    - f(x-\Delta x)}{\Delta x} \ ,\\
-\frac{df}{dx} &= \lim_{\Delta x\to0}\frac{f(x+\Delta x) - f(x-dx)}{2\Delta x}\ .
+\frac{df}{dx} &= \lim_{\Delta x\to0}\frac{f(x+\Delta x) - f(x-\Delta x)}{2\Delta x}\ .
 \end{align}
 $$
 
@@ -61,9 +61,9 @@ $$
 
 In the first equation above we compute the derivative of $f(x)$ by considering the points $\big(f(x),f(x+\Delta x)\big)$. Because of the nature of the approximation to use points that are further *up* the $x$-direction, this is called a ***forward finite difference approximation***.
 
-Similarly, the second equation above is used to compute the derivative of $f(x)$ by considering the points $\big(f(x-dx),f(x)\big)$. Because of the nature of the approximation to use points that are further *down* the $x$-direction, this is called a ***backwards finite difference approximation***.
+Similarly, the second equation above is used to compute the derivative of $f(x)$ by considering the points $\big(f(x-\Delta x),f(x)\big)$. Because of the nature of the approximation to use points that are further *down* the $x$-direction, this is called a ***backwards finite difference approximation***.
 
-Finally, the third equation above computes the derivative of $f(x)$ by considering the points $\big(f(x-dx),f(x+dx)\big)$. Quite appropriately, this is referred to as ***centered finite difference approximation***.
+Finally, the third equation above computes the derivative of $f(x)$ by considering the points $\big(f(x-\Delta x),f(x+\Delta x)\big)$. Quite appropriately, this is referred to as ***centered finite difference approximation***.
 
 <a name="FDTaylor">
 ## Determining finite differences expressions \[Back to [ToC](#ToC)\]
@@ -261,7 +261,7 @@ M =
 \end{bmatrix}\ .
 $$
 
-The following code in Python, which uses the [SymPy](https://www.sympy.org/) python package, takes care of this:
+The following code in `Python`, which uses the [SymPy](https://www.sympy.org/) `Python` package, takes care of this:
 
 ```python
 # Import SymPy Python module
@@ -359,6 +359,7 @@ M_inv = M**(-1)
 The result we obtain is
 
 $$
+M^{-1} = 
 \left[
 \begin{matrix}
 1 & - \frac{49}{20} & \frac{203}{90} & - \frac{49}{48} & \frac{35}{144} & - \frac{7}{240} & \frac{1}{720}\\0 & 6 & - \frac{87}{10} & \frac{29}{6} & - \frac{31}{24} & \frac{1}{6} & - \frac{1}{120}\\0 & - \frac{15}{2} & \frac{117}{8} & - \frac{461}{48} & \frac{137}{48} & - \frac{19}{48} & \frac{1}{48}\\0 & \frac{20}{3} & - \frac{127}{9} & \frac{31}{3} & - \frac{121}{36} & \frac{1}{2} & - \frac{1}{36}\\0 & - \frac{15}{4} & \frac{33}{4} & - \frac{307}{48} & \frac{107}{48} & - \frac{17}{48} & \frac{1}{48}\\0 & \frac{6}{5} & - \frac{27}{10} & \frac{13}{6} & - \frac{19}{24} & \frac{2}{15} & - \frac{1}{120}\\0 & - \frac{1}{6} & \frac{137}{360} & - \frac{5}{16} & \frac{17}{144} & - \frac{1}{48} & \frac{1}{720}
