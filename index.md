@@ -55,6 +55,8 @@ I have also obtained a M.Sc. in Physics, under supervision of
 [Prof. Dr. Victor O. Rivelles](http://itec.if.usp.br/~rivelles/), and a
 Teaching Degree in Physics, where my undergraduate research was
 supervised by Prof. Dr. Artour G. Elfimov, both from USP.
+<br><br>
+[**My CV (Updated Nov. 2021)**](assets/CV.pdf)
 
 <a name='Research'>
 ## Research
