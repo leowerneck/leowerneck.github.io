@@ -32,7 +32,7 @@ conducting research under supervision of [Prof. Dr. Zachariah
 B. Etienne](http://astro.phys.wvu.edu/zetienne/). I am also a member of
 the [TCAN collaboration on Binary Neutron
 Stars](http://compact-binaries.org/). I was a postdoc at [West Virginia
-University](https://www.wvu.edu) from Nov. 2020 to Oct. 2021, where I
+University](https://www.wvu.edu) from Oct. 2020 to Oct. 2021, where I
 worked on the same project I am currently working on.
 <br><br>
 I have obtained my Ph.D. in Physics from the [Institute of
