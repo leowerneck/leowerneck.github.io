@@ -56,7 +56,7 @@ I have also obtained a M.Sc. in Physics, under supervision of
 Teaching Degree in Physics, where my undergraduate research was
 supervised by Prof. Dr. Artour G. Elfimov, both from USP.
 <br><br>
-[**My CV (Updated Mar. 2023)**](assets/CV.pdf)
+[**My CV (Updated May 2024)**](assets/CV.pdf)
 
 <a name='Research'>
 ## Research
