@@ -1,0 +1,4 @@
+/* Reduce the base font size for the entire site */
+body {
+  font-size: 11px; /* Adjust this value as needed (default is 16px) */
+}
