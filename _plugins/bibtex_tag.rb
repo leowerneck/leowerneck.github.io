@@ -1,6 +1,6 @@
 # _plugins/paper_tag.rb
 module Jekyll
-  class PaperTag < Liquid::Block
+  class BibtexTag < Liquid::Block
     def initialize(tag_name, image_url, tokens)
       super
       @image_url = image_url.strip
@@ -13,11 +13,11 @@ module Jekyll
 
       # Create the HTML structure
       html = <<~HTML
-        <div class="paper-entry bibtex-entry">
-          <div class="paper-image">
-            <img src="#{@image_url}" alt="Paper thumbnail" style="width: 100px; height: 100px; object-fit: cover;">
+        <div class="bibtex-entry">
+          <div class="bibtex-image">
+            <img src="#{@image_url}" alt="Paper thumbnail">
           </div>
-          <div class="paper-details">
+          <div class="bibtex-details">
             <p></p>
           </div>
           <div class="bibtex-data">
@@ -31,4 +31,4 @@ module Jekyll
   end
 end
 
-Liquid::Template.register_tag('paper', Jekyll::PaperTag)
+Liquid::Template.register_tag('bibtex', Jekyll::BibtexTag)

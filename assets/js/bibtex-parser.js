@@ -99,7 +99,7 @@ function formatCitation(bibData) {
 document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('.bibtex-entry').forEach(container => {
     const bibtexData = container.querySelector('.bibtex-data');
-    const displayElement = container.querySelector('.paper-details p');
+    const displayElement = container.querySelector('.bibtex-details p');
 
     if (bibtexData && displayElement) {
       const parsed = parseBibTeX(bibtexData.textContent);

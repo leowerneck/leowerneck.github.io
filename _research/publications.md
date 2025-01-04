@@ -5,7 +5,7 @@ toc: false
 bibtex: true
 ---
 
-{% paper /assets/images/web-app-manifest-512x512.png %}
+{% bibtex /assets/images/web-app-manifest-512x512.png %}
 @article{Zenati:2024pgn,
     author = "Zenati, Yossef and Krolik, Julian H. and Werneck, Leonardo R. and Etienne, Zachariah B. and Noble, Scott C. and Murguia-Berthier, Ariadna and Schnittman, Jeremy D.",
     title = "{The Dynamics of Debris Disk Creation in Neutron Star Mergers}",
@@ -19,9 +19,9 @@ bibtex: true
     pages = "50",
     year = "2024"
 }
-{% endpaper %}
+{% endbibtex %}
 
-{% paper /assets/images/web-app-manifest-512x512.png %}
+{% bibtex /assets/images/web-app-manifest-512x512.png %}
 
 @article{10.1063/5.0206405,
     author = {Werneck, L. R. and Jessup, C. and Brandenberger, A. and Knowles, T. and Lewandowski, C. W. and Nolan, M. and Sible, K. and Etienne, Z. B. and D’Urso, B.},
@@ -41,9 +41,9 @@ bibtex: true
 
 
 
-{% endpaper %}
+{% endbibtex %}
 
-{% paper /assets/images/web-app-manifest-512x512.png %}
+{% bibtex /assets/images/web-app-manifest-512x512.png %}
 @article{Zenati:2023lwh,
     author = "Zenati, Yossef and Krolik, Julian H. and Werneck, Leonardo R. and Murguia-Berthier, Ariadna and Etienne, Zachariah B. and Noble, Scott C. and Piran, Tsvi",
     title = "{Bound Debris Expulsion from Neutron Star Merger Remnants}",
@@ -57,9 +57,9 @@ bibtex: true
     pages = "161",
     year = "2023"
 }
-{% endpaper %}
+{% endbibtex %}
 
-{% paper /assets/images/web-app-manifest-512x512.png %}
+{% bibtex /assets/images/web-app-manifest-512x512.png %}
 @article{Werneck:2022exo,
     author = "Werneck, Leonardo R. and others",
     title = "{Addition of tabulated equation of state and neutrino leakage support to illinoisgrmhd}",
@@ -73,9 +73,9 @@ bibtex: true
     pages = "044037",
     year = "2023"
 }
-{% endpaper %}
+{% endbibtex %}
 
-{% paper /assets/images/web-app-manifest-512x512.png %}
+{% bibtex /assets/images/web-app-manifest-512x512.png %}
 @article{Armengol:2021mbt,
     author = "Armengol, Federico G. Lopez and others",
     title = "{Handing off the outcome of binary neutron star mergers for accurate and long-term postmerger simulations}",
@@ -89,9 +89,9 @@ bibtex: true
     pages = "083015",
     year = "2022"
 }
-{% endpaper %}
+{% endbibtex %}
 
-{% paper /assets/images/web-app-manifest-512x512.png %}
+{% bibtex /assets/images/web-app-manifest-512x512.png %}
 @article{Assumpcao:2021fhq,
     author = "Assumpcao, Thiago and Werneck, Leonardo R. and Jacques, Terrence Pierre and Etienne, Zachariah B.",
     title = "{Fast hyperbolic relaxation elliptic solver for numerical relativity: Conformally flat, binary puncture initial data}",
@@ -105,9 +105,9 @@ bibtex: true
     pages = "104037",
     year = "2022"
 }
-{% endpaper %}
+{% endbibtex %}
 
-{% paper /assets/images/web-app-manifest-512x512.png %}
+{% bibtex /assets/images/web-app-manifest-512x512.png %}
 @article{Werneck:2021kch,
     author = "Werneck, Leonardo R. and Etienne, Zachariah B. and Abdalla, Elcio and Cuadros-Melgar, Bertha and Pellicer, C. E.",
     title = "{NRPyCritCol \& SFcollapse1D: an open-source, user-friendly toolkit to study critical phenomena}",
@@ -121,9 +121,9 @@ bibtex: true
     pages = "245005",
     year = "2021"
 }
-{% endpaper %}
+{% endbibtex %}
 
-{% paper /assets/images/web-app-manifest-512x512.png %}
+{% bibtex /assets/images/web-app-manifest-512x512.png %}
 @article{Murguia-Berthier:2021tnt,
     author = "Murguia-Berthier, Ariadna and others",
     title = "{HARM3D+NUC: A New Method for Simulating the Post-merger Phase of Binary Neutron Star Mergers with GRMHD, Tabulated EOS, and Neutrino Leakage}",
@@ -137,4 +137,4 @@ bibtex: true
     pages = "95",
     year = "2021"
 }
-{% endpaper %}
+{% endbibtex %}
