@@ -11,6 +11,42 @@ main:
   - title: "<i class=\"fas fa-circle-info\"></i> Resume/CV"
     url: /resume-cv/
 
+# Research
+research:
+  - title: "Overview"
+    url: /research/
+  - title: "Software Development"
+    url: /research/software/
+    children:
+      - title: "<em>General Relativistic Magnetohydrodynamics</em>"
+        children:
+          - title: "IllinoisGRMHD"
+            url: /research/software/illinoisgrmhd/
+          - title: "GRHayL"
+            url: /research/software/grhayl/
+          - title: "NRPyLeakage"
+            url: /research/software/nrpyleakage/
+      - title: "<em>Numerical Relativity</em>"
+        children:
+          - title: "Einstein Toolkit"
+            url: /research/software/etk/
+          - title: "NRPy"
+            url: /research/software/nrpy/
+          - title: "NRPyElliptic"
+            url: /research/software/nrpyelliptic/
+          - title: "NRPyCritCol"
+            url: /research/software/nrpycritcol/
+          - title: "SFcollapse1D"
+            url: /research/software/sfcollapse1d/
+      - title: "<em>Applied Physics</em>"
+        children:
+          - title: "RETINAS"
+            url: /research/software/retinas/
+  - title: "Publications"
+    url: /research/publications/
+  - title: "Talks"
+    url: /research/talks/
+
 # Data Structures & Algorithms links
 dsa:
   - title: "1 Getting Started"
