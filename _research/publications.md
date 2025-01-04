@@ -5,7 +5,8 @@ toc: false
 bibtex: true
 ---
 
-{% bibtex /assets/images/web-app-manifest-512x512.png %}
+# Peer-Reviewed
+{% bibtex /assets/images/papers/2024_zenati.png %}
 @article{Zenati:2024pgn,
     author = "Zenati, Yossef and Krolik, Julian H. and Werneck, Leonardo R. and Etienne, Zachariah B. and Noble, Scott C. and Murguia-Berthier, Ariadna and Schnittman, Jeremy D.",
     title = "{The Dynamics of Debris Disk Creation in Neutron Star Mergers}",
@@ -21,29 +22,24 @@ bibtex: true
 }
 {% endbibtex %}
 
-{% bibtex /assets/images/web-app-manifest-512x512.png %}
+{% bibtex /assets/images/papers/2024_werneck.png %}
 
 @article{10.1063/5.0206405,
-    author = {Werneck, L. R. and Jessup, C. and Brandenberger, A. and Knowles, T. and Lewandowski, C. W. and Nolan, M. and Sible, K. and Etienne, Z. B. and D’Urso, B.},
-    title = {Cross-correlation image analysis for real-time single particle tracking},
+    author = "Werneck, L. R. and Jessup, C. and Brandenberger, A. and Knowles, T. and Lewandowski, C. W. and Nolan, M. and Sible, K. and Etienne, Z. B. and D’Urso, B.",
+    title = "{Cross-Correlation Image Analysis for Real-time Single Particle Tracking}",
+    eprint = "2310.08770",
+    archivePrefix = "arXiv",
+    primaryClass = "physics.optics",
+    doi = "10.1063/5.0206405",
     journal = {Review of Scientific Instruments},
-    volume = {95},
-    number = {7},
-    pages = {073708},
-    year = {2024},
-    month = {07},
-    abstract = {Accurately measuring the translations of objects between images is essential in many fields, including biology, medicine, chemistry, and physics. One important application is tracking one or more particles by measuring their apparent displacements in a series of images. Popular methods, such as the center of mass, often require idealized scenarios to reach the shot noise limit of particle tracking and, therefore, are not generally applicable to multiple image types. More general methods, such as maximum likelihood estimation, reliably approach the shot noise limit, but are too computationally intense for use in real-time applications. These limitations are significant, as real-time, shot-noise-limited particle tracking is of paramount importance for feedback control systems. To fill this gap, we introduce a new cross-correlation-based algorithm that approaches shot-noise-limited displacement detection and a graphics processing unit-based implementation for real-time image analysis of a single particle.},
-    issn = {0034-6748},
-    doi = {10.1063/5.0206405},
-    url = {https://doi.org/10.1063/5.0206405},
-    eprint = {https://pubs.aip.org/aip/rsi/article-pdf/doi/10.1063/5.0206405/20050243/073708\_1\_5.0206405.pdf},
+    volume = "95",
+    number = "7",
+    pages = "073708",
+    year = "2024",
 }
-
-
-
 {% endbibtex %}
 
-{% bibtex /assets/images/web-app-manifest-512x512.png %}
+{% bibtex /assets/images/papers/2023_zenati.png %}
 @article{Zenati:2023lwh,
     author = "Zenati, Yossef and Krolik, Julian H. and Werneck, Leonardo R. and Murguia-Berthier, Ariadna and Etienne, Zachariah B. and Noble, Scott C. and Piran, Tsvi",
     title = "{Bound Debris Expulsion from Neutron Star Merger Remnants}",
@@ -59,7 +55,7 @@ bibtex: true
 }
 {% endbibtex %}
 
-{% bibtex /assets/images/web-app-manifest-512x512.png %}
+{% bibtex /assets/images/papers/2022_werneck.png %}
 @article{Werneck:2022exo,
     author = "Werneck, Leonardo R. and others",
     title = "{Addition of tabulated equation of state and neutrino leakage support to illinoisgrmhd}",
@@ -75,9 +71,9 @@ bibtex: true
 }
 {% endbibtex %}
 
-{% bibtex /assets/images/web-app-manifest-512x512.png %}
+{% bibtex /assets/images/papers/2021_armengol.png %}
 @article{Armengol:2021mbt,
-    author = "Armengol, Federico G. Lopez and others",
+    author = "Armengol, Federico G. Lopez and Etienne, Zachariah B. and Noble, Scott C. and Kelly, Bernard J. and Werneck, Leonardo R. and others",
     title = "{Handing off the outcome of binary neutron star mergers for accurate and long-term postmerger simulations}",
     eprint = "2112.09817",
     archivePrefix = "arXiv",
@@ -91,7 +87,7 @@ bibtex: true
 }
 {% endbibtex %}
 
-{% bibtex /assets/images/web-app-manifest-512x512.png %}
+{% bibtex /assets/images/papers/2021_assumpcao.png %}
 @article{Assumpcao:2021fhq,
     author = "Assumpcao, Thiago and Werneck, Leonardo R. and Jacques, Terrence Pierre and Etienne, Zachariah B.",
     title = "{Fast hyperbolic relaxation elliptic solver for numerical relativity: Conformally flat, binary puncture initial data}",
@@ -107,10 +103,10 @@ bibtex: true
 }
 {% endbibtex %}
 
-{% bibtex /assets/images/web-app-manifest-512x512.png %}
+{% bibtex /assets/images/papers/2021_werneck.png %}
 @article{Werneck:2021kch,
     author = "Werneck, Leonardo R. and Etienne, Zachariah B. and Abdalla, Elcio and Cuadros-Melgar, Bertha and Pellicer, C. E.",
-    title = "{NRPyCritCol \& SFcollapse1D: an open-source, user-friendly toolkit to study critical phenomena}",
+    title = "{NRPyCritCol & SFcollapse1D: an open-source, user-friendly toolkit to study critical phenomena}",
     eprint = "2106.06553",
     archivePrefix = "arXiv",
     primaryClass = "gr-qc",
@@ -123,9 +119,9 @@ bibtex: true
 }
 {% endbibtex %}
 
-{% bibtex /assets/images/web-app-manifest-512x512.png %}
+{% bibtex /assets/images/papers/2021_murguia-berthier.png %}
 @article{Murguia-Berthier:2021tnt,
-    author = "Murguia-Berthier, Ariadna and others",
+    author = "Murguia-Berthier, Ariadna and Noble, Scott C. and Roberts, Luke F. and Remirez-Ruiz, Enrico and Werneck, Leonardo R. and others",
     title = "{HARM3D+NUC: A New Method for Simulating the Post-merger Phase of Binary Neutron Star Mergers with GRMHD, Tabulated EOS, and Neutrino Leakage}",
     eprint = "2106.05356",
     archivePrefix = "arXiv",
@@ -136,5 +132,33 @@ bibtex: true
     number = "2",
     pages = "95",
     year = "2021"
+}
+{% endbibtex %}
+
+# Preprints
+
+{% bibtex /assets/images/papers/2024_pierre-jacques.png %}
+@article{Jacques:2024pxh,
+    author = "Jacques, Terrence Pierre and Cupp, Samuel and Werneck, Leonardo R. and Tootle, Samuel D. and Hamilton, Maria C. Babiuc and Etienne, Zachariah B.",
+    title = "{GRoovy: A General Relativistic Hydrodynamics Code for Dynamical Spacetimes with Curvilinear Coordinates, Tabulated Equations of State, and Neutrino Physics}",
+    eprint = "2412.03659",
+    archivePrefix = "arXiv",
+    primaryClass = "gr-qc",
+    month = "12",
+    year = "2024",
+    misc = "Submitted to Phys. Rev. D"
+}
+{% endbibtex %}
+
+{% bibtex /assets/images/papers/2024_duez.png %}
+@article{Duez:2024ujs,
+    author = "Duez, Matthew D. and Cadenhead, Courtney L. and Etienne, Zachariah B. and Kelly, Bernard and Werneck, Leonardo R.",
+    title = "{Toward 2D Dynamo Models Calibrated by Global 3D Relativistic Accretion Disk Simulations}",
+    eprint = "2409.02899",
+    archivePrefix = "arXiv",
+    primaryClass = "astro-ph.HE",
+    month = "9",
+    year = "2024",
+    misc = "Submitted to Phys. Rev. D"
 }
 {% endbibtex %}

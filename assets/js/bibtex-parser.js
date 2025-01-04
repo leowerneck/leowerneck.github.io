@@ -47,7 +47,7 @@ function formatAuthors(authorStr, boldAuthor = "L.R. Werneck") {
 
       // Check if this is the author to be bold (compare original unformatted name)
       if (formattedName === boldAuthor) {
-        return `<strong>${formattedName}</strong>`;
+        return `<strong>L.R.&nbsp;Werneck</strong>`;
       }
       return formattedName;
     })
@@ -73,27 +73,23 @@ function formatCitation(bibData) {
   }
 
   if (fields.journal) {
-    parts.push(fields.journal);
+    parts.push(`<a href="https://doi.org/${fields.doi}">${fields.journal}, ${fields.volume} (${fields.number}) ${fields.pages}</a>`);
   }
 
-  if (fields.volume) {
-    parts.push(fields.volume);
+  if (fields.eprint && fields.archiveprefix === "arXiv") {
+    parts.push(`arXiv:<a href="https://arxiv.org/abs/${fields.eprint}">${fields.eprint}</a> [${fields.primaryclass}]`)
   }
 
-  if (fields.number) {
-    parts.push(`(${fields.number})`);
-  }
-
-  if (fields.pages) {
-    parts.push(fields.pages);
+  if (fields.misc) {
+    parts.push(`<em>${fields.misc}</em>`)
   }
 
   if (fields.year) {
     // Add year in parentheses with bold numbers
-    parts.push(`(<strong>${fields.year}</strong>).`);
+    return parts.join(', ') + ` (<strong>${fields.year}</strong>).`;
   }
 
-  return parts.join(', ');
+  return undefined;
 }
 
 document.addEventListener('DOMContentLoaded', function() {
