@@ -1,0 +1,26 @@
+.bibtex-entry {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    max-width: 800px;
+}
+
+.bibtex-image {
+    border: 1px solid #ccc;
+    margin-left: 10px;
+    margin-right: 20px;
+    width: 100px;
+    height: 100px;
+    flex-shrink: 0;
+}
+
+.bibtex-details {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+.bibtex-details p {
+    margin: 0;
+    line-height: 1.5;
+}

@@ -311,6 +311,10 @@ collections:
     sort_by: entry
     permalink: /:collection/:path/
 
+  research:
+    output: true
+    permalink: /:collection/:path/
+
 # Defaults
 defaults:
   # _pages
@@ -331,6 +335,18 @@ defaults:
       comments: # true
       share: true
       related: true
+  # _research
+  - scope:
+      path: ""
+      type: research
+    values:
+      layout: single
+      author_profile: false
+      subtitle: "Research"
+      toc: true
+      sidebar:
+        nav: "research"
+
   # _dsa
   - scope:
       path: ""

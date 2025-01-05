@@ -128,6 +128,10 @@ body {
     }
   }
 
+  li {
+    text-align: justify;
+  }
+
   a:not(.btn) {
     &:hover {
       text-decoration: underline;
