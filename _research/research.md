@@ -1,7 +1,7 @@
 ---
-title: Research
+title: Overview
 permalink: /research/
 ---
 
-Hello, research!
+In progress. [Publications](/research/publications/) and [talks](/research/talks/) already available!
 
