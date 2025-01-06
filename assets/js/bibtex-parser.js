@@ -33,73 +33,178 @@ function formatAuthorName(authorStr) {
   return `${initials}. ${lastName}`;
 }
 
-function formatAuthors(authorStr, boldAuthor = "L.R. Werneck") {
-  // Replace "others" with italicized "et al."
-  authorStr = authorStr.replace(/\band\s+others\b/, 'and <i>et al</i>.');
+function formatAuthors(authorStr, myName = "L.R. Werneck") {
+  // Split authors into array
+  const authors = authorStr.split(' and ').map(a => a.trim());
 
-  return authorStr.split(' and ')
-    .map(author => {
-      author = author.trim();
-      // Skip formatting for the et al. part
-      if (author.includes('et al')) return author;
+  // Find my position in the author list
+  const myIndex = authors.findIndex(author => formatAuthorName(author) === myName);
 
-      const formattedName = formatAuthorName(author);
+  // If there are 5 or fewer authors, handle normally
+  if (authors.length <= 5) {
+    if (myIndex === -1) {
+      return authors.map(author => formatAuthorName(author)).join(', ');
+    }
 
-      // Check if this is the author to be bold (compare original unformatted name)
-      if (formattedName === boldAuthor) {
-        return `<strong>L.R.&nbsp;Werneck</strong>`;
-      }
-      return formattedName;
-    })
-    .join(', ');
+    let formattedAuthors = authors
+      .map((author, index) => {
+        if (index === myIndex) {
+          return `<strong>${myName}</strong>`;
+        }
+        return formatAuthorName(author);
+      });
+
+    // Add "and" before the last author if needed
+    if (formattedAuthors.length > 1) {
+      formattedAuthors[formattedAuthors.length - 1] = 'and ' + formattedAuthors[formattedAuthors.length - 1];
+    }
+
+    return formattedAuthors.join(', ');
+  }
+
+  // More than 5 authors
+  if (myIndex === -1 || myIndex >= 5) {
+    // Show first 5 authors and et al.
+    const firstFive = authors.slice(0, 5).map(author => formatAuthorName(author));
+    if (myIndex > 5) {
+      return firstFive.join(', ') + ', ' + `<strong>${myName}</strong>` + ' et al.';
+    }
+    return firstFive.join(', ') + ' et al.';
+  }
+
+  // I'm among the first 5 authors
+  let formattedAuthors = authors.slice(0, 5).map((author, index) => {
+    if (index === myIndex) {
+      return `<strong>${myName}</strong>`;
+    }
+    return formatAuthorName(author);
+  });
+
+  return formattedAuthors.join(', ') + ' et al.';
+}
+
+function formatTitle(title) {
+  // List of words to keep lowercase
+  const lowercaseWords = new Set([
+    'a', 'an', 'the', 'and', 'but', 'or', 'for', 'nor', 'on', 'at',
+    'to', 'by', 'in', 'of', 'with', 'as'
+  ]);
+
+  // List of special terms to preserve exact capitalization
+  const preserveTerms = new Map([
+    ['illinoisgrmhd', 'IllinoisGRMHD'],
+    ['nrpy+', 'NRPy+'],
+    ['retinas', 'RETINAS'],
+    ['nrpycritcol', 'NRPyCritCol'],
+    ['sfcollapse1d', 'SFcollapse1D'],
+    ['groovy', 'GRoovy'],
+    ['grhayl', 'GRHayL'],
+    ['harm3d+nuc', 'HARM3D+NUC'],
+    ['1d', '1D'],
+    ['2d', '2D'],
+    ['3d', '3D'],
+  ]);
+
+  // Remove any remaining braces and split into words
+  const cleanTitle = title.replace(/[{}]/g, '');
+  const words = cleanTitle.split(/\s+/);
+
+  // Capitalize words according to rules
+  const titleCase = words.map((word, index) => {
+    // Remove punctuation from the word for comparison
+    const match = word.match(/^([a-zA-Z0-9+]+)([.,:;!?]*)$/);
+    const baseWord = match ? match[1] : word;
+    const punctuation = match ? match[2] : '';
+
+    // Convert base word to lowercase for comparison
+    const lowercaseWord = baseWord.toLowerCase();
+
+    // Check if word is a special term that needs preservation
+    if (preserveTerms.has(lowercaseWord)) {
+      return preserveTerms.get(lowercaseWord) + punctuation;
+    }
+
+    // Always capitalize first and last word
+    if (index === 0 || index === words.length - 1) {
+      return baseWord.charAt(0).toUpperCase() + baseWord.slice(1).toLowerCase() + punctuation;
+    }
+    // Check if word should remain lowercase
+    if (lowercaseWords.has(lowercaseWord)) {
+      return baseWord.toLowerCase() + punctuation;
+    }
+    // Capitalize first letter of other words
+    return baseWord.charAt(0).toUpperCase() + baseWord.slice(1).toLowerCase() + punctuation;
+  });
+
+  return `<strong><i>${titleCase.join(' ')}</i></strong>`;
 }
 
 function formatCitation(bibData) {
   if (!bibData) return '';
-
   const { fields } = bibData;
-  const parts = [];
 
-  if (fields.author) {
-    const authorsElement = document.createElement('span');
-    authorsElement.innerHTML = formatAuthors(fields.author);
-    parts.push(authorsElement.outerHTML);
-  }
+  // Create separate elements for each part
+  const titleElement = document.createElement('div');
+  const authorsElement = document.createElement('div');
+  const journalElement = document.createElement('div');
 
+  // Format title
   if (fields.title) {
-    // Remove any remaining braces and add italics
-    const cleanTitle = fields.title.replace(/[{}]/g, '');
-    parts.push(`<i>${cleanTitle}</i>`);
+    titleElement.innerHTML = formatTitle(fields.title);
   }
 
+  // Format authors
+  if (fields.author) {
+    authorsElement.innerHTML = formatAuthors(fields.author);
+  }
+
+  // Format journal info
   if (fields.journal) {
-    parts.push(`<a href="https://doi.org/${fields.doi}">${fields.journal}, ${fields.volume} (${fields.number}) ${fields.pages}</a>`);
+    journalElement.innerHTML = `${fields.journal}, ${fields.volume} (${fields.number}) ${fields.pages} (${fields.year})`;
+  } else if (fields.eprint && fields.archiveprefix === "arXiv") {
+    journalElement.innerHTML = `arXiv:${fields.eprint} [${fields.primaryclass}] (${fields.year})`;
   }
 
-  if (fields.eprint && fields.archiveprefix === "arXiv") {
-    parts.push(`arXiv:<a href="https://arxiv.org/abs/${fields.eprint}">${fields.eprint}</a> [${fields.primaryclass}]`)
-  }
-
-  if (fields.misc) {
-    parts.push(`<em>${fields.misc}</em>`)
-  }
-
-  if (fields.year) {
-    // Add year in parentheses with bold numbers
-    return parts.join(', ') + ` (<strong>${fields.year}</strong>).`;
-  }
-
-  return undefined;
+  return {
+    title: titleElement.innerHTML,
+    authors: authorsElement.innerHTML,
+    journal: journalElement.innerHTML
+  };
 }
 
 document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('.bibtex-entry').forEach(container => {
     const bibtexData = container.querySelector('.bibtex-data');
-    const displayElement = container.querySelector('.bibtex-details p');
+    const titleElement = container.querySelector('.paper-title');
+    const authorsElement = container.querySelector('.paper-authors');
+    const journalElement = container.querySelector('.paper-journal');
 
-    if (bibtexData && displayElement) {
+    if (bibtexData) {
       const parsed = parseBibTeX(bibtexData.textContent);
-      displayElement.innerHTML = formatCitation(parsed);
+      const formatted = formatCitation(parsed);
+
+      // Set the content for each section
+      if (titleElement) titleElement.innerHTML = formatted.title;
+      if (authorsElement) authorsElement.innerHTML = formatted.authors;
+      if (journalElement) journalElement.innerHTML = formatted.journal;
+
+      // Set up the button links
+      if (parsed && parsed.fields) {
+        const journalButton = container.querySelector('.btn--journal');
+        if (journalButton && parsed.fields.doi) {
+          journalButton.href = `https://doi.org/${parsed.fields.doi}`;
+        } else if (journalButton) {
+          journalButton.style.display = 'none';
+        }
+
+        const arxivButton = container.querySelector('.btn--arxiv');
+        if (arxivButton && parsed.fields.eprint) {
+          arxivButton.href = `https://arxiv.org/abs/${parsed.fields.eprint}`;
+        } else if (arxivButton) {
+          arxivButton.style.display = 'none';
+        }
+      }
+
       bibtexData.style.display = 'none';
     }
   });

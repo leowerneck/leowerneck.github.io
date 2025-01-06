@@ -39,7 +39,10 @@
   (info, $info-color),
   (facebook, $facebook-color),
   (twitter, $twitter-color),
-  (linkedin, $linkedin-color);
+  (linkedin, $linkedin-color),
+  (journal, $facebook-color),
+  (arxiv, $danger-color),
+  (pdf, $lighter-gray);
 
   @each $buttoncolor, $color in $buttoncolors {
     &--#{$buttoncolor} {
@@ -93,5 +96,10 @@
   /* small button */
   &--small {
     font-size: $type-size-7;
+  }
+
+  /* bibtex buttons */
+  &--bibtex {
+    padding: 0em 0.5em;
   }
 }

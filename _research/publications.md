@@ -1,11 +1,38 @@
 ---
 title: Publications
 permalink: /research/publications/
+classes: wide
 toc: false
 bibtex: true
 ---
 
-# Peer-Reviewed
+# 2024
+{% bibtex /assets/images/papers/2024_pierre-jacques.png %}
+@article{Jacques:2024pxh,
+    author = "Jacques, Terrence Pierre and Cupp, Samuel and Werneck, Leonardo R. and Tootle, Samuel D. and Hamilton, Maria C. Babiuc and Etienne, Zachariah B.",
+    title = "{GRoovy: A General Relativistic Hydrodynamics Code for Dynamical Spacetimes with Curvilinear Coordinates, Tabulated Equations of State, and Neutrino Physics}",
+    eprint = "2412.03659",
+    archivePrefix = "arXiv",
+    primaryClass = "gr-qc",
+    month = "12",
+    year = "2024",
+    misc = "Submitted to Phys. Rev. D"
+}
+{% endbibtex %}
+
+{% bibtex /assets/images/papers/2024_duez.png %}
+@article{Duez:2024ujs,
+    author = "Duez, Matthew D. and Cadenhead, Courtney L. and Etienne, Zachariah B. and Kelly, Bernard and Werneck, Leonardo R.",
+    title = "{Toward 2D Dynamo Models Calibrated by Global 3D Relativistic Accretion Disk Simulations}",
+    eprint = "2409.02899",
+    archivePrefix = "arXiv",
+    primaryClass = "astro-ph.HE",
+    month = "9",
+    year = "2024",
+    misc = "Submitted to Phys. Rev. D"
+}
+{% endbibtex %}
+
 {% bibtex /assets/images/papers/2024_zenati.png %}
 @article{Zenati:2024pgn,
     author = "Zenati, Yossef and Krolik, Julian H. and Werneck, Leonardo R. and Etienne, Zachariah B. and Noble, Scott C. and Murguia-Berthier, Ariadna and Schnittman, Jeremy D.",
@@ -39,6 +66,7 @@ bibtex: true
 }
 {% endbibtex %}
 
+# 2023
 {% bibtex /assets/images/papers/2023_zenati.png %}
 @article{Zenati:2023lwh,
     author = "Zenati, Yossef and Krolik, Julian H. and Werneck, Leonardo R. and Murguia-Berthier, Ariadna and Etienne, Zachariah B. and Noble, Scott C. and Piran, Tsvi",
@@ -55,9 +83,9 @@ bibtex: true
 }
 {% endbibtex %}
 
-{% bibtex /assets/images/papers/2022_werneck.png %}
+{% bibtex /assets/images/papers/2023_werneck.png %}
 @article{Werneck:2022exo,
-    author = "Werneck, Leonardo R. and others",
+    author = "Werneck, Leonardo R. and Etienne, Zachariah B. and Murguia-Berthier, Ariadna and Haas, Roland and Cipolletta, Federico and others",
     title = "{Addition of tabulated equation of state and neutrino leakage support to illinoisgrmhd}",
     eprint = "2208.14487",
     archivePrefix = "arXiv",
@@ -71,7 +99,8 @@ bibtex: true
 }
 {% endbibtex %}
 
-{% bibtex /assets/images/papers/2021_armengol.png %}
+# 2022
+{% bibtex /assets/images/papers/2022_armengol.png %}
 @article{Armengol:2021mbt,
     author = "Armengol, Federico G. Lopez and Etienne, Zachariah B. and Noble, Scott C. and Kelly, Bernard J. and Werneck, Leonardo R. and others",
     title = "{Handing off the outcome of binary neutron star mergers for accurate and long-term postmerger simulations}",
@@ -87,7 +116,7 @@ bibtex: true
 }
 {% endbibtex %}
 
-{% bibtex /assets/images/papers/2021_assumpcao.png %}
+{% bibtex /assets/images/papers/2022_assumpcao.png %}
 @article{Assumpcao:2021fhq,
     author = "Assumpcao, Thiago and Werneck, Leonardo R. and Jacques, Terrence Pierre and Etienne, Zachariah B.",
     title = "{Fast hyperbolic relaxation elliptic solver for numerical relativity: Conformally flat, binary puncture initial data}",
@@ -103,6 +132,7 @@ bibtex: true
 }
 {% endbibtex %}
 
+# 2021
 {% bibtex /assets/images/papers/2021_werneck.png %}
 @article{Werneck:2021kch,
     author = "Werneck, Leonardo R. and Etienne, Zachariah B. and Abdalla, Elcio and Cuadros-Melgar, Bertha and Pellicer, C. E.",
@@ -135,30 +165,3 @@ bibtex: true
 }
 {% endbibtex %}
 
-# Preprints
-
-{% bibtex /assets/images/papers/2024_pierre-jacques.png %}
-@article{Jacques:2024pxh,
-    author = "Jacques, Terrence Pierre and Cupp, Samuel and Werneck, Leonardo R. and Tootle, Samuel D. and Hamilton, Maria C. Babiuc and Etienne, Zachariah B.",
-    title = "{GRoovy: A General Relativistic Hydrodynamics Code for Dynamical Spacetimes with Curvilinear Coordinates, Tabulated Equations of State, and Neutrino Physics}",
-    eprint = "2412.03659",
-    archivePrefix = "arXiv",
-    primaryClass = "gr-qc",
-    month = "12",
-    year = "2024",
-    misc = "Submitted to Phys. Rev. D"
-}
-{% endbibtex %}
-
-{% bibtex /assets/images/papers/2024_duez.png %}
-@article{Duez:2024ujs,
-    author = "Duez, Matthew D. and Cadenhead, Courtney L. and Etienne, Zachariah B. and Kelly, Bernard and Werneck, Leonardo R.",
-    title = "{Toward 2D Dynamo Models Calibrated by Global 3D Relativistic Accretion Disk Simulations}",
-    eprint = "2409.02899",
-    archivePrefix = "arXiv",
-    primaryClass = "astro-ph.HE",
-    month = "9",
-    year = "2024",
-    misc = "Submitted to Phys. Rev. D"
-}
-{% endbibtex %}
