@@ -1,4 +1,4 @@
-# _plugins/paper_tag.rb
+# _plugins/bibtex_tag.rb
 module Jekyll
   class BibtexTag < Liquid::Block
     def initialize(tag_name, image_url, tokens)
@@ -17,11 +17,17 @@ module Jekyll
           <div class="bibtex-image">
             <img src="#{@image_url}" alt="Paper thumbnail">
           </div>
-          <div class="bibtex-details">
-            <p></p>
-          </div>
-          <div class="bibtex-data">
-            #{text}
+          <div class="bibtex-contents">
+            <div class="paper-title"></div>
+            <div class="paper-authors"></div>
+            <div class="paper-journal"></div>
+            <div class="bibtex-buttons">
+              <a href="#" class="btn btn--bibtex btn--journal">Journal</a>
+              <a href="#" class="btn btn--bibtex btn--arxiv">arXiv</a>
+            </div>
+            <div class="bibtex-data">
+              #{text}
+            </div>
           </div>
         </div>
       HTML

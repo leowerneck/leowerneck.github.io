@@ -325,25 +325,37 @@
    Wide Pages
    ========================================================================== */
 
-.wide .sidebar__right {
-  margin-bottom: 1em;
+.wide {
+  .sidebar__right {
+    margin-bottom: 1em;
 
-  @include breakpoint($large) {
-    position: initial;
-    top: initial;
-    inset-inline-end: initial;
-    width: initial;
-    margin-inline-end: initial;
-    padding-inline-start: initial;
-    z-index: initial;
+    @include breakpoint($large) {
+      position: initial;
+      top: initial;
+      inset-inline-end: initial;
+      width: initial;
+      margin-inline-end: initial;
+      padding-inline-start: initial;
+      z-index: initial;
 
-    &.sticky {
-      float: none;
+      &.sticky {
+        float: none;
+      }
+    }
+
+    @include breakpoint($x-large) {
+      width: initial;
+      margin-inline-end: initial;
     }
   }
 
-  @include breakpoint($x-large) {
-    width: initial;
-    margin-inline-end: initial;
+  .sidebar {
+    @include breakpoint($large) {
+      width: calc(#{$right-sidebar-width-narrow} - 1em);
+    }
+
+    @include breakpoint($x-large) {
+      width: calc(#{$right-sidebar-width-narrow} - 1em);
+    }
   }
 }

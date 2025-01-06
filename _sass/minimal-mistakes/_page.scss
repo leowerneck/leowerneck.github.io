@@ -562,7 +562,8 @@ body {
     }
 
     @include breakpoint($x-large) {
-      padding-inline-end: 0;
+      width: calc(100% - #{$right-sidebar-width-narrow});
+      padding-inline-end: 50px;
     }
   }
 }
