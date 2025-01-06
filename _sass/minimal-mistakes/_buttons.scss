@@ -42,7 +42,7 @@
   (linkedin, $linkedin-color),
   (journal, $facebook-color),
   (arxiv, $danger-color),
-  (pdf, $lighter-gray);
+  (bib, $info-color);
 
   @each $buttoncolor, $color in $buttoncolors {
     &--#{$buttoncolor} {

@@ -162,7 +162,7 @@ function formatCitation(bibData) {
   if (fields.journal) {
     journalElement.innerHTML = `${fields.journal}, ${fields.volume} (${fields.number}) ${fields.pages} (${fields.year})`;
   } else if (fields.eprint && fields.archiveprefix === "arXiv") {
-    journalElement.innerHTML = `arXiv:${fields.eprint} [${fields.primaryclass}] (${fields.year})`;
+    journalElement.innerHTML = `arXiv:${fields.eprint} [${fields.primaryclass}] (${fields.year}), <em>${fields.misc}</em>`;
   }
 
   return {
@@ -207,5 +207,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
       bibtexData.style.display = 'none';
     }
+  });
+
+  document.querySelectorAll('.btn--bib').forEach(button => {
+    button.addEventListener('click', function() {
+      const targetId = this.getAttribute('data-target');
+      const bibtexContent = document.querySelector(targetId);
+
+      if (bibtexContent) {
+        const isVisible = bibtexContent.style.display !== 'none';
+        bibtexContent.style.display = isVisible ? 'none' : 'block';
+        this.textContent = isVisible ? 'BibTeX' : 'Hide';
+      }
+    });
   });
 });
