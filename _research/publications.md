@@ -3,7 +3,7 @@ title: Publications
 permalink: /research/publications/
 classes: wide
 toc: false
-bibtex: true
+bibtex_paper: true
 ---
 
 # 2024
