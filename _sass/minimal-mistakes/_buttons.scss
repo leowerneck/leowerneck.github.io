@@ -42,6 +42,7 @@
   (linkedin, $linkedin-color),
   (journal, $facebook-color),
   (arxiv, $danger-color),
+  (slides, #f5bf17),
   (bib, $info-color);
 
   @each $buttoncolor, $color in $buttoncolors {

@@ -1,10 +1,21 @@
 ---
 title: Talks
 permalink: /research/talks/
+classes: wide
+toc: false
+bibtex_talk: true
 ---
 
 # 2024
-* **Invited talk**, _From Microspheres to Supermassive Stars: An overview of the University of Idaho’s Numerical Relativity group’s research_, Idaho National Laboratory, ID, USA.
+{% talk /assets/images/papers/2023_werneck.png test %}
+@misc{2024_LRW_INL_talk,
+    authors = {Werneck, Leonardo R.},
+    title = {From Microspheres to Supermassive Stars: An overview of the University of Idaho’s Numerical Relativity group’s research},
+    journal = {Idaho National Laboratory, ID, USA},
+    year = {2024},
+    note = {Invited talk}
+}
+{% endtalk %}
 * **Invited talk**, North American Einstein Toolkit Summer School, _Direct-Collapse Black Holes: Gravitational-Wave Signatures of Massive Black Hole Formation_, Louisiana State University, LA, USA.
 * **Selected talk**, APS April Meeting, _Binary Neutron Star Mergers on a Moving Mesh_, SAFE Credit Union Convention Center, Sacramento, CA, USA.
 

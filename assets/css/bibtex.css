@@ -25,18 +25,18 @@
     flex-direction: column;
 }
 
-.paper-title {
+.paper-title, .talk-title {
     font-size: 1.1em;
     text-align: justify;
     padding-bottom: 8px;
     border-bottom: 1px solid #bbb;
 }
 
-.paper-authors {
+.paper-authors, .talk-type {
     padding-top: 8px;
 }
 
-.paper-journal {
+.paper-journal, .talk-venue {
     color: #666;
 }
 
