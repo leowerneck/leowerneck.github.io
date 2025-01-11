@@ -7,34 +7,159 @@ bibtex_talk: true
 ---
 
 # 2024
-{% talk /assets/images/papers/2023_werneck.png test %}
-@misc{2024_LRW_INL_talk,
+{% talk /assets/images/papers/2023_werneck.png %}
+@misc{2024_Werneck_INL_talk,
     authors = {Werneck, Leonardo R.},
     title = {From Microspheres to Supermassive Stars: An overview of the University of Idaho’s Numerical Relativity group’s research},
-    journal = {Idaho National Laboratory, ID, USA},
+    address = {Idaho National Laboratory, Idaho Falls, ID, USA},
     year = {2024},
     note = {Invited talk}
 }
 {% endtalk %}
-* **Invited talk**, North American Einstein Toolkit Summer School, _Direct-Collapse Black Holes: Gravitational-Wave Signatures of Massive Black Hole Formation_, Louisiana State University, LA, USA.
-* **Selected talk**, APS April Meeting, _Binary Neutron Star Mergers on a Moving Mesh_, SAFE Credit Union Convention Center, Sacramento, CA, USA.
+
+{% talk /assets/images/papers/2023_werneck.png %}
+@misc{2024_Werneck_NAETSS_talk,
+    authors = {Werneck, Leonardo R.},
+    title = {Direct-Collapse Black Holes: Gravitational-Wave Signatures of Massive Black Hole Formation},
+    booktitle = {North American Einstein Toolkit Summer School},
+    address = {Louisiana State University, Baton Rouge, LA, USA},
+    year = {2024},
+    note = {Invited talk}
+}
+{% endtalk %}
+
+{% talk /assets/images/papers/2023_werneck.png %}
+@misc{2024_Werneck_APS_talk,
+    authors = {Werneck, Leonardo R.},
+    title = {Binary Neutron Star Mergers on a Moving Mesh},
+    booktitle = {APS April Meeting},
+    address = {SAFE Credit Union Convention Center, Sacramento, CA, USA},
+    year = {2024},
+    note = {Contributed talk}
+}
+{% endtalk %}
 
 # 2023
-* **Invited talk**, INT 23-2: Astrophysical Neutrinos and the Origin of the Elements, _GRHayL: An Open-source, Modular, Extensible GRMHD Library_, Institute for Nuclear Theory, Seattle, WA, USA.
-* **Invited talk**, North American Einstein Toolkit Summer School, _Tutorial: Einstein Toolkit Simulation Analysis_, Rochester Institute of Technology, NY, USA.
-* **Selected talk**, APS April Meeting, _IllinoisGRMHD: Recent Developments and Future Plans_, Hilton Minneapolis, Minneapolis, MN, USA.
+{% talk /assets/images/papers/2023_werneck.png %}
+@misc{2024_Werneck_INT_talk,
+    authors = {Werneck, Leonardo R.},
+    title = {GRHayL: An Open-source, Modular, Extensible GRMHD Library},
+    booktitle = {INT 23-2: Astrophysical Neutrinos and the Origin of the Elements},
+    address = {Institute for Nuclear Theory, Seattle, Wa, USA},
+    year = {2023},
+    note = {Invited talk}
+}
+{% endtalk %}
+
+{% talk /assets/images/papers/2023_werneck.png %}
+@misc{2023_Werneck_NAETSS_talk,
+    authors = {Werneck, Leonardo R.},
+    title = {Tutorial: Einstein Toolkit Simulation Analysis},
+    booktitle = {North American Einstein Toolkit Summer School},
+    address = {Rochester Institute of Technology, NY, USA},
+    year = {2023},
+    note = {Invited talk}
+}
+{% endtalk %}
+
+{% talk /assets/images/papers/2023_werneck.png %}
+@misc{2023_Werneck_APS_talk,
+    authors = {Werneck, Leonardo R.},
+    title = {IllinoisGRMHD: Recent Developments and Future Plans},
+    booktitle = {APS April Meeting},
+    address = {Hilton Minneapolis, Minneapolis, MN, USA},
+    year = {2023},
+    note = {Contributed talk}
+}
+{% endtalk %}
 
 # 2022
-* **Invited talk**, North American Einstein Toolkit Working Workshop, _An introduction to NRPy+_, University of Illinois at Urbana-Champaign, IL, USA.
-* **Invited talk**, North American Einstein Toolkit Summer School, _Accurate, long-term binary neutron stars simulations with IllinoisGRMHD and HARM+NUC_, University of Idaho, ID, USA.
-* **Selected talk**, APS April Meeting, _Accurate, long-term binary neutron stars simulations with IllinoisGRMHD and HARM+NUC_, New York Marriott Marquis, NY, USA.
+{% talk /assets/images/papers/2023_werneck.png %}
+@misc{2022_Werneck_ETWW_talk,
+    authors = {Werneck, Leonardo R.},
+    title = {An introduction to NRPy+},
+    booktitle = {North American Einstein Toolkit Working Workshop},
+    address = {University of Illinois at Urbana-Champaign, IL, USA},
+    year = {2022},
+    note = {Invited talk}
+}
+{% endtalk %}
+
+{% talk /assets/images/papers/2023_werneck.png %}
+@misc{2022_Werneck_NAETSS_talk,
+    authors = {Werneck, Leonardo R.},
+    title = {Accurate, long-term binary neutron stars simulations with IllinoisGRMHD and HARM+NUC},
+    booktitle = {North American Einstein Toolkit Summer School},
+    address = {University of Idaho, Moscow, ID, USA},
+    year = {2022},
+    note = {Invited talk}
+}
+{% endtalk %}
+
+{% talk /assets/images/papers/2023_werneck.png %}
+@misc{2022_Werneck_APS_talk,
+    authors = {Werneck, Leonardo R.},
+    title = {Accurate, long-term binary neutron stars simulations with IllinoisGRMHD and HARM+NUC},
+    booktitle = {APS April Meeting},
+    address = {New York Marriott Marquis, NY, USA},
+    year = {2022},
+    note = {Contributed talk}
+}
+{% endtalk %}
 
 # 2021
-* **Poster presentation**, Midwest Relativity Meeting, _IllinoisGRMHD+HARM3D: Next-generation binary neutron stars simulations_, University of Illinois at Urbana-Champaign, IL, USA.
-* **Invited talk**, North American Einstein Toolkit Summer School, _NRPy+ tutorial: Maxwell’s equations in flat space & ET thorn generation_, University of Illinois at Urbana-Champaign, IL, USA (online event).
-* **Invited talk**, TCAN on BNS Workshop, _IllinoisGRMHD progress update --- advanced, tabulated equation of state support_, Rochester Institute of Technology, NY, USA (online event).
-* **Selected talk**, APS April Meeting, _New, user-friendly codes to study critical collapse_, online event.
+{% talk /assets/images/papers/2023_werneck.png %}
+@misc{2021_Werneck_MWRM_talk,
+    authors = {Werneck, Leonardo R.},
+    title = {IllinoisGRMHD+HARM3D: Next-generation binary neutron stars simulations},
+    booktitle = {Midwest Relativity Meeting},
+    address = {University of Illinois at Urbana-Champaign, IL, USA},
+    year = {2021},
+    note = {Poster Presentation}
+}
+{% endtalk %}
+
+{% talk /assets/images/papers/2023_werneck.png %}
+@misc{2021_Werneck_NAETSS_talk,
+    authors = {Werneck, Leonardo R.},
+    title = {NRPy+ tutorial: Maxwell’s equations in flat space & ET thorn generation},
+    booktitle = {North American Einstein Toolkit Summer School},
+    address = {Online Event, University of Illinois at Urbana-Champaign, IL, USA},
+    year = {2021},
+    note = {Invited talk}
+}
+{% endtalk %}
+
+{% talk /assets/images/papers/2023_werneck.png %}
+@misc{2021_Werneck_TCAN_talk,
+    authors = {Werneck, Leonardo R.},
+    title = {IllinoisGRMHD progress update — advanced, tabulated equation of state support},
+    booktitle = {TCAN on BNS Workshop},
+    address = {Online Event, Rochester Institute of Technology, NY, USA},
+    year = {2021},
+    note = {Invited talk}
+}
+{% endtalk %}
+
+{% talk /assets/images/papers/2023_werneck.png %}
+@misc{2021_Werneck_APS_talk,
+    authors = {Werneck, Leonardo R.},
+    title = {New, user-friendly codes to study critical collapse},
+    booktitle = {APS April Meeting},
+    address = {Online Event},
+    year = {2021},
+    note = {Contributed talk}
+}
+{% endtalk %}
 
 # 2020
-* **Invited talk**, TCAN on BNS Workshop, _IllinoisGRMHD progress update --- piecewise polytropic equation of state support_, Rochester Institute of Technology, NY, USA (online event).
-
+{% talk /assets/images/papers/2023_werneck.png %}
+@misc{2020_Werneck_TCAN_talk,
+    authors = {Werneck, Leonardo R.},
+    title = {IllinoisGRMHD progress update — piecewise polytropic equation of state support},
+    booktitle = {TCAN on BNS Workshop},
+    address = {Online Event, Rochester Institute of Technology, NY, USA},
+    year = {2021},
+    note = {Invited talk}
+}
+{% endtalk %}

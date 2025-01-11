@@ -7,7 +7,8 @@ function formatTalk(bibData) {
     // Create separate elements for each part
     const titleElement = document.createElement('div');
     const typeElement = document.createElement('div');
-    const venueElement = document.createElement('div');
+    const eventnameElement = document.createElement('div');
+    const addressElement = document.createElement('div');
 
     // Format title
     if (fields.title) {
@@ -19,15 +20,21 @@ function formatTalk(bibData) {
         typeElement.innerHTML = `<em>${fields.note.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}</em>`;
     }
 
-    // Format venue (journal) info
-    if (fields.journal) {
-        venueElement.innerHTML = `${fields.journal}, (${fields.year})`;
+    // Format booktitle (event name)
+    if (fields.booktitle) {
+        eventnameElement.innerHTML = `<strong>${fields.booktitle}</strong>`
+    }
+
+    // Format address (journal) info
+    if (fields.address) {
+        addressElement.innerHTML = `${fields.address} (${fields.year})`;
     }
 
     return {
         title: titleElement.innerHTML,
         type: typeElement.innerHTML,
-        venue: venueElement.innerHTML
+        eventname: eventnameElement.innerHTML,
+        address: addressElement.innerHTML
     };
 }
 
@@ -36,7 +43,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const bibtexData = container.querySelector('.bibtex-data');
         const titleElement = container.querySelector('.talk-title');
         const typeElement = container.querySelector('.talk-type');
-        const venueElement = container.querySelector('.talk-venue');
+        const eventElement = container.querySelector('.talk-event');
+        const addressElement = container.querySelector('.talk-address');
 
 
         if (bibtexData) {
@@ -46,7 +54,18 @@ document.addEventListener('DOMContentLoaded', function() {
             // Set the content for each section
             if (titleElement) titleElement.innerHTML = formatted.title;
             if (typeElement) typeElement.innerHTML = formatted.type;
-            if (venueElement) venueElement.innerHTML = formatted.venue;
+            if (eventElement) eventElement.innerHTML = formatted.eventname;
+            if (addressElement) addressElement.innerHTML = formatted.address;
+
+            // Set up the button links
+            if (parsed && parsed.fields) {
+                const slidesButton = container.querySelector('.btn--slides');
+                if (slidesButton && parsed.fields.publishedat) {
+                    slidesButton.href = `${parsed.fields.publishedat}`;
+                } else if (slidesButton) {
+                    slidesButton.style.display = 'none';
+                }
+            }
 
             bibtexData.style.display = 'none';
         }

@@ -32,11 +32,11 @@
     border-bottom: 1px solid #bbb;
 }
 
-.paper-authors, .talk-type {
+.paper-authors {
     padding-top: 8px;
 }
 
-.paper-journal, .talk-venue {
+.paper-journal {
     color: #666;
 }
 
@@ -57,4 +57,9 @@
 
 .btn--bib {
     cursor: pointer;
+}
+
+.talk-event {
+    padding-top: 8px;
+    color: #666;
 }
