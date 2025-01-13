@@ -1,6 +1,6 @@
 ---
 title: Talks
-permalink: /research/talks/
+permalink: /talks/
 classes: wide
 toc: false
 bibtex_talk: true

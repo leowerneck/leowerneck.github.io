@@ -1,6 +1,6 @@
 ---
 title: Publications
-permalink: /research/publications/
+permalink: /publications/
 classes: wide
 toc: false
 bibtex_paper: true
