@@ -3,7 +3,7 @@ module Jekyll
   class TalkTag < Liquid::Block
     def initialize(tag_name, markup, tokens)
       super
-      @image_url, @pdf_url = markup.split(" ").map(&:strip)
+      @thumbnail_url, @pdf_url = markup.split(" ").map(&:strip)
     end
 
     # Generate a unique ID for this entry
@@ -14,6 +14,14 @@ module Jekyll
       site = context.registers[:site]
       converter = site.find_converter_instance(Jekyll::Converters::Markdown)
 
+      # Set thumbnail string, distinguishing between videos and images
+      if @thumbnail_url.end_with?(".mp4")
+        thumbnail_string = "<video src=\"#{@thumbnail_url}\" alt=\"Talk thumbnail\"></video>"
+      else
+        thumbnail_string = "<img src=\"#{@thumbnail_url}\" alt=\"Talk thumbnail\">"
+      end
+
+      # Set PDF string, if one is provided
       pdf_string = ""
       if @pdf_url && @pdf_url != ""
         pdf_string = "<a href=\"#{@pdf_url}\" class=\"btn btn--bibtex btn--inverse\">PDF</a>"
@@ -31,8 +39,8 @@ module Jekyll
       # Create the HTML structure
       html = <<~HTML
         <div class="bibtex-entry">
-          <div class="bibtex-image">
-            <img src="#{@image_url}" alt="Paper thumbnail">
+          <div class="bibtex-thumbnail">
+            #{thumbnail_string}
           </div>
           <div class="bibtex-contents">
             <div class="talk-title"></div>

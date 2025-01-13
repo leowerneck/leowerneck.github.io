@@ -83,4 +83,10 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    document.querySelectorAll('.bibtex-thumbnail video').forEach(video => {
+        video.autoplay = true;
+        video.loop = true;
+        video.muted = true;
+    });
 });

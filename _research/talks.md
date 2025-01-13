@@ -108,12 +108,13 @@ bibtex_talk: true
 {% endtalk %}
 
 # 2021
-{% talk /assets/images/papers/2023_werneck.png %}
+{% talk /assets/images/talks/2021_MWRM.png /assets/docs/posters/2021-11-12-LRW-Poster-MWRM.pdf %}
 @misc{2021_Werneck_MWRM_talk,
     authors = {Werneck, Leonardo R.},
     title = {IllinoisGRMHD+HARM3D: Next-generation binary neutron stars simulations},
     booktitle = {Midwest Relativity Meeting},
     address = {University of Illinois at Urbana-Champaign, IL, USA},
+    publishedat = {https://docs.google.com/presentation/d/1MUfAP3AhW-ixWGMsNhGywNFovFM4EhnDn0p06ml_mnU/edit?usp=sharing},
     year = {2021},
     note = {Poster Presentation}
 }
@@ -130,18 +131,19 @@ bibtex_talk: true
 }
 {% endtalk %}
 
-{% talk /assets/images/papers/2023_werneck.png %}
+{% talk /assets/videos/igm_bns_ls220.mp4 /assets/docs/talks/2021-07-12-LRW-Talk-TCAN.pdf %}
 @misc{2021_Werneck_TCAN_talk,
     authors = {Werneck, Leonardo R.},
     title = {IllinoisGRMHD progress update — advanced, tabulated equation of state support},
     booktitle = {TCAN on BNS Workshop},
     address = {Online Event, Rochester Institute of Technology, NY, USA},
+    publishedat = {https://docs.google.com/presentation/d/1TfY0ytauG6u1iWY-ZJnaXFfzSu7zRXmdNStpDhIhfCY/edit?usp=sharing},
     year = {2021},
     note = {Invited talk}
 }
 {% endtalk %}
 
-{% talk /assets/images/papers/2023_werneck.png %}
+{% talk /assets/images/talks/2021_APS.png /assets/docs/talks/2021-04-19-LRW-Talk-APS.pdf %}
 @misc{2021_Werneck_APS_talk,
     authors = {Werneck, Leonardo R.},
     title = {New, user-friendly codes to study critical collapse},
@@ -153,13 +155,13 @@ bibtex_talk: true
 {% endtalk %}
 
 # 2020
-{% talk /assets/images/papers/2023_werneck.png %}
+{% talk /assets/videos/igm_bns_sly_ppeos.mp4 /assets/docs/talks/2020-07-07-LRW-Talk-TCAN.pdf %}
 @misc{2020_Werneck_TCAN_talk,
     authors = {Werneck, Leonardo R.},
     title = {IllinoisGRMHD progress update — piecewise polytropic equation of state support},
     booktitle = {TCAN on BNS Workshop},
     address = {Online Event, Rochester Institute of Technology, NY, USA},
-    year = {2021},
+    year = {2020},
     note = {Invited talk}
 }
 {% endtalk %}

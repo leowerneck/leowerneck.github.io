@@ -26,7 +26,7 @@ module Jekyll
       # Create the HTML structure
       html = <<~HTML
         <div class="bibtex-entry">
-          <div class="bibtex-image">
+          <div class="bibtex-thumbnail">
             <img src="#{@image_url}" alt="Paper thumbnail">
           </div>
           <div class="bibtex-contents">

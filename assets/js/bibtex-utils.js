@@ -28,6 +28,7 @@ export function formatTitle(title) {
     // List of special terms to preserve exact capitalization
     const preserveTerms = new Map([
         ['illinoisgrmhd', 'IllinoisGRMHD'],
+        ['illinoisgrmhd+harm3d', 'IllinoisGRMHD+HARM3D'],
         ['nrpy+', 'NRPy+'],
         ['retinas', 'RETINAS'],
         ['nrpycritcol', 'NRPyCritCol'],
@@ -71,7 +72,7 @@ export function formatTitle(title) {
             return baseWord.toLowerCase() + punctuation;
         }
         // Capitalize first letter of other words
-        return baseWord.charAt(0).toUpperCase() + baseWord.slice(1).toLowerCase() + punctuation;
+        return baseWord.split('-').map(part => part.charAt(0).toUpperCase() + part.slice(1).toLowerCase()).join('-') + punctuation;
     });
 
     return `<strong><i>${titleCase.join(' ')}</i></strong>`;
