@@ -29,6 +29,7 @@ export function formatTitle(title) {
     const preserveTerms = new Map([
         ['illinoisgrmhd', 'IllinoisGRMHD'],
         ['illinoisgrmhd+harm3d', 'IllinoisGRMHD+HARM3D'],
+        ['grmhd', 'GRMHD'],
         ['nrpy+', 'NRPy+'],
         ['retinas', 'RETINAS'],
         ['nrpycritcol', 'NRPyCritCol'],
@@ -45,7 +46,7 @@ export function formatTitle(title) {
     ]);
 
     // Remove any remaining braces and split into words
-    const cleanTitle = title.replace(/[{}]/g, '');
+    const cleanTitle = title.replace(/[{}]/g, '').replace(/\\&/g, '&');
     const words = cleanTitle.split(/\s+/);
 
     // Capitalize words according to rules

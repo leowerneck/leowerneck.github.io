@@ -40,7 +40,7 @@ bibtex_talk: true
 {% endtalk %}
 
 # 2023
-{% talk /assets/images/papers/2023_werneck.png %}
+{% talk /assets/images/papers/2023_werneck.png /assets/docs/talks/2023-08-03-LRW-Talk-INT.pdf %}
 @misc{2024_Werneck_INT_talk,
     authors = {Werneck, Leonardo R.},
     title = {GRHayL: An Open-source, Modular, Extensible GRMHD Library},
@@ -62,19 +62,20 @@ bibtex_talk: true
 }
 {% endtalk %}
 
-{% talk /assets/images/papers/2023_werneck.png %}
+{% talk /assets/images/talks/2023_APS.png %}
 @misc{2023_Werneck_APS_talk,
     authors = {Werneck, Leonardo R.},
     title = {IllinoisGRMHD: Recent Developments and Future Plans},
     booktitle = {APS April Meeting},
     address = {Hilton Minneapolis, Minneapolis, MN, USA},
+    publishedat = {https://docs.google.com/presentation/d/1hBFdMBtryAEw_MaNqvWMXINt6c2eWICItRYeBjyPepY/edit?usp=sharing},
     year = {2023},
     note = {Contributed talk}
 }
 {% endtalk %}
 
 # 2022
-{% talk /assets/images/papers/2023_werneck.png %}
+{% talk /assets/images/talks/2022_ETWW.png 2022-07-20-LRW-Talk-ETWW.pdf %}
 @misc{2022_Werneck_ETWW_talk,
     authors = {Werneck, Leonardo R.},
     title = {An introduction to NRPy+},
@@ -85,7 +86,7 @@ bibtex_talk: true
 }
 {% endtalk %}
 
-{% talk /assets/images/papers/2023_werneck.png %}
+{% talk /assets/images/papers/2023_werneck.png 2022-06-17-LRW-Talk-NAET.pdf %}
 @misc{2022_Werneck_NAETSS_talk,
     authors = {Werneck, Leonardo R.},
     title = {Accurate, long-term binary neutron stars simulations with IllinoisGRMHD and HARM+NUC},
@@ -96,12 +97,13 @@ bibtex_talk: true
 }
 {% endtalk %}
 
-{% talk /assets/images/papers/2023_werneck.png %}
+{% talk /assets/videos/igm_bns_ls220_temperature.mp4 /assets/docs/talks/2022-04-10-LRW-Talk-APS.pdf %}
 @misc{2022_Werneck_APS_talk,
     authors = {Werneck, Leonardo R.},
-    title = {Accurate, long-term binary neutron stars simulations with IllinoisGRMHD and HARM+NUC},
+    title = {Accurate, long-term binary neutron stars simulations with IllinoisGRMHD and HARM3D},
     booktitle = {APS April Meeting},
     address = {New York Marriott Marquis, NY, USA},
+    publishedat = {https://docs.google.com/presentation/d/1l9h5IvjXh8wfF8F4mXGHrByhyeve5jq7qqOzab9YUnU/edit?usp=sharing},
     year = {2022},
     note = {Contributed talk}
 }
@@ -123,7 +125,7 @@ bibtex_talk: true
 {% talk /assets/images/papers/2023_werneck.png %}
 @misc{2021_Werneck_NAETSS_talk,
     authors = {Werneck, Leonardo R.},
-    title = {NRPy+ tutorial: Maxwell’s equations in flat space & ET thorn generation},
+    title = {NRPy+ tutorial: Maxwell’s equations in flat space \& ET thorn generation},
     booktitle = {North American Einstein Toolkit Summer School},
     address = {Online Event, University of Illinois at Urbana-Champaign, IL, USA},
     year = {2021},
@@ -131,7 +133,7 @@ bibtex_talk: true
 }
 {% endtalk %}
 
-{% talk /assets/videos/igm_bns_ls220.mp4 /assets/docs/talks/2021-07-12-LRW-Talk-TCAN.pdf %}
+{% talk /assets/videos/igm_bns_ls220_density.mp4 /assets/docs/talks/2021-07-12-LRW-Talk-TCAN.pdf %}
 @misc{2021_Werneck_TCAN_talk,
     authors = {Werneck, Leonardo R.},
     title = {IllinoisGRMHD progress update — advanced, tabulated equation of state support},
