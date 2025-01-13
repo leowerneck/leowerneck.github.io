@@ -4,6 +4,8 @@ permalink: /teaching/
 layout: home
 ---
 
+# Past Courses
+
 | Year | Semester |                Course                |        Institution         |
 |:----:|----------|--------------------------------------|----------------------------|
 | 2024 |  Spring  | Engineering Physics III              | University of Idaho        |

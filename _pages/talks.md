@@ -7,7 +7,7 @@ bibtex_talk: true
 ---
 
 # 2024
-{% talk /assets/images/papers/2023_werneck.png %}
+{% talk generic.png %}
 @misc{2024_Werneck_INL_talk,
     authors = {Werneck, Leonardo R.},
     title = {From Microspheres to Supermassive Stars: An overview of the University of Idaho’s Numerical Relativity group’s research},
@@ -17,7 +17,7 @@ bibtex_talk: true
 }
 {% endtalk %}
 
-{% talk /assets/images/papers/2023_werneck.png %}
+{% talk generic.png %}
 @misc{2024_Werneck_NAETSS_talk,
     authors = {Werneck, Leonardo R.},
     title = {Direct-Collapse Black Holes: Gravitational-Wave Signatures of Massive Black Hole Formation},
@@ -28,7 +28,7 @@ bibtex_talk: true
 }
 {% endtalk %}
 
-{% talk /assets/images/papers/2023_werneck.png %}
+{% talk generic.png %}
 @misc{2024_Werneck_APS_talk,
     authors = {Werneck, Leonardo R.},
     title = {Binary Neutron Star Mergers on a Moving Mesh},
@@ -40,7 +40,7 @@ bibtex_talk: true
 {% endtalk %}
 
 # 2023
-{% talk /assets/images/papers/2023_werneck.png /assets/docs/talks/2023-08-03-LRW-Talk-INT.pdf %}
+{% talk moving_mesh.mp4 2023-08-03-LRW-Talk-INT.pdf Shadowfax https://dwarfs.ugent.be/shadowfax/ %}
 @misc{2024_Werneck_INT_talk,
     authors = {Werneck, Leonardo R.},
     title = {GRHayL: An Open-source, Modular, Extensible GRMHD Library},
@@ -51,18 +51,19 @@ bibtex_talk: true
 }
 {% endtalk %}
 
-{% talk /assets/images/papers/2023_werneck.png %}
+{% talk generic.png %}
 @misc{2023_Werneck_NAETSS_talk,
     authors = {Werneck, Leonardo R.},
     title = {Tutorial: Einstein Toolkit Simulation Analysis},
     booktitle = {North American Einstein Toolkit Summer School},
     address = {Rochester Institute of Technology, NY, USA},
+    url = {https://github.com/leowerneck/ritetschool2023},
     year = {2023},
     note = {Invited talk}
 }
 {% endtalk %}
 
-{% talk /assets/images/talks/2023_APS.png %}
+{% talk 2023_APS.png %}
 @misc{2023_Werneck_APS_talk,
     authors = {Werneck, Leonardo R.},
     title = {IllinoisGRMHD: Recent Developments and Future Plans},
@@ -75,7 +76,7 @@ bibtex_talk: true
 {% endtalk %}
 
 # 2022
-{% talk /assets/images/talks/2022_ETWW.png 2022-07-20-LRW-Talk-ETWW.pdf %}
+{% talk 2022_ETWW.png 2022-07-20-LRW-Talk-ETWW.pdf %}
 @misc{2022_Werneck_ETWW_talk,
     authors = {Werneck, Leonardo R.},
     title = {An introduction to NRPy+},
@@ -86,7 +87,7 @@ bibtex_talk: true
 }
 {% endtalk %}
 
-{% talk /assets/images/papers/2023_werneck.png 2022-06-17-LRW-Talk-NAET.pdf %}
+{% talk generic.png 2022-06-17-LRW-Talk-NAET.pdf %}
 @misc{2022_Werneck_NAETSS_talk,
     authors = {Werneck, Leonardo R.},
     title = {Accurate, long-term binary neutron stars simulations with IllinoisGRMHD and HARM+NUC},
@@ -97,7 +98,7 @@ bibtex_talk: true
 }
 {% endtalk %}
 
-{% talk /assets/videos/igm_bns_ls220_temperature.mp4 /assets/docs/talks/2022-04-10-LRW-Talk-APS.pdf %}
+{% talk igm_bns_ls220_temperature.mp4 2022-04-10-LRW-Talk-APS.pdf %}
 @misc{2022_Werneck_APS_talk,
     authors = {Werneck, Leonardo R.},
     title = {Accurate, long-term binary neutron stars simulations with IllinoisGRMHD and HARM3D},
@@ -110,7 +111,7 @@ bibtex_talk: true
 {% endtalk %}
 
 # 2021
-{% talk /assets/images/talks/2021_MWRM.png /assets/docs/posters/2021-11-12-LRW-Poster-MWRM.pdf %}
+{% talk 2021_MWRM.png 2021-11-12-LRW-Poster-MWRM.pdf %}
 @misc{2021_Werneck_MWRM_talk,
     authors = {Werneck, Leonardo R.},
     title = {IllinoisGRMHD+HARM3D: Next-generation binary neutron stars simulations},
@@ -122,7 +123,7 @@ bibtex_talk: true
 }
 {% endtalk %}
 
-{% talk /assets/images/papers/2023_werneck.png %}
+{% talk generic.png %}
 @misc{2021_Werneck_NAETSS_talk,
     authors = {Werneck, Leonardo R.},
     title = {NRPy+ tutorial: Maxwell’s equations in flat space \& ET thorn generation},
@@ -133,7 +134,7 @@ bibtex_talk: true
 }
 {% endtalk %}
 
-{% talk /assets/videos/igm_bns_ls220_density.mp4 /assets/docs/talks/2021-07-12-LRW-Talk-TCAN.pdf %}
+{% talk igm_bns_ls220_density.mp4 2021-07-12-LRW-Talk-TCAN.pdf %}
 @misc{2021_Werneck_TCAN_talk,
     authors = {Werneck, Leonardo R.},
     title = {IllinoisGRMHD progress update — advanced, tabulated equation of state support},
@@ -145,7 +146,7 @@ bibtex_talk: true
 }
 {% endtalk %}
 
-{% talk /assets/images/talks/2021_APS.png /assets/docs/talks/2021-04-19-LRW-Talk-APS.pdf %}
+{% talk 2021_APS.png 2021-04-19-LRW-Talk-APS.pdf %}
 @misc{2021_Werneck_APS_talk,
     authors = {Werneck, Leonardo R.},
     title = {New, user-friendly codes to study critical collapse},
@@ -157,7 +158,7 @@ bibtex_talk: true
 {% endtalk %}
 
 # 2020
-{% talk /assets/videos/igm_bns_sly_ppeos.mp4 /assets/docs/talks/2020-07-07-LRW-Talk-TCAN.pdf %}
+{% talk igm_bns_sly_ppeos.mp4 2020-07-07-LRW-Talk-TCAN.pdf %}
 @misc{2020_Werneck_TCAN_talk,
     authors = {Werneck, Leonardo R.},
     title = {IllinoisGRMHD progress update — piecewise polytropic equation of state support},

@@ -1,6 +1,6 @@
 # main links
 main:
-  - title: "<i class=\"fas fa-user\"></i> Home"
+  - title: "<i class=\"fas fa-house\"></i> Home"
     url: /
   - title: "<i class=\"fas fa-book\"></i> Publications"
     url: /publications/
@@ -8,7 +8,7 @@ main:
     url: /talks/
   - title: "<i class=\"fas fa-chalkboard\"></i> Teaching"
     url: /teaching/
-  - title: "<i class=\"fas fa-circle-info\"></i> Resume/CV"
+  - title: "<i class=\"fas fa-user\"></i> Resume/CV"
     url: /resume-cv/
 
   # - title: "Software Development"

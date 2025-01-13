@@ -65,6 +65,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 } else if (slidesButton) {
                     slidesButton.style.display = 'none';
                 }
+
+                const githubButton = container.querySelector('.btn--github');
+                if (githubButton && parsed.fields.url) {
+                    githubButton.href = `${parsed.fields.url}`;
+                } else if (githubButton) {
+                    githubButton.style.display = 'none';
+                }
             }
 
             bibtexData.style.display = 'none';

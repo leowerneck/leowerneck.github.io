@@ -43,6 +43,7 @@
   (journal, $facebook-color),
   (arxiv, $danger-color),
   (slides, #f5bf17),
+  (github, #000),
   (bib, $info-color);
 
   @each $buttoncolor, $color in $buttoncolors {
