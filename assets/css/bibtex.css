@@ -5,17 +5,39 @@
     width: calc(100% - 60px);
 }
 
-.bibtex-image {
+.bibtex-thumbnail {
     flex-shrink: 0;
     width: 150px;
     height: 150px;
     border: 1px solid #ccc;
+    position: relative;
+    display: inline-block;
 }
 
-.bibtex-image img {
+.bibtex-thumbnail img,
+.bibtex-thumbnail video {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.bibtex-thumbnail .caption {
+    position: absolute;
+    bottom: 0;
+    inset-inline-end: 0;
+    margin: 0 auto;
+    padding: 2px 5px;
+    font-family: Georgia, Times, serif !default;
+    font-size: 7pt;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: end;
+    z-index: 5;
+    border-radius: $border-radius 0 0 0;
+    a {
+        color: #fff;
+        text-decoration: none;
+    }
 }
 
 .bibtex-contents {
@@ -26,8 +48,11 @@
 }
 
 .paper-title {
-    font-size: 1.1em;
     text-align: justify;
+}
+
+.paper-title, .talk-title {
+    font-size: 1.1em;
     padding-bottom: 8px;
     border-bottom: 1px solid #bbb;
 }
@@ -58,3 +83,9 @@
 .btn--bib {
     cursor: pointer;
 }
+
+.talk-event {
+    padding-top: 8px;
+    color: #666;
+}
+

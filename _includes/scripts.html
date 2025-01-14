@@ -51,6 +51,10 @@
 <script src="https://tikzjax.com/v1/tikzjax.js"></script>
 {% endif %}
 
-{% if page.bibtex %}
-<script src="{{ '/assets/js/bibtex-parser.js' | relative_url }}"></script>
+{% if page.bibtex_paper %}
+<script type="module" src="{{ '/assets/js/bibtex-paper.js' | relative_url }}"></script>
+{% endif %}
+
+{% if page.bibtex_talk %}
+<script type="module" src="{{ '/assets/js/bibtex-talk.js' | relative_url }}"></script>
 {% endif %}

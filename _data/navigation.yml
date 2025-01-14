@@ -1,20 +1,16 @@
 # main links
 main:
-  - title: "<i class=\"fas fa-user\"></i> Home"
+  - title: "<i class=\"fas fa-house\"></i> Home"
     url: /
-  - title: "<i class=\"fas fa-laptop-code\"></i> Research"
-    url: /research/
+  - title: "<i class=\"fas fa-book\"></i> Publications"
+    url: /publications/
+  - title: "<i class=\"fas fa-comment-dots\"></i> Talks"
+    url: /talks/
   - title: "<i class=\"fas fa-chalkboard\"></i> Teaching"
     url: /teaching/
-  - title: "<i class=\"fas fa-book\"></i> Collections"
-    url: /collections/
-  - title: "<i class=\"fas fa-circle-info\"></i> Resume/CV"
+  - title: "<i class=\"fas fa-user\"></i> Resume/CV"
     url: /resume-cv/
 
-# Research
-research:
-  - title: "Overview"
-    url: /research/
   # - title: "Software Development"
   #   url: /research/software/
   #   children:
@@ -42,10 +38,6 @@ research:
   #       children:
   #         - title: "RETINAS"
   #           url: /research/software/retinas/
-  - title: "Publications"
-    url: /research/publications/
-  - title: "Talks"
-    url: /research/talks/
 
 # Data Structures & Algorithms links
 dsa:
