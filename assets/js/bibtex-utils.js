@@ -27,6 +27,14 @@ export function formatTitle(title) {
 
     // List of special terms to preserve exact capitalization
     const preserveTerms = new Map([
+        ['--', '–'],
+        ['---', '—'],
+        ['ns', 'NS'],
+        ['nss', 'NSs'],
+        ['bns', 'BNS'],
+        ['bh', 'BH'],
+        ['bhs', 'BHs'],
+        ['bbh', 'BBH'],
         ['illinoisgrmhd', 'IllinoisGRMHD'],
         ['illinoisgrmhd+harm3d', 'IllinoisGRMHD+HARM3D'],
         ['grmhd', 'GRMHD'],
@@ -38,6 +46,7 @@ export function formatTitle(title) {
         ['groovy', 'GRoovy'],
         ['grhayl', 'GRHayL'],
         ['harm', 'HARM'],
+        ['harm3d', 'HARM3D'],
         ['harm+nuc', 'HARM+NUC'],
         ['harm3d+nuc', 'HARM3D+NUC'],
         ['1d', '1D'],

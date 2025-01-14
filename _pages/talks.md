@@ -7,7 +7,7 @@ bibtex_talk: true
 ---
 
 # 2024
-{% talk generic.png %}
+{% talk generic.png 2024-06-21-LRW-Talk-INL.pdf %}
 @misc{2024_Werneck_INL_talk,
     authors = {Werneck, Leonardo R.},
     title = {From Microspheres to Supermassive Stars: An overview of the University of Idaho’s Numerical Relativity group’s research},
@@ -20,15 +20,16 @@ bibtex_talk: true
 {% talk generic.png %}
 @misc{2024_Werneck_NAETSS_talk,
     authors = {Werneck, Leonardo R.},
-    title = {Direct-Collapse Black Holes: Gravitational-Wave Signatures of Massive Black Hole Formation},
+    title = {Direct-Collapse BHs: Gravitational-Wave Signatures of Massive BH Formation},
     booktitle = {North American Einstein Toolkit Summer School},
     address = {Louisiana State University, Baton Rouge, LA, USA},
+    publishedat = {https://docs.google.com/presentation/d/1iSIekn0TqHmfMFejJBPxdzhxURa5uEoLN3TbjXLiPZY/edit?usp=sharing},
     year = {2024},
     note = {Invited talk}
 }
 {% endtalk %}
 
-{% talk generic.png %}
+{% talk moving_mesh.mp4 none.pdf Shadowfax https://dwarfs.ugent.be/shadowfax/ %}
 @misc{2024_Werneck_APS_talk,
     authors = {Werneck, Leonardo R.},
     title = {Binary Neutron Star Mergers on a Moving Mesh},
@@ -40,7 +41,7 @@ bibtex_talk: true
 {% endtalk %}
 
 # 2023
-{% talk moving_mesh.mp4 2023-08-03-LRW-Talk-INT.pdf Shadowfax https://dwarfs.ugent.be/shadowfax/ %}
+{% talk generic.png 2023-08-03-LRW-Talk-INT.pdf %}
 @misc{2024_Werneck_INT_talk,
     authors = {Werneck, Leonardo R.},
     title = {GRHayL: An Open-source, Modular, Extensible GRMHD Library},
@@ -90,7 +91,7 @@ bibtex_talk: true
 {% talk generic.png 2022-06-17-LRW-Talk-NAET.pdf %}
 @misc{2022_Werneck_NAETSS_talk,
     authors = {Werneck, Leonardo R.},
-    title = {Accurate, long-term binary neutron stars simulations with IllinoisGRMHD and HARM+NUC},
+    title = {Accurate, long-term BNS simulations with IllinoisGRMHD and HARM+NUC},
     booktitle = {North American Einstein Toolkit Summer School},
     address = {University of Idaho, Moscow, ID, USA},
     year = {2022},
@@ -101,7 +102,7 @@ bibtex_talk: true
 {% talk igm_bns_ls220_temperature.mp4 2022-04-10-LRW-Talk-APS.pdf %}
 @misc{2022_Werneck_APS_talk,
     authors = {Werneck, Leonardo R.},
-    title = {Accurate, long-term binary neutron stars simulations with IllinoisGRMHD and HARM3D},
+    title = {Accurate, long-term BNS simulations with IllinoisGRMHD and HARM3D},
     booktitle = {APS April Meeting},
     address = {New York Marriott Marquis, NY, USA},
     publishedat = {https://docs.google.com/presentation/d/1l9h5IvjXh8wfF8F4mXGHrByhyeve5jq7qqOzab9YUnU/edit?usp=sharing},
@@ -137,7 +138,7 @@ bibtex_talk: true
 {% talk igm_bns_ls220_density.mp4 2021-07-12-LRW-Talk-TCAN.pdf %}
 @misc{2021_Werneck_TCAN_talk,
     authors = {Werneck, Leonardo R.},
-    title = {IllinoisGRMHD progress update — advanced, tabulated equation of state support},
+    title = {IllinoisGRMHD progress update --- advanced, tabulated equation of state support},
     booktitle = {TCAN on BNS Workshop},
     address = {Online Event, Rochester Institute of Technology, NY, USA},
     publishedat = {https://docs.google.com/presentation/d/1TfY0ytauG6u1iWY-ZJnaXFfzSu7zRXmdNStpDhIhfCY/edit?usp=sharing},
@@ -161,7 +162,7 @@ bibtex_talk: true
 {% talk igm_bns_sly_ppeos.mp4 2020-07-07-LRW-Talk-TCAN.pdf %}
 @misc{2020_Werneck_TCAN_talk,
     authors = {Werneck, Leonardo R.},
-    title = {IllinoisGRMHD progress update — piecewise polytropic equation of state support},
+    title = {IllinoisGRMHD progress update --- piecewise polytropic equation of state support},
     booktitle = {TCAN on BNS Workshop},
     address = {Online Event, Rochester Institute of Technology, NY, USA},
     year = {2020},

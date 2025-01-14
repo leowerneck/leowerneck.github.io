@@ -28,13 +28,11 @@
     inset-inline-end: 0;
     margin: 0 auto;
     padding: 2px 5px;
-    color: #fff;
     font-family: Georgia, Times, serif !default;
     font-size: 7pt;
-    background: #000;
+    background-color: rgba(0, 0, 0, 0.5);
     text-align: end;
     z-index: 5;
-    opacity: 0.5;
     border-radius: $border-radius 0 0 0;
     a {
         color: #fff;
@@ -49,9 +47,12 @@
     flex-direction: column;
 }
 
+.paper-title {
+    text-align: justify;
+}
+
 .paper-title, .talk-title {
     font-size: 1.1em;
-    text-align: justify;
     padding-bottom: 8px;
     border-bottom: 1px solid #bbb;
 }
