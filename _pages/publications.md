@@ -6,7 +6,7 @@ toc: false
 bibtex_paper: true
 ---
 
-# 2024
+# 2025
 {% bibtex /assets/images/papers/2025_tootle.png %}
 @article{Tootle:2025ikk,
     author = "Tootle, Samuel D. and Werneck, Leonardo R. and Assumpcao, Thiago and Jacques, Terrence Pierre and Etienne, Zachariah B.",
@@ -19,6 +19,7 @@ bibtex_paper: true
 }
 {% endbibtex %}
 
+# 2024
 {% bibtex /assets/images/papers/2024_pierre-jacques.png %}
 @article{Jacques:2024pxh,
     author = "Jacques, Terrence Pierre and Cupp, Samuel and Werneck, Leonardo R. and Tootle, Samuel D. and Hamilton, Maria C. Babiuc and Etienne, Zachariah B.",
