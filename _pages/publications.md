@@ -15,6 +15,23 @@ bibtex_paper: true
     archivePrefix = "arXiv",
     primaryClass = "gr-qc",
     month = "1",
+    year = "2025",
+    misc = "Submitted to Class. Quant. Grav."
+}
+{% endbibtex %}
+
+{% bibtex /assets/images/papers/2024_duez.png %}
+@article{Duez:2024ujs,
+    author = "Duez, Matthew D. and Cadenhead, Courtney L. and Etienne, Zachariah B. and Kelly, Bernard and Werneck, Leonardo R.",
+    title = "{Toward 2D dynamo models calibrated by global 3D relativistic accretion disk simulations}",
+    eprint = "2409.02899",
+    archivePrefix = "arXiv",
+    primaryClass = "astro-ph.HE",
+    doi = "10.1103/PhysRevD.111.023040",
+    journal = "Phys. Rev. D",
+    volume = "111",
+    number = "2",
+    pages = "023040",
     year = "2025"
 }
 {% endbibtex %}
@@ -28,19 +45,6 @@ bibtex_paper: true
     archivePrefix = "arXiv",
     primaryClass = "gr-qc",
     month = "12",
-    year = "2024",
-    misc = "Submitted to Phys. Rev. D"
-}
-{% endbibtex %}
-
-{% bibtex /assets/images/papers/2024_duez.png %}
-@article{Duez:2024ujs,
-    author = "Duez, Matthew D. and Cadenhead, Courtney L. and Etienne, Zachariah B. and Kelly, Bernard and Werneck, Leonardo R.",
-    title = "{Toward 2D Dynamo Models Calibrated by Global 3D Relativistic Accretion Disk Simulations}",
-    eprint = "2409.02899",
-    archivePrefix = "arXiv",
-    primaryClass = "astro-ph.HE",
-    month = "9",
     year = "2024",
     misc = "Submitted to Phys. Rev. D"
 }
