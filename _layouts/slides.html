@@ -11,33 +11,64 @@
 
     <link rel="stylesheet" href="/assets/reveal.js/dist/reset.css" />
     <link rel="stylesheet" href="/assets/reveal.js/dist/reveal.css" />
-    <link rel="stylesheet" href="/assets/reveal.js/dist/theme/black.css" />
+    <link rel="stylesheet" href="/assets/reveal.js/dist/theme/bo.css" />
+    <link rel="stylesheet" href="/assets/reveal.js/css/footer.css" />
 
     <!-- Theme used for syntax highlighted code -->
-    <link rel="stylesheet" href="/assets/reveal.js/plugin/highlight/monokai.css" />
+    <link
+      rel="stylesheet"
+      href="/assets/reveal.js/plugin/highlight/monokai.css"
+    />
   </head>
   <body>
     <div class="reveal">
       <div class="slides">
-        {{ preprocessed_slide_content }}
+        <section
+          data-markdown
+          data-separator="<!--s-->"
+          data-separator-vertical="<!--v-->"
+          data-separator-notes="^Note:"
+          data-charset="iso-8859-15"
+        />
+          <textarea data-template>
+            {{ page.preprocessed_slide_content }}
+          </textarea>
+        </section>
       </div>
     </div>
 
-    <script src="dist/reveal.js"></script>
-    <script src="plugin/notes/notes.js"></script>
-    <script src="plugin/markdown/markdown.js"></script>
-    <script src="plugin/highlight/highlight.js"></script>
+    <footer class="footer">Leo Werneck &mdash; {{ page.event }} &mdash; {{ page.date }}</footer>
+
+    <script src="/assets/reveal.js/dist/reveal.js"></script>
+    <script src="/assets/reveal.js/plugin/notes/notes.js"></script>
+    <script src="/assets/reveal.js/plugin/markdown/markdown.js"></script>
+    <script src="/assets/reveal.js/plugin/highlight/highlight.js"></script>
+    <script src="/assets/reveal.js/plugin/math/math.js"></script>
     <script>
       // More info about initialization & config:
       // - https://revealjs.com/initialization/
       // - https://revealjs.com/config/
       Reveal.initialize({
         hash: true,
+        width: 1280,
+        height: 800,
+        center: false,
 
+        mathjax3: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          tex: {
+            inlineMath: [
+              ['$', '$'],
+              ['\\(', '\\)'],
+            ],
+          },
+          options: {
+            skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+          },
+        },
         // Learn about plugins: https://revealjs.com/plugins/
-        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.MathJax3],
       });
     </script>
   </body>
 </html>
-
