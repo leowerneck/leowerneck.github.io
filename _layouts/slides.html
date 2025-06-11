@@ -19,17 +19,37 @@
       rel="stylesheet"
       href="/assets/reveal.js/plugin/highlight/monokai.css"
     />
+
+    <style>
+      .hide {
+        display: none !important;
+      }
+    </style>
   </head>
+
   <body>
     <div class="reveal">
       <div class="slides">
+        {% if page.title and page.author %}
+        <section class="center">
+          <div>
+            <h1>{{ page.title }}</h1>
+            {% if page.subtitle %}
+            <h3>{{ page.subtitle }}</h3>
+            {% endif %}
+            <hr />
+            <h2>{{ page.author }}</h2>
+          </div>
+        </section>
+        {% endif %}
+
         <section
           data-markdown
           data-separator="<!--s-->"
           data-separator-vertical="<!--v-->"
           data-separator-notes="^Note:"
           data-charset="iso-8859-15"
-        />
+        >
           <textarea data-template>
             {{ page.preprocessed_slide_content }}
           </textarea>
@@ -37,7 +57,9 @@
       </div>
     </div>
 
-    <footer class="footer">Leo Werneck &mdash; {{ page.event }} &mdash; {{ page.date }}</footer>
+    <footer class="footer">
+      Leo Werneck &mdash; {{ page.event }} &mdash; {{ page.date }}
+    </footer>
 
     <script src="/assets/reveal.js/dist/reveal.js"></script>
     <script src="/assets/reveal.js/plugin/notes/notes.js"></script>
@@ -53,21 +75,52 @@
         width: 1280,
         height: 800,
         center: false,
+        controlsLayout: "edges",
+        controlsBackArrows: "hidden",
+        slideNumber: true,
 
         mathjax3: {
-          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          mathjax:
+            "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js",
           tex: {
             inlineMath: [
-              ['$', '$'],
-              ['\\(', '\\)'],
+              ["$", "$"],
+              ["\\(", "\\)"],
             ],
           },
           options: {
-            skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            skipHtmlTags: [
+              "script",
+              "noscript",
+              "style",
+              "textarea",
+              "pre",
+              "code",
+            ],
           },
         },
         // Learn about plugins: https://revealjs.com/plugins/
-        plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.MathJax3],
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealNotes,
+          RevealMath.MathJax3,
+        ],
+      });
+
+      // This must be registered AFTER Reveal.initialize
+      Reveal.on("ready", () => {
+        const footer = document.querySelector("footer.footer");
+        const slideNo = document.querySelector("div.slide-number");
+
+        function toggleFooterVisibility() {
+          const isFirstSlide = Reveal.getIndices().h === 0 && Reveal.getIndices().v === 0;
+          footer?.classList.toggle("hide", isFirstSlide);
+          slideNo?.classList.toggle("hide", isFirstSlide);
+        }
+
+        toggleFooterVisibility(); // initial check
+        Reveal.on("slidechanged", toggleFooterVisibility);
       });
     </script>
   </body>
