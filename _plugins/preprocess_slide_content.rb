@@ -16,14 +16,55 @@ module Jekyll
     private
 
     def preprocess(content)
-      content = preprocess_equations(content)
+      content = preprocess_fragmented_equations(content)
       content = preprocess_titles(content)
       content = preprocess_lists(content)
       content
     end
 
-    def preprocess_equations(content)
-      content.gsub("$$>", '$$<!--.element class="fragment"-->')
+    def preprocess_fragmented_equations(content)
+      content.gsub(/\$\$>>\s*(.*?)\s*\$\$/m) do
+        block = Regexp.last_match(1)
+
+        lines = block.lines.map(&:chomp)
+        result = []
+
+        inside_equation = false
+
+        lines.each do |line|
+          if line.strip.start_with?('\\begin{') || line.strip.start_with?('\\end{')
+            result << line
+            next
+          end
+
+          # Only transform lines inside the equation
+          if !line.strip.empty?
+            transformed_line = line.dup
+
+            # Replace "\\" with "\cr"
+            transformed_line.gsub!(/\\\\/, '\cr')
+
+            # Replace "&" with "&{} "
+            transformed_line.gsub!(/&/, '&{} ')
+
+            # Extract RHS of &= or similar, preserve math spacing and wrap with class
+            if transformed_line =~ /(.*?&\{\}\s*)(.*?)(\\cr)?\s*$/
+              prefix = $1
+              expr = $2
+              suffix = $3 || ""
+              wrapped = "#{prefix}\\class{fragment}{#{expr.strip}}#{suffix}"
+              result << wrapped
+            else
+              # In case the line doesn't match, still wrap the whole line as a fallback
+              result << "\\class{fragment}{#{transformed_line.strip}}"
+            end
+          else
+            result << line
+          end
+        end
+
+        "$$\n" + result.join("\n") + "\n$$"
+      end
     end
 
     def preprocess_lists(content)

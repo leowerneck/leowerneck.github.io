@@ -38,7 +38,13 @@
             <h3>{{ page.subtitle }}</h3>
             {% endif %}
             <hr />
-            <h2>{{ page.author }}</h2>
+            <h3>
+              {% if page.coauthors %}
+                Leo Werneck, {{ page.coauthors }}
+              {% else %}
+                Leo Werneck
+              {% endif %}
+            </h3>
           </div>
         </section>
         {% endif %}
@@ -57,9 +63,7 @@
       </div>
     </div>
 
-    <footer class="footer">
-      Leo Werneck &mdash; {{ page.event }} &mdash; {{ page.date }}
-    </footer>
+    <footer class="footer">{{ page.event }} &mdash; {{ page.date }}</footer>
 
     <script src="/assets/reveal.js/dist/reveal.js"></script>
     <script src="/assets/reveal.js/plugin/notes/notes.js"></script>
@@ -76,7 +80,6 @@
         height: 800,
         center: false,
         controlsLayout: "edges",
-        controlsBackArrows: "hidden",
         slideNumber: true,
 
         mathjax3: {
@@ -89,6 +92,11 @@
             ],
           },
           options: {
+            menuOptions: {
+              settings: {
+                assistiveMml: false,
+              },
+            },
             skipHtmlTags: [
               "script",
               "noscript",
@@ -114,7 +122,8 @@
         const slideNo = document.querySelector("div.slide-number");
 
         function toggleFooterVisibility() {
-          const isFirstSlide = Reveal.getIndices().h === 0 && Reveal.getIndices().v === 0;
+          const isFirstSlide =
+            Reveal.getIndices().h === 0 && Reveal.getIndices().v === 0;
           footer?.classList.toggle("hide", isFirstSlide);
           slideNo?.classList.toggle("hide", isFirstSlide);
         }

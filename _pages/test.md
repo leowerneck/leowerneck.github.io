@@ -2,12 +2,11 @@
 permalink: /test/
 layout: slides
 event: Test Event
-date: 03/26/2025
+date: 2025-06-26
 title: Test Presentation
 subtitle: Enhanced Markdown Annotations for Reveal.js
 author: Leo Werneck
-authors: Main Author, Co-Author 1, Co-Author 2
-affiliation: University 1, Company 1, University 2
+coauthors: Co-Author 1, Co-Author 2
 ---
 
 ## Lorem ipsum
@@ -34,3 +33,33 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 * Item 2
 * Item 3
 * Item 4
+
+<!--s-->
+
+$$
+\begin{align}
+  \class{fragment}{(x+1)^2}
+    &{} \class{fragment}{= (x+1)(x+1)}         \cr
+    &{} \class{fragment}{= x(x+1) + 1(x+1)}    \cr
+    &{} \class{fragment}{= (x^2+x) + (x+1)}    \cr
+    &{} \class{fragment}{= x^2 + (x + x) + 1}  \cr
+    &{} \class{fragment}{= x^2 + 2x + 1}
+\end{align}
+$$
+
+<!--s-->
+
+$$>>
+\begin{align}
+(x+1)^2
+  &= (x+1)(x+1) \\
+  &= x(x+1) + 1(x+1) \\
+  &= (x^2 + x) + (x + 1) \\
+  &= x^2 + x + x + 1 \\
+  &= x^2 + 2x + 1
+\end{align}
+$$
+
+<!--s-->
+
+## Other slide
